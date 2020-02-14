@@ -148,6 +148,96 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CSSNote" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/14/CSSNote/">文档流与BFC感悟</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/14/CSSNote/" class="archive-article-date">
+  	<time datetime="2020-02-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h2><blockquote>
+<p>normal flow 正常文档流<br>position: absolute/fix/relative; z-index; float形成脱离文档流 </p>
+</blockquote>
+<ol>
+<li>文档流包括正常文档流，脱离文档流。</li>
+<li>浮动元素具有破坏性，包裹性及浮动性。会造成父元素高度塌陷，但可以形成文字环绕的效果，应合理应用float元素。</li>
+<li>元素浮动后，块级元素将忽略他的存在，BFC将重新感知它的存在。</li>
+<li>block级元素具有流体性质，会自动填满父级元素，可利用该性质，在布局上形成自适应宽度的效果。</li>
+</ol>
+<hr>
+<h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><blockquote>
+<p>Block Format Context 块级元素格式上下文</p>
+</blockquote>
+<ol>
+<li>简单来说，块级元素形成BFC后，会在内部形成一个独立渲染区域，不管外部元素如何进行渲染，BFC总是“泰山崩于前而不改其色”。</li>
+<li>在浮动图片与块级元素（文字）同一布局时，文字形成环绕，可将块级文字用overflow:hidden;形成BFC独立渲染区域，文字将不再环绕图片。</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/14/CSSNote/">Show more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-HtmlNote" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -155,7 +245,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/11/HtmlNote/">HTML CSS Note</a>
+      <a class="article-title" href="/2020/02/11/HtmlNote/">HTMLNote</a>
     </h1>
   
 
@@ -231,7 +321,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">HTML CSS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
         		</li>
       		
 		</ul>
@@ -438,7 +528,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HTML CSS</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
             
             <div class="clearfix"></div>
