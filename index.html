@@ -155,12 +155,120 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/16/CSS/CSS_Layout/">CSS Layout</a>
+      <a class="article-title" href="/2020/03/17/CSS/CSS_Layout/">CSS Layout</a>
     </h1>
   
 
         
-        <a href="/2020/03/16/CSS/CSS_Layout/" class="archive-article-date">
+        <a href="/2020/03/17/CSS/CSS_Layout/" class="archive-article-date">
+  	<time datetime="2020-03-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="实现两栏布局的方法（左侧固定右侧自适应）"><a href="#实现两栏布局的方法（左侧固定右侧自适应）" class="headerlink" title="实现两栏布局的方法（左侧固定右侧自适应）"></a>实现两栏布局的方法（左侧固定右侧自适应）</h3><pre><code>&lt;div class=&quot;wrap&quot;&gt;
+&lt;div class=&quot;left&quot;&gt;left&lt;/div&gt;
+&lt;div class=&quot;right&quot;&gt;right&lt;/right&gt;
+&lt;/div&gt;</code></pre><h4 id="一，双inline-block方案"><a href="#一，双inline-block方案" class="headerlink" title="一，双inline-block方案"></a>一，双inline-block方案</h4><pre><code>.wrap{font-size:0}
+.left, .right{
+    display:inline-block;
+    vertical-align:top;
+    font-size:14px;
+    box-sizing:border-box;
+}
+.right{width:calc(100%-140px)}</code></pre><h4 id="二，双float方案"><a href="#二，双float方案" class="headerlink" title="二，双float方案"></a>二，双float方案</h4><pre><code>.wrap{overflow:auto;
+    box-sizing:content-box;
+}
+.left, .right{
+    float:left;
+    box-sizing:border-box;
+}
+.right{
+    width:calc(100%-140px);
+}</code></pre><h4 id="三，float-margin-left方案"><a href="#三，float-margin-left方案" class="headerlink" title="三，float + margin-left方案"></a>三，float + margin-left方案</h4><pre><code>.wrap{overflow:hidden;}
+.left{float:left;}
+.right{margin-left:150px;}</code></pre><h4 id="四，absolute-margin-left方案"><a href="#四，absolute-margin-left方案" class="headerlink" title="四，absolute + margin-left方案"></a>四，absolute + margin-left方案</h4><pre><code>.left{position:absolute;}
+.right{margin-left:150px;}</code></pre><h4 id="五，float-BFC方案"><a href="#五，float-BFC方案" class="headerlink" title="五，float + BFC方案"></a>五，float + BFC方案</h4><pre><code>.wrap{overflow:auto;}
+.left{
+    float:left;
+    margin-left:20px;
+}
+.right{
+    margin-left:0;
+    overflow:auto; //形成BFC
+}</code></pre><h4 id="六，flex方案"><a href="#六，flex方案" class="headerlink" title="六，flex方案"></a>六，flex方案</h4><pre><code>.wrap{
+    display:flex;
+    align-items:flex-start;
+}
+.left{flex:0 0 auto}
+.right{flex:1 1 auto}</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/17/CSS/CSS_Layout/">Read more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CSS/CSS_Flex" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/16/CSS/CSS_Flex/">CSS Flex</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/16/CSS/CSS_Flex/" class="archive-article-date">
   	<time datetime="2020-03-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-16</time>
 </a>
         
@@ -172,48 +280,60 @@
 <p>Flexible Box</p>
 </blockquote>
 <ul>
-<li>任何容器都可指定为flex布局(webkit内核浏览器应加前缀-webkit)<blockquote>
+<li><p>任何容器都可指定为flex布局(webkit内核浏览器应加前缀-webkit)</p>
+<blockquote>
 <p>.block_box{display:flex}<br>.inline_box{display:inline-flex}</p>
 </blockquote>
 </li>
-<li>flex布局之后：子元素float,clear,vertical-align将失效。<h3 id="容器属性"><a href="#容器属性" class="headerlink" title="容器属性"></a>容器属性</h3></li>
-<li>容器内项目排列属性<blockquote>
+<li><p>flex布局之后：子元素float,clear,vertical-align将失效。</p>
+<h3 id="容器属性"><a href="#容器属性" class="headerlink" title="容器属性"></a>容器属性</h3></li>
+<li><p>容器内项目排列属性</p>
+<blockquote>
 <p>flex-direction: row(default)|row-recerse|colum|colum-reverse<br>flex-wrap: nowrap|wrap|wrap-reverse<br>flex-flow: flex-direction || flex-wrap</p>
 </blockquote>
 </li>
-<li>容器内项目在主轴对齐方式<blockquote>
+<li><p>容器内项目在主轴对齐方式</p>
+<blockquote>
 <p>justify-content: flex-start | flex-end | center | space-around | space-between</p>
 </blockquote>
 </li>
-<li>容器内项目在交叉轴的对齐方式<blockquote>
+<li><p>容器内项目在交叉轴的对齐方式</p>
+<blockquote>
 <p>align-items: flex-start | flex-end | baseline | stretch</p>
 </blockquote>
 </li>
-<li>定义多样轴线对齐方式<blockquote>
+<li><p>定义多样轴线对齐方式</p>
+<blockquote>
 <p>align-content: flex-start | flex-end | center | stretch | space-between | space-around</p>
 </blockquote>
 <h3 id="项目属性"><a href="#项目属性" class="headerlink" title="项目属性"></a>项目属性</h3></li>
-<li>ord: 定义排列顺序<blockquote>
+<li><p>ord: 定义排列顺序</p>
+<blockquote>
 <p>.item{ord:integer}</p>
 </blockquote>
 </li>
-<li>flex-grow：定义放大比例（default:0）<blockquote>
+<li><p>flex-grow：定义放大比例（default:0）</p>
+<blockquote>
 <p>.item{flex-grow:integer}</p>
 </blockquote>
 </li>
-<li>flex-shrink：定义缩小比例（default:1）<blockquote>
+<li><p>flex-shrink：定义缩小比例（default:1）</p>
+<blockquote>
 <p>.item{flex-shrink:integer}</p>
 </blockquote>
 </li>
-<li>flex-basis：定义项目占据主轴空间<blockquote>
+<li><p>flex-basis：定义项目占据主轴空间</p>
+<blockquote>
 <p>.item{flex-basis:integer | auto}</p>
 </blockquote>
 </li>
-<li>flex：混合定义<blockquote>
+<li><p>flex：混合定义</p>
+<blockquote>
 <p>.item{flex: flex-grow | flex-shrink | flex-basis}</p>
 </blockquote>
-<h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><blockquote>
-<p>允许单个项目与其他项目相比有不一样的对齐方式<br>与align-items属性相似，如无父元素，等同于stretch<br>align-self: auto | flex-start | flex-end | flex-center | baseline |<br>stretch</p>
+<h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p>允许单个项目与其他项目相比有不一样的对齐方式</p>
+<blockquote>
+<p>与align-items属性相似，如无父元素，等同于stretch<br>align-self: auto | flex-start | flex-end | flex-center | baseline |<br>stretch</p>
 </blockquote>
 </li>
 </ul>
@@ -240,7 +360,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/16/CSS/CSS_Layout/">Read more >></a>
+          <a class="article-more-a" href="/2020/03/16/CSS/CSS_Flex/">Read more >></a>
         </p>
       
 
