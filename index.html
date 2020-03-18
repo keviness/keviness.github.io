@@ -148,19 +148,223 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-CSS/CSS_Layout" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-CSS/CSS_Layout2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/17/CSS/CSS_Layout/">CSS Layout</a>
+      <a class="article-title" href="/2020/03/18/CSS/CSS_Layout2/">CSS Layout 之三栏布局实现</a>
     </h1>
   
 
         
-        <a href="/2020/03/17/CSS/CSS_Layout/" class="archive-article-date">
+        <a href="/2020/03/18/CSS/CSS_Layout2/" class="archive-article-date">
+  	<time datetime="2020-03-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="实现三栏布局（网页宽度自适应）"><a href="#实现三栏布局（网页宽度自适应）" class="headerlink" title="实现三栏布局（网页宽度自适应）"></a>实现三栏布局（网页宽度自适应）</h3><h4 id="一，absolute绝对定位法（main置于中间）"><a href="#一，absolute绝对定位法（main置于中间）" class="headerlink" title="一，absolute绝对定位法（main置于中间）"></a>一，absolute绝对定位法（main置于中间）</h4><p>HTML代码:</p>
+<pre><code>&lt;body&gt;
+    &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;main&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;</code></pre><p>CSS:</p>
+<pre><code>#left, #right{
+    position:absolute;
+    top:0;
+    height:100%;
+    width:200px;
+}
+#left{
+    left:0;
+}
+#right{
+    right:0;
+}
+#main{
+    margin: 210px;
+}</code></pre><h4 id="magrin负值法（negative-margin）"><a href="#magrin负值法（negative-margin）" class="headerlink" title="magrin负值法（negative margin）"></a>magrin负值法（negative margin）</h4><p>HTML代码：main要用双重嵌套标签。</p>
+<pre><code>&lt;body&gt;
+    &lt;div id=&quot;main&quot;&gt;
+        &lt;div id=&quot;body&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;</code></pre><p>CSS:</p>
+<pre><code>#main{
+    width:100%;
+    height:100%;
+    float:left;
+}
+#main #body{
+    margin:0 210px;
+    height:100%;
+}
+#left, #right{
+    width:200px;
+    height:100px;
+    float:float;
+}
+#left{
+    margin-left: -100%;
+}
+#right{
+    margin-right: -200px;
+}</code></pre><h4 id="float自身浮动法"><a href="#float自身浮动法" class="headerlink" title="float自身浮动法"></a>float自身浮动法</h4><p>HTML代码：main放于最后。</p>
+<pre><code>&lt;body&gt;
+    &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;main&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;</code></pre><p>CSS：</p>
+<pre><code>#main{
+    height:100%;
+    margin:0 210px;
+}
+#left, #right{
+    right:100%;
+    width:200px;
+}
+#left{
+    float:left;
+}
+#right{
+    float:right;
+}</code></pre><h4 id="双飞翼布局"><a href="#双飞翼布局" class="headerlink" title="双飞翼布局"></a>双飞翼布局</h4><p>HTML代码：</p>
+<pre><code>&lt;body&gt;
+    &lt;div id=&quot;main&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;sub&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;extra&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;</code></pre><p>CSS：</p>
+<ul>
+<li><p>法一（类似方案三）</p>
+<p>  body{</p>
+<pre><code>padding:0 230px 0 190px;</code></pre><p>  }<br>  #main{</p>
+<pre><code>float:left;
+width:100%;</code></pre><p>  }<br>  #sub{</p>
+<pre><code>float:left;
+margin-left:-100%;
+width:190px;
+position:relative;
+left:-190px;</code></pre><p>  }<br>  #extra{</p>
+<pre><code>float:left;
+margin-left:-230px;
+width:230px;
+position:relative;
+right:-230px;</code></pre><p>  }</p>
+</li>
+<li><p>法二：在main元素外加一层包装元素。<br>HTML代码：id=”main”元素外加一个盒子，封装为id=”main-content”</p>
+  <div id="main-content">
+      <div id="main"></div>
+  </div>
+
+</li>
+</ul>
+<p>CSS：</p>
+<pre><code>#main{
+    float:left;
+    width:100%;
+}
+#main-content{
+    margin:0 230px 0 190px;
+}
+#sub{
+    float:left;
+    margin-left:-100%;
+    width:190px;
+}
+#extra{
+    float:left;
+    margin-left:-230px;
+    width:230px;
+}</code></pre><p>法三：对main用padding。<br>HTML代码：不变。</p>
+<hr>
+<p>CSS：</p>
+<pre><code>#main{
+    float:left;
+    width:100%;
+    box-sizing:border-box;
+    padding:0 210px 0 190px;
+}
+#sub{
+    float:left;
+    margin-left:-100%;
+    width:190px;
+}
+#extra{
+    float:left;
+    margin-left:-230px;
+    width:230px;
+}</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/18/CSS/CSS_Layout2/">Read more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CSS/CSS_Layout1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/17/CSS/CSS_Layout1/">CSS Layout 之两栏布局实现</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/17/CSS/CSS_Layout1/" class="archive-article-date">
   	<time datetime="2020-03-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-17</time>
 </a>
         
@@ -226,7 +430,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/17/CSS/CSS_Layout/">Read more >></a>
+          <a class="article-more-a" href="/2020/03/17/CSS/CSS_Layout1/">Read more >></a>
         </p>
       
 
@@ -989,6 +1193,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
             
             <div class="clearfix"></div>
