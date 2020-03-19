@@ -494,34 +494,17 @@
         <h2 id="CSS-Flex"><a href="#CSS-Flex" class="headerlink" title="CSS Flex"></a>CSS Flex</h2><blockquote>
 <p>Flexible Box</p>
 </blockquote>
-<ul>
-<li><p>任何容器都可指定为flex布局(webkit内核浏览器应加前缀-webkit)</p>
-<blockquote>
-<p>.block_box{display:flex}<br>.inline_box{display:inline-flex}</p>
-</blockquote>
-</li>
-<li><p>flex布局之后：子元素float,clear,vertical-align将失效。</p>
-<h3 id="容器属性"><a href="#容器属性" class="headerlink" title="容器属性"></a>容器属性</h3></li>
-<li><p>容器内项目排列属性</p>
-<blockquote>
-<p>flex-direction: row(default)|row-recerse|colum|colum-reverse<br>flex-wrap: nowrap|wrap|wrap-reverse<br>flex-flow: flex-direction || flex-wrap</p>
-</blockquote>
-</li>
-<li><p>容器内项目在主轴对齐方式</p>
-<blockquote>
-<p>justify-content: flex-start | flex-end | center | space-around | space-between</p>
-</blockquote>
-</li>
-<li><p>容器内项目在交叉轴的对齐方式</p>
-<blockquote>
+<h4 id="1，任何容器都可指定为flex布局-webkit内核浏览器应加前缀-webkit"><a href="#1，任何容器都可指定为flex布局-webkit内核浏览器应加前缀-webkit" class="headerlink" title="1，任何容器都可指定为flex布局(webkit内核浏览器应加前缀-webkit)"></a>1，任何容器都可指定为flex布局(webkit内核浏览器应加前缀-webkit)</h4><pre><code>.block_box{display:flex}
+.inline_box{display:inline-flex}</code></pre><h4 id="2，flex布局之后：子元素float-clear-vertical-align将失效。"><a href="#2，flex布局之后：子元素float-clear-vertical-align将失效。" class="headerlink" title="2，flex布局之后：子元素float,clear,vertical-align将失效。"></a>2，flex布局之后：子元素float,clear,vertical-align将失效。</h4><hr>
+<h3 id="一，容器属性"><a href="#一，容器属性" class="headerlink" title="一，容器属性"></a>一，容器属性</h3><h4 id="1，容器内项目排列属性"><a href="#1，容器内项目排列属性" class="headerlink" title="1，容器内项目排列属性"></a>1，容器内项目排列属性</h4><pre><code>flex-direction: row(default)|row-recerse|colum|colum-reverse
+flex-wrap: nowrap|wrap|wrap-reverse
+flex-flow: flex-direction || flex-wrap</code></pre><h4 id="2，容器内项目在主轴对齐方式"><a href="#2，容器内项目在主轴对齐方式" class="headerlink" title="2，容器内项目在主轴对齐方式"></a>2，容器内项目在主轴对齐方式</h4><pre><code>justify-content: flex-start | flex-end | center | space-around | space-between</code></pre><h4 id="3，容器内项目在交叉轴的对齐方式"><a href="#3，容器内项目在交叉轴的对齐方式" class="headerlink" title="3，容器内项目在交叉轴的对齐方式"></a>3，容器内项目在交叉轴的对齐方式</h4><blockquote>
 <p>align-items: flex-start | flex-end | baseline | stretch</p>
 </blockquote>
-</li>
-<li><p>定义多样轴线对齐方式</p>
-<blockquote>
+<h4 id="4，定义多样轴线对齐方式"><a href="#4，定义多样轴线对齐方式" class="headerlink" title="4，定义多样轴线对齐方式"></a>4，定义多样轴线对齐方式</h4><blockquote>
 <p>align-content: flex-start | flex-end | center | stretch | space-between | space-around</p>
 </blockquote>
-<h3 id="项目属性"><a href="#项目属性" class="headerlink" title="项目属性"></a>项目属性</h3></li>
+<h3 id="二，项目属性"><a href="#二，项目属性" class="headerlink" title="二，项目属性"></a>二，项目属性</h3><ul>
 <li><p>ord: 定义排列顺序</p>
 <blockquote>
 <p>.item{ord:integer}</p>
@@ -546,10 +529,11 @@
 <blockquote>
 <p>.item{flex: flex-grow | flex-shrink | flex-basis}</p>
 </blockquote>
-<h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p>允许单个项目与其他项目相比有不一样的对齐方式</p>
+<h3 id="三，align-self"><a href="#三，align-self" class="headerlink" title="三，align-self"></a>三，align-self</h3><p>允许单个项目与其他项目相比有不一样的对齐方式</p>
 <blockquote>
-<p>与align-items属性相似，如无父元素，等同于stretch<br>align-self: auto | flex-start | flex-end | flex-center | baseline |<br>stretch</p>
+<p>与align-items属性相似，如无父元素，等同于stretch</p>
 </blockquote>
+<p>  align-self: auto | flex-start | flex-end | flex-center | baseline | stretch</p>
 </li>
 </ul>
 
