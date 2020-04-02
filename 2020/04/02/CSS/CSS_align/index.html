@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/keviness">
-  <title>HTMLNote | Keviness&#39;s Blog</title>
+  <title>CSS 常见对齐方式 | Keviness&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Html5基本结构元素&lt;!DOCTYPE html&gt; &lt;html&gt;   &#x2F;&#x2F;this is root node &lt;head&gt;     &lt;title&gt;&lt;&#x2F;title&gt; &lt;&#x2F;head&gt; &lt;body&gt;  &#x2F;&#x2F;this is body node     &lt;div&gt;&lt;&#x2F;div&gt; &lt;&#x2F;body&amp;g">
+  <meta name="description" content="CSS 水平居中若子元素为行内元素（inline）parentNode{     text-align:center; }若子元素为块元素（block）宽度固定childNode{     margin:0 auto; }宽度不固定parentNode{     text-align:center; } childNode{     display:inline-block(inline); }">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTMLNote">
-<meta property="og:url" content="https://github.com/keviness/2020/02/11/HtmlNote/HtmlNote/index.html">
+<meta property="og:title" content="CSS 常见对齐方式">
+<meta property="og:url" content="https://github.com/keviness/2020/04/02/CSS/CSS_align/index.html">
 <meta property="og:site_name" content="Keviness&#39;s Blog">
-<meta property="og:description" content="Html5基本结构元素&lt;!DOCTYPE html&gt; &lt;html&gt;   &#x2F;&#x2F;this is root node &lt;head&gt;     &lt;title&gt;&lt;&#x2F;title&gt; &lt;&#x2F;head&gt; &lt;body&gt;  &#x2F;&#x2F;this is body node     &lt;div&gt;&lt;&#x2F;div&gt; &lt;&#x2F;body&amp;g">
+<meta property="og:description" content="CSS 水平居中若子元素为行内元素（inline）parentNode{     text-align:center; }若子元素为块元素（block）宽度固定childNode{     margin:0 auto; }宽度不固定parentNode{     text-align:center; } childNode{     display:inline-block(inline); }">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://q7u2d5quo.bkt.clouddn.com/boxmodel.jpg">
-<meta property="article:published_time" content="2020-02-10T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-03-27T04:23:19.281Z">
+<meta property="article:published_time" content="2020-04-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-04-02T14:47:49.139Z">
 <meta property="article:author" content="keviness">
-<meta property="article:tag" content="HTML">
+<meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://q7u2d5quo.bkt.clouddn.com/boxmodel.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Keviness&#39;s Blog" type="application/atom+xml">
   
@@ -151,77 +149,54 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-HtmlNote/HtmlNote" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-CSS/CSS_align" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      HTMLNote
+      CSS 常见对齐方式
     </h1>
   
 
         
-        <a href="/2020/02/11/HtmlNote/HtmlNote/" class="archive-article-date">
-  	<time datetime="2020-02-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-11</time>
+        <a href="/2020/04/02/CSS/CSS_align/" class="archive-article-date">
+  	<time datetime="2020-04-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Html5基本结构元素"><a href="#Html5基本结构元素" class="headerlink" title="Html5基本结构元素"></a>Html5基本结构元素</h2><pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;   //this is root node
-&lt;head&gt;
-    &lt;title&gt;&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;  //this is body node
-    &lt;div&gt;&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre><hr>
-<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h2><ol>
-<li><blockquote>
-<p>HTML日常使用的结构标签并不多，但结构语义化是html文档的灵魂所在，在使用标签时应特别注意。</p>
+        <h3 id="CSS-水平居中"><a href="#CSS-水平居中" class="headerlink" title="CSS 水平居中"></a>CSS 水平居中</h3><h4 id="若子元素为行内元素（inline）"><a href="#若子元素为行内元素（inline）" class="headerlink" title="若子元素为行内元素（inline）"></a>若子元素为行内元素（inline）</h4><pre><code>parentNode{
+    text-align:center;
+}</code></pre><h4 id="若子元素为块元素（block）"><a href="#若子元素为块元素（block）" class="headerlink" title="若子元素为块元素（block）"></a>若子元素为块元素（block）</h4><h5 id="宽度固定"><a href="#宽度固定" class="headerlink" title="宽度固定"></a>宽度固定</h5><pre><code>childNode{
+    margin:0 auto;
+}</code></pre><h5 id="宽度不固定"><a href="#宽度不固定" class="headerlink" title="宽度不固定"></a>宽度不固定</h5><pre><code>parentNode{
+    text-align:center;
+}
+childNode{
+    display:inline-block(inline);
+}</code></pre><hr>
+<h3 id="CSS垂直居中"><a href="#CSS垂直居中" class="headerlink" title="CSS垂直居中"></a>CSS垂直居中</h3><h4 id="若子元素为行内元素（inline）-1"><a href="#若子元素为行内元素（inline）-1" class="headerlink" title="若子元素为行内元素（inline）"></a>若子元素为行内元素（inline）</h4><pre><code>parentNode{
+    height:A px;
+}
+childNode{
+    line-heght:A px;
+}</code></pre><h4 id="若子元素为块元素（block）-1"><a href="#若子元素为块元素（block）-1" class="headerlink" title="若子元素为块元素（block）"></a>若子元素为块元素（block）</h4><blockquote>
+<p>块级元素的高度由内容撑起。</p>
 </blockquote>
-</li>
-<li><blockquote>
-<p>结构语义化：通俗而言，就是让HTML文档标签标注合适的内容，如p代表文本段落，header代表页首，footer代表页尾等。</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>结构语义化，有便于HTML文档维护，XHTML在谨慎应用标签方面值得借鉴。</p>
-</blockquote>
-<h2 id="CSS基础内容概要"><a href="#CSS基础内容概要" class="headerlink" title="CSS基础内容概要"></a>CSS基础内容概要</h2></li>
-</ol>
-<hr>
-<h3 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h3><h4 id="CSS基本选择器"><a href="#CSS基本选择器" class="headerlink" title="CSS基本选择器"></a>CSS基本选择器</h4><ol>
-<li>元素选择器</li>
-<li>ID选择器</li>
-<li>Class选择器<h4 id="层次选择器"><a href="#层次选择器" class="headerlink" title="层次选择器"></a>层次选择器</h4><blockquote>
-<p>根据元素层次关系选择元素</p>
-</blockquote>
-</li>
-<li>父子选择器   M N</li>
-<li>后代选择器   M &gt; N</li>
-<li>兄弟选择器   M ~ N</li>
-<li>相邻选择器   M + N</li>
-</ol>
-<hr>
-<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><p><img src="http://q7u2d5quo.bkt.clouddn.com/boxmodel.jpg" alt="boxmodel"></p>
-<h3 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing:"></a>box-sizing:</h3><ol>
-<li>content box</li>
-<li>padding box</li>
-<li>border box<h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2></li>
-<li>字体样式</li>
-<li>文本样式</li>
-<li>背景样式</li>
-<li>列表样式</li>
-<li>表格样式</li>
-<li>表单样式</li>
-<li>超链接样式</li>
-</ol>
-
+<h5 id="高度未定"><a href="#高度未定" class="headerlink" title="高度未定"></a>高度未定</h5><h3 id><a href="#" class="headerlink" title></a></h3><pre><code>parentNode{
+    display:table-cell;
+    vertical-align:middle;
+}</code></pre><h5 id="高度已定"><a href="#高度已定" class="headerlink" title="高度已定"></a>高度已定</h5><pre><code>parentNode{
+    height:A px;
+}
+childNode{
+    height:B px;
+    margin-top(margin-bottom):(A-B)/2 px; 
+}</code></pre>
       
 
       
@@ -234,7 +209,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
         		</li>
       		
 		</ul>
@@ -290,7 +265,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/keviness/2020/02/11/HtmlNote/HtmlNote/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/keviness/2020/04/02/CSS/CSS_align/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -304,18 +279,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/14/CSS/CSSNote/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          文档流与BFC感悟
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/02/09/HtmlNote/First-post/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">First Step</div>
+    <a href="/2020/03/22/Algorithms/Algorithms_second/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Algorithms(second)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -342,7 +308,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Html5基本结构元素"><span class="toc-number">1.</span> <span class="toc-text">Html5基本结构元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tips"><span class="toc-number">2.</span> <span class="toc-text">Tips:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS基础内容概要"><span class="toc-number">3.</span> <span class="toc-text">CSS基础内容概要</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS选择器"><span class="toc-number">3.1.</span> <span class="toc-text">CSS选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CSS基本选择器"><span class="toc-number">3.1.1.</span> <span class="toc-text">CSS基本选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#层次选择器"><span class="toc-number">3.1.2.</span> <span class="toc-text">层次选择器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#盒子模型"><span class="toc-number">4.</span> <span class="toc-text">盒子模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#box-sizing"><span class="toc-number">4.1.</span> <span class="toc-text">box-sizing:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#样式"><span class="toc-number">5.</span> <span class="toc-text">样式</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-水平居中"><span class="toc-number">1.</span> <span class="toc-text">CSS 水平居中</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#若子元素为行内元素（inline）"><span class="toc-number">1.1.</span> <span class="toc-text">若子元素为行内元素（inline）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#若子元素为块元素（block）"><span class="toc-number">1.2.</span> <span class="toc-text">若子元素为块元素（block）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#宽度固定"><span class="toc-number">1.2.1.</span> <span class="toc-text">宽度固定</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#宽度不固定"><span class="toc-number">1.2.2.</span> <span class="toc-text">宽度不固定</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS垂直居中"><span class="toc-number">2.</span> <span class="toc-text">CSS垂直居中</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#若子元素为行内元素（inline）-1"><span class="toc-number">2.1.</span> <span class="toc-text">若子元素为行内元素（inline）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#若子元素为块元素（block）-1"><span class="toc-number">2.2.</span> <span class="toc-text">若子元素为块元素（block）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#高度未定"><span class="toc-number">2.2.1.</span> <span class="toc-text">高度未定</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">3.</span> <span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#高度已定"><span class="toc-number">3.0.1.</span> <span class="toc-text">高度已定</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -359,8 +325,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "https://github.com/keviness/2020/02/11/HtmlNote/HtmlNote/", 
-    sourceId: "HtmlNote/HtmlNote",
+    url: "https://github.com/keviness/2020/04/02/CSS/CSS_align/", 
+    sourceId: "CSS/CSS_align",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
