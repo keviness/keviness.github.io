@@ -187,7 +187,7 @@ childNode{
 }</code></pre><h4 id="若子元素为块元素（block）-1"><a href="#若子元素为块元素（block）-1" class="headerlink" title="若子元素为块元素（block）"></a>若子元素为块元素（block）</h4><blockquote>
 <p>块级元素的高度由内容撑起。</p>
 </blockquote>
-<h5 id="高度未定"><a href="#高度未定" class="headerlink" title="高度未定"></a>高度未定</h5><h3 id><a href="#" class="headerlink" title></a></h3><pre><code>parentNode{
+<h5 id="高度未定"><a href="#高度未定" class="headerlink" title="高度未定"></a>高度未定</h5><pre><code>parentNode{
     display:table-cell;
     vertical-align:middle;
 }</code></pre><h5 id="高度已定"><a href="#高度已定" class="headerlink" title="高度已定"></a>高度已定</h5><pre><code>parentNode{
@@ -195,7 +195,7 @@ childNode{
 }
 childNode{
     height:B px;
-    margin-top(margin-bottom):(A-B)/2 px; 
+    margin-top/margin-bottom:(A-B)/2px; 
 }</code></pre>
       
 
@@ -1049,25 +1049,27 @@ flex-flow: flex-direction || flex-wrap</code></pre><h4 id="2，容器内项目�
 <li><p>DOM是JavaScript核心模型之一，它也是DOMcore的重要表现之一。</p>
 </li>
 <li><p>DOM实质应用表现为一个DOM节点树，除html根元素之外，都有父元素，且每个元素仅有一个父元素。</p>
-<h3 id="DOM重要点："><a href="#DOM重要点：" class="headerlink" title="DOM重要点："></a>DOM重要点：</h3><h4 id="访问节点树"><a href="#访问节点树" class="headerlink" title="访问节点树"></a>访问节点树</h4><h3 id><a href="#" class="headerlink" title></a></h3><p>  object.getElementById()<br>  object.getElementsByClassName()<br>  object.getElementsByTagName()<br>  object.getElementsByName()</p>
+<h3 id="DOM重要点："><a href="#DOM重要点：" class="headerlink" title="DOM重要点："></a>DOM重要点：</h3><h4 id="访问节点树"><a href="#访问节点树" class="headerlink" title="访问节点树"></a>访问节点树</h4><p>  object.getElementById()<br>  object.getElementsByClassName()<br>  object.getElementsByTagName()<br>  object.getElementsByName()</p>
 </li>
 </ul>
-<h4 id="操作节点"><a href="#操作节点" class="headerlink" title="操作节点"></a>操作节点</h4><h3 id="-1"><a href="#-1" class="headerlink" title></a></h3><pre><code>document.createElement()
+<h4 id="操作节点"><a href="#操作节点" class="headerlink" title="操作节点"></a>操作节点</h4><pre><code>document.createElement()
 document.createTextNode()
 object.appendChild()
 object.insertBefore()
 object.removeChild()
 object.cloneNode(true/false)
 object.replace(newNode, oldNode)</code></pre><hr>
-<h4 id="操作节点属性"><a href="#操作节点属性" class="headerlink" title="操作节点属性"></a>操作节点属性</h4><ul>
-<li><p>位置信息</p>
-<h4 id="-2"><a href="#-2" class="headerlink" title></a></h4><p>  parentNode<br>  childNode<br>  firstNode<br>  lastNode<br>  previousSibling<br>  nextSibling</p>
-</li>
-<li><p>节点属性信息</p>
-<h3 id="-3"><a href="#-3" class="headerlink" title></a></h3><p>  attributes<br>  nodeType<br>  nodeName<br>  nodeValue<br>  innerHTML<br>  innerText</p>
-</li>
-</ul>
-
+<h4 id="操作节点属性"><a href="#操作节点属性" class="headerlink" title="操作节点属性"></a>操作节点属性</h4><h5 id="位置信息"><a href="#位置信息" class="headerlink" title="位置信息"></a>位置信息</h5><pre><code>parentNode  
+childNode
+firstNode   
+lastNode
+previousSibling     
+nextSibling</code></pre><h5 id="节点属性信息"><a href="#节点属性信息" class="headerlink" title="节点属性信息"></a>节点属性信息</h5><pre><code>attributes
+nodeType
+nodeName
+nodeValue
+innerHTML
+innerText</code></pre>
       
 
       
