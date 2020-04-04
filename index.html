@@ -196,6 +196,26 @@ childNode{
 childNode{
     height:B px;
     margin-top/margin-bottom:(A-B)/2px; 
+}</code></pre><hr>
+<h3 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h3><h4 id="水平对齐-行高（子元素为inline元素）"><a href="#水平对齐-行高（子元素为inline元素）" class="headerlink" title="水平对齐+行高（子元素为inline元素）"></a>水平对齐+行高（子元素为inline元素）</h4><pre><code>parentNode{
+    height:A px;
+    text-align:center;
+}
+childNode{
+    line-height:A px;
+}</code></pre><h4 id="水平对齐-垂直对齐（子元素为block元素）"><a href="#水平对齐-垂直对齐（子元素为block元素）" class="headerlink" title="水平对齐+垂直对齐（子元素为block元素）"></a>水平对齐+垂直对齐（子元素为block元素）</h4><pre><code>parentNode{
+    display:table-cell;
+    text-align:center;
+    vertical-align:center;
+}
+childNode{
+    diaplay:inline-block;
+}</code></pre><h4 id="relative-absolute（任意元素）"><a href="#relative-absolute（任意元素）" class="headerlink" title="relative+absolute（任意元素）"></a>relative+absolute（任意元素）</h4><pre><code>parentNode{
+    position:relative;
+}
+childNode{
+    position:absolute;
+    margin:auto;
 }</code></pre>
       
 
