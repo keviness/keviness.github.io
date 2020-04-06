@@ -197,7 +197,19 @@ childNode{
     height:B px;
     margin-top/margin-bottom:(A-B)/2px; 
 }</code></pre><hr>
-<h3 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h3><h4 id="水平对齐-行高（子元素为inline元素）"><a href="#水平对齐-行高（子元素为inline元素）" class="headerlink" title="水平对齐+行高（子元素为inline元素）"></a>水平对齐+行高（子元素为inline元素）</h4><pre><code>parentNode{
+<h3 id="CSS垂直居中万能语法"><a href="#CSS垂直居中万能语法" class="headerlink" title="CSS垂直居中万能语法"></a>CSS垂直居中万能语法</h3><pre><code>parentNode{
+    position:relative;
+}
+childNode{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:Xpx;
+    height:Ypx;
+    margin-top:-(Y/2)px;
+    margin-left:-(X/2)px;
+}</code></pre><hr>
+<h3 id="CSS水平垂直居中"><a href="#CSS水平垂直居中" class="headerlink" title="CSS水平垂直居中"></a>CSS水平垂直居中</h3><h4 id="水平对齐-行高（子元素为inline元素）"><a href="#水平对齐-行高（子元素为inline元素）" class="headerlink" title="水平对齐+行高（子元素为inline元素）"></a>水平对齐+行高（子元素为inline元素）</h4><pre><code>parentNode{
     height:A px;
     text-align:center;
 }
