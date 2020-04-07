@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/keviness">
-  <title>Keviness&#39;s Blog</title>
+  <title>CSS样式表的引入 | Keviness&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="My personal zone              a{             text-decoration: none;         }         #wrapper h2{             width: 100%;             color: rgb(53, 99, 99);             font-size: 26px;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Keviness&#39;s Blog">
-<meta property="og:url" content="https://github.com/keviness/ZONE/index.html">
+  <meta name="description" content="css样式表的引入内嵌样式表 内嵌样式表是写在Tag(标签)里面的。内嵌样式只对所在的Tag有效 (若有多种样式，内嵌式会覆盖其它的样式)。  &lt;p style&#x3D;&quot;font-size:20px; color:red&quot;&gt;&lt;&#x2F;p&gt; 这个style定义p标签里面的文字 是20px字体，字体颜色是红色。  内部样式表 内部样式表是写在HTML的head标签里面的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS样式表的引入">
+<meta property="og:url" content="https://github.com/keviness/2020/04/07/CSS/CSS_Link/index.html">
 <meta property="og:site_name" content="Keviness&#39;s Blog">
-<meta property="og:description" content="My personal zone              a{             text-decoration: none;         }         #wrapper h2{             width: 100%;             color: rgb(53, 99, 99);             font-size: 26px;">
+<meta property="og:description" content="css样式表的引入内嵌样式表 内嵌样式表是写在Tag(标签)里面的。内嵌样式只对所在的Tag有效 (若有多种样式，内嵌式会覆盖其它的样式)。  &lt;p style&#x3D;&quot;font-size:20px; color:red&quot;&gt;&lt;&#x2F;p&gt; 这个style定义p标签里面的文字 是20px字体，字体颜色是红色。  内部样式表 内部样式表是写在HTML的head标签里面的">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-01T14:35:35.126Z">
-<meta property="article:modified_time" content="2020-04-01T14:35:35.126Z">
+<meta property="article:published_time" content="2020-04-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-04-07T10:56:49.041Z">
 <meta property="article:author" content="keviness">
-<meta property="article:tag" content="keviness blog">
+<meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Keviness&#39;s Blog" type="application/atom+xml">
@@ -149,42 +149,51 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-CSS/CSS_Link" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS样式表的引入
+    </h1>
+  
+
+        
+        <a href="/2020/04/07/CSS/CSS_Link/" class="archive-article-date">
+  	<time datetime="2020-04-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>My personal zone</title>
-    <style>
-        a{
-            text-decoration: none;
-        }
-        #wrapper h2{
-            width: 100%;
-            color: rgb(53, 99, 99);
-            font-size: 26px;
-            text-align: center;
-        }
-        a:hover{
-            color: red;
-        }
-    </style>
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Keviness's Blog" type="application/atom+xml">
-</head>
-<body>
-    <div id="wrapper">
-    <h2>Welcome to my personal zone</h2>
-    <h3>Index</h3>
-    <ul>
-        <li><a href="first.html" target="_self">My first step</a></li>
-    </ul>
-    </div>
-</body>
-</html>
+        <h2 id="css样式表的引入"><a href="#css样式表的引入" class="headerlink" title="css样式表的引入"></a>css样式表的引入</h2><h3 id="内嵌样式表"><a href="#内嵌样式表" class="headerlink" title="内嵌样式表"></a>内嵌样式表</h3><blockquote>
+<p>内嵌样式表是写在Tag(标签)里面的。内嵌样式只对所在的Tag有效 (若有多种样式，内嵌式会覆盖其它的样式)。</p>
+</blockquote>
+<pre><code>&lt;p style=&quot;font-size:20px; color:red&quot;&gt;&lt;/p&gt;</code></pre><blockquote>
+<p>这个style定义p标签里面的文字 是20px字体，字体颜色是红色。</p>
+</blockquote>
+<h3 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h3><blockquote>
+<p>内部样式表是写在HTML的head标签里面的，内部样式表只对所在的网页有效。<br>内部样式表要用到style标签，如下 ：</p>
+</blockquote>
+<pre><code>&lt;style  type=&quot;text/css&quot;&gt;
+    div{
+        color : red;
+    }
+&lt;/style&gt;</code></pre><h3 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h3><blockquote>
+<p>若很多网页需要用到同样的样式，此时需要用外部样式表。<br>外部样式表需要将样式写在一个css文件中,然后在页面中用link标签引入，在需要应用该样式的每个页面中引入该文件。</p>
+</blockquote>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;link href=&quot;./css/example.css &quot; rel =&quot;stylesheet&quot; type=&quot;text/css &quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;…&lt;/body&gt;
+&lt;/html&gt;</code></pre><blockquote>
+<p>rel=”stylesheet” type=”text/css” 是固定写法不可修改。</p>
+</blockquote>
+
       
 
       
@@ -192,6 +201,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -242,7 +262,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/keviness/ZONE/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/keviness/2020/04/07/CSS/CSS_Link/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -254,6 +274,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/02/CSS/CSS_align/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS 常见对齐方式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -275,7 +305,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#wrapper"><span class="toc-number">1.</span> <span class="toc-text">Welcome to my personal zone</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#wrapper"><span class="toc-number">1.1.</span> <span class="toc-text">Index</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#css样式表的引入"><span class="toc-number">1.</span> <span class="toc-text">css样式表的引入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#内嵌样式表"><span class="toc-number">1.1.</span> <span class="toc-text">内嵌样式表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内部样式表"><span class="toc-number">1.2.</span> <span class="toc-text">内部样式表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#外部样式表"><span class="toc-number">1.3.</span> <span class="toc-text">外部样式表</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -292,8 +322,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "https://github.com/keviness/ZONE/index.html", 
-    sourceId: "",
+    url: "https://github.com/keviness/2020/04/07/CSS/CSS_Link/", 
+    sourceId: "CSS/CSS_Link",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
@@ -325,7 +355,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
