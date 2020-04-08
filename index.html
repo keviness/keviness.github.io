@@ -149,6 +149,115 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-HtmlNote/Html_form" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/08/HtmlNote/Html_form/">HTML FORM</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/08/HtmlNote/Html_form/" class="archive-article-date">
+  	<time datetime="2020-04-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="表单的一些属性："><a href="#表单的一些属性：" class="headerlink" title="表单的一些属性："></a>表单的一些属性：</h3><ol>
+<li>name属性：用于对提交到服务器后的表单数据进行标识,是一种key-value的对应形式。  </li>
+<li>value属性：在input框里面写的值。</li>
+<li>readonly属性：使表单元素变为只读。</li>
+<li>disabled属性：让按钮变灰，使表单元素不可用。</li>
+</ol>
+<hr>
+<h3 id="常见表单元素"><a href="#常见表单元素" class="headerlink" title="常见表单元素"></a>常见表单元素</h3><h4 id="常见表单元素应用场景"><a href="#常见表单元素应用场景" class="headerlink" title="常见表单元素应用场景"></a>常见表单元素应用场景</h4><p><img src="http://q7u2d5quo.bkt.clouddn.com/algorithms/20200408/0W1vHpykLoaS.png" alt="表单应用场景"></p>
+<h4 id="代码举例："><a href="#代码举例：" class="headerlink" title="代码举例："></a>代码举例：</h4><pre><code>单行文本框
+&lt;input type=&quot;text&quot; name=&quot;key&quot; value=&quot;123&quot; readonly=&quot;readonly&quot; 
+disabled=&quot;disabled&quot;/&gt;  
+密码框
+&lt;input type=&quot;password&quot;/&gt;　　
+下拉列表
+&lt;selected&gt;
+    &lt;option value=&quot;1&quot; selected&gt;1&lt;/option&gt;
+    &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+&lt;/selected&gt;
+单选框
+&lt;input type=&quot;radio&quot; name=&quot;like&quot; value=&quot;喜欢&quot; checked=&quot;checked&quot;/&gt;　　
+&lt;input type=&quot;radio&quot; name=&quot;like&quot; value=&quot;不喜欢&quot;/&gt;
+多选框
+&lt;input type=&quot;checkbox&quot; name=&quot;run&quot; value=&quot;跑&quot; checked=&quot;checked&quot;/&gt;　　
+&lt;input type=&quot;checkbox&quot; name=&quot;climb&quot; value=&quot;爬山&quot;/&gt;
+文件域
+&lt;input type=&quot;file&quot;&gt;
+多行文本框
+&lt;textarea rows=&quot;5&quot; cols=&quot;10&quot;&gt;&lt;/textarea&gt;
+提交按钮
+&lt;input type=&quot;submit&quot; value=&quot;提交&quot;/&gt;　
+重置按钮
+&lt;input type=&quot;reset&quot; value=&quot;重置&quot;/&gt;  
+按钮
+&lt;input type=&quot;button&quot; value=&quot;按钮&quot;/&gt;  
+图像按钮
+&lt;input type=&quot;image&quot; src=&quot;img.jpg&quot;&gt;</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/08/HtmlNote/Html_form/">Read more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-CSS/CSS_Link" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -183,17 +292,14 @@
         color : red;
     }
 &lt;/style&gt;</code></pre><h3 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h3><blockquote>
-<p>若很多网页需要用到同样的样式，此时需要用外部样式表。<br>外部样式表需要将样式写在一个css文件中,然后在页面中用link标签引入，在需要应用该样式的每个页面中引入该文件。</p>
+<p>若很多网页需要用到同样的样式，此时需要用外部样式表。<br>外部样式表需要将样式写在一个css文件中,然后在页面中用link标签引入，在需要应用该样式的每个页面中引入该文件。<br>rel=”stylesheet” type=”text/css” 是固定写法不可修改。</p>
 </blockquote>
 <pre><code>&lt;html&gt;
 &lt;head&gt;
     &lt;link href=&quot;./css/example.css &quot; rel =&quot;stylesheet&quot; type=&quot;text/css &quot;&gt;
 &lt;/head&gt;
 &lt;body&gt;…&lt;/body&gt;
-&lt;/html&gt;</code></pre><blockquote>
-<p>rel=”stylesheet” type=”text/css” 是固定写法不可修改。</p>
-</blockquote>
-
+&lt;/html&gt;</code></pre>
       
 
       
@@ -1222,96 +1328,6 @@ innerText</code></pre>
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/03/14/JavaScript/javascript_DOM/">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CSS/CSSNote" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/14/CSS/CSSNote/">文档流与BFC感悟</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/14/CSS/CSSNote/" class="archive-article-date">
-  	<time datetime="2020-02-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h2><blockquote>
-<p>normal flow 正常文档流<br>position: absolute/fix/relative; z-index; float形成脱离文档流 </p>
-</blockquote>
-<ol>
-<li>文档流包括正常文档流，脱离文档流。</li>
-<li>浮动元素具有破坏性，包裹性及浮动性。会造成父元素高度塌陷，但可以形成文字环绕的效果，应合理应用float元素。</li>
-<li>元素浮动后，块级元素将忽略他的存在，BFC将重新感知它的存在。</li>
-<li>block级元素具有流体性质，会自动填满父级元素，可利用该性质，在布局上形成自适应宽度的效果。</li>
-</ol>
-<hr>
-<h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><blockquote>
-<p>Block Format Context 块级元素格式上下文</p>
-</blockquote>
-<ol>
-<li>简单来说，块级元素形成BFC后，会在内部形成一个独立渲染区域，不管外部元素如何进行渲染，BFC总是“泰山崩于前而不改其色”。</li>
-<li>在浮动图片与块级元素（文字）同一布局时，文字形成环绕，可将块级文字用overflow:hidden;形成BFC独立渲染区域，文字将不再环绕图片。</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CSS BFC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/14/CSS/CSSNote/">Read more >></a>
         </p>
       
 

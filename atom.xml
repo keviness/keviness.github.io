@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/keviness/"/>
-  <updated>2020-04-07T10:56:49.041Z</updated>
+  <updated>2020-04-08T15:42:19.020Z</updated>
   <id>https://github.com/keviness/</id>
   
   <author>
@@ -17,13 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>HTML FORM</title>
+    <link href="https://github.com/keviness/2020/04/08/HtmlNote/Html_form/"/>
+    <id>https://github.com/keviness/2020/04/08/HtmlNote/Html_form/</id>
+    <published>2020-04-07T16:00:00.000Z</published>
+    <updated>2020-04-08T15:42:19.020Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="表单的一些属性："><a href="#表单的一些属性：" class="headerlink" title="表单的一些属性："></a>表单的一些属性：</h3><ol><li>name属性：用于对提交到服务器后的表单数据进行标识,是一种key-value的对应形式。  </li><li>value属性：在input框里面写的值。</li><li>readonly属性：使表单元素变为只读。</li><li>disabled属性：让按钮变灰，使表单元素不可用。</li></ol><hr><h3 id="常见表单元素"><a href="#常见表单元素" class="headerlink" title="常见表单元素"></a>常见表单元素</h3><h4 id="常见表单元素应用场景"><a href="#常见表单元素应用场景" class="headerlink" title="常见表单元素应用场景"></a>常见表单元素应用场景</h4><p><img src="http://q7u2d5quo.bkt.clouddn.com/algorithms/20200408/0W1vHpykLoaS.png" alt="表单应用场景"></p><h4 id="代码举例："><a href="#代码举例：" class="headerlink" title="代码举例："></a>代码举例：</h4><pre><code>单行文本框&lt;input type=&quot;text&quot; name=&quot;key&quot; value=&quot;123&quot; readonly=&quot;readonly&quot; disabled=&quot;disabled&quot;/&gt;  密码框&lt;input type=&quot;password&quot;/&gt;　　下拉列表&lt;selected&gt;    &lt;option value=&quot;1&quot; selected&gt;1&lt;/option&gt;    &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;    &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;&lt;/selected&gt;单选框&lt;input type=&quot;radio&quot; name=&quot;like&quot; value=&quot;喜欢&quot; checked=&quot;checked&quot;/&gt;　　&lt;input type=&quot;radio&quot; name=&quot;like&quot; value=&quot;不喜欢&quot;/&gt;多选框&lt;input type=&quot;checkbox&quot; name=&quot;run&quot; value=&quot;跑&quot; checked=&quot;checked&quot;/&gt;　　&lt;input type=&quot;checkbox&quot; name=&quot;climb&quot; value=&quot;爬山&quot;/&gt;文件域&lt;input type=&quot;file&quot;&gt;多行文本框&lt;textarea rows=&quot;5&quot; cols=&quot;10&quot;&gt;&lt;/textarea&gt;提交按钮&lt;input type=&quot;submit&quot; value=&quot;提交&quot;/&gt;　重置按钮&lt;input type=&quot;reset&quot; value=&quot;重置&quot;/&gt;  按钮&lt;input type=&quot;button&quot; value=&quot;按钮&quot;/&gt;  图像按钮&lt;input type=&quot;image&quot; src=&quot;img.jpg&quot;&gt;</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;表单的一些属性：&quot;&gt;&lt;a href=&quot;#表单的一些属性：&quot; class=&quot;headerlink&quot; title=&quot;表单的一些属性：&quot;&gt;&lt;/a&gt;表单的一些属性：&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;name属性：用于对提交到服务器后的表单数据进行标识,是一种key-value的
+      
+    
+    </summary>
+    
+    
+    
+      <category term="HTML" scheme="https://github.com/keviness/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CSS样式表的引入</title>
     <link href="https://github.com/keviness/2020/04/07/CSS/CSS_Link/"/>
     <id>https://github.com/keviness/2020/04/07/CSS/CSS_Link/</id>
     <published>2020-04-06T16:00:00.000Z</published>
-    <updated>2020-04-07T10:56:49.041Z</updated>
+    <updated>2020-04-08T15:01:09.149Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="css样式表的引入"><a href="#css样式表的引入" class="headerlink" title="css样式表的引入"></a>css样式表的引入</h2><h3 id="内嵌样式表"><a href="#内嵌样式表" class="headerlink" title="内嵌样式表"></a>内嵌样式表</h3><blockquote><p>内嵌样式表是写在Tag(标签)里面的。内嵌样式只对所在的Tag有效 (若有多种样式，内嵌式会覆盖其它的样式)。</p></blockquote><pre><code>&lt;p style=&quot;font-size:20px; color:red&quot;&gt;&lt;/p&gt;</code></pre><blockquote><p>这个style定义p标签里面的文字 是20px字体，字体颜色是红色。</p></blockquote><h3 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h3><blockquote><p>内部样式表是写在HTML的head标签里面的，内部样式表只对所在的网页有效。<br>内部样式表要用到style标签，如下 ：</p></blockquote><pre><code>&lt;style  type=&quot;text/css&quot;&gt;    div{        color : red;    }&lt;/style&gt;</code></pre><h3 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h3><blockquote><p>若很多网页需要用到同样的样式，此时需要用外部样式表。<br>外部样式表需要将样式写在一个css文件中,然后在页面中用link标签引入，在需要应用该样式的每个页面中引入该文件。</p></blockquote><pre><code>&lt;html&gt;&lt;head&gt;    &lt;link href=&quot;./css/example.css &quot; rel =&quot;stylesheet&quot; type=&quot;text/css &quot;&gt;&lt;/head&gt;&lt;body&gt;…&lt;/body&gt;&lt;/html&gt;</code></pre><blockquote><p>rel=”stylesheet” type=”text/css” 是固定写法不可修改。</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="css样式表的引入"><a href="#css样式表的引入" class="headerlink" title="css样式表的引入"></a>css样式表的引入</h2><h3 id="内嵌样式表"><a href="#内嵌样式表" class="headerlink" title="内嵌样式表"></a>内嵌样式表</h3><blockquote><p>内嵌样式表是写在Tag(标签)里面的。内嵌样式只对所在的Tag有效 (若有多种样式，内嵌式会覆盖其它的样式)。</p></blockquote><pre><code>&lt;p style=&quot;font-size:20px; color:red&quot;&gt;&lt;/p&gt;</code></pre><blockquote><p>这个style定义p标签里面的文字 是20px字体，字体颜色是红色。</p></blockquote><h3 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h3><blockquote><p>内部样式表是写在HTML的head标签里面的，内部样式表只对所在的网页有效。<br>内部样式表要用到style标签，如下 ：</p></blockquote><pre><code>&lt;style  type=&quot;text/css&quot;&gt;    div{        color : red;    }&lt;/style&gt;</code></pre><h3 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h3><blockquote><p>若很多网页需要用到同样的样式，此时需要用外部样式表。<br>外部样式表需要将样式写在一个css文件中,然后在页面中用link标签引入，在需要应用该样式的每个页面中引入该文件。<br>rel=”stylesheet” type=”text/css” 是固定写法不可修改。</p></blockquote><pre><code>&lt;html&gt;&lt;head&gt;    &lt;link href=&quot;./css/example.css &quot; rel =&quot;stylesheet&quot; type=&quot;text/css &quot;&gt;&lt;/head&gt;&lt;body&gt;…&lt;/body&gt;&lt;/html&gt;</code></pre>]]></content>
     
     <summary type="html">
     
