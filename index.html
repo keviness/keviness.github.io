@@ -170,10 +170,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="理解Function类型"><a href="#理解Function类型" class="headerlink" title="理解Function类型"></a>理解Function类型</h3><blockquote>
-<p>JS 中Function类型实际上是一种对象，每一个函数实际上都是Function类型的一个实例，函数通常是用函数声明语法定义的，而且每一个函数都有默认的属性和方法。</p>
-</blockquote>
-<blockquote>
-<p>因为函数是一个对象，故函数名实际上也是一个指向函数对象的指针变量，不会与某个函数绑定。</p>
+<ul>
+<li>JS 中Function类型实际上是一种对象，每一个函数实际上都是Function类型的一个实例，函数通常是用函数声明语法定义的，而且每一个函数都有默认的属性和方法。</li>
+<li>因为函数是一个对象，故函数名实际上也是一个指向函数对象的指针变量，不会与某个函数绑定。</li>
+</ul>
 </blockquote>
 <h4 id="函数声明与表达式（匿名函数）"><a href="#函数声明与表达式（匿名函数）" class="headerlink" title="函数声明与表达式（匿名函数）"></a>函数声明与表达式（匿名函数）</h4><p>函数声明会优先被读取使用（函数可提前访问）。</p>
 <pre><code>console.log(test(10,30))；　　//40
@@ -184,7 +184,9 @@ function test(num1,num2) {
 var test = function (num1,num2) {
     return num1+num2;
 };</code></pre><h4 id="作为值的函数"><a href="#作为值的函数" class="headerlink" title="作为值的函数"></a>作为值的函数</h4><blockquote>
-<p>js中的函数名本身就是变量，所以函数也可以作为值来使用，可以像传递参数一样把一个函数传递给另一个函数。</p>
+<ul>
+<li>js中的函数名本身就是变量，所以函数也可以作为值来使用，可以像传递参数一样把一个函数传递给另一个函数。</li>
+</ul>
 </blockquote>
 <pre><code>function sum (num1, num2) {
     return num1 + num2;
@@ -199,14 +201,20 @@ function sum (num1, num2) {
     return num1+num2;
 }
 function func(num1){
-    return sum(num1,10);
+    return sum(num1,5);
 }
-alert(func(10));    //20</code></pre><hr>
+alert(func(5));    //10</code></pre><hr>
 <h3 id="函数内部属性"><a href="#函数内部属性" class="headerlink" title="函数内部属性"></a>函数内部属性</h3><blockquote>
-<p>在函数内部包含两个特殊的对象：arguments和this</p>
+<ul>
+<li>在函数内部包含两个特殊的对象：arguments和this</li>
+</ul>
 </blockquote>
 <h4 id="arguments"><a href="#arguments" class="headerlink" title="arguments:"></a>arguments:</h4><blockquote>
-<p>arguments 是一个类数组，用来保存函数传递过来的参数。<br>arguments 中还有一个很重要的属性就是callee，是一个指针变量，指向的是arguments所在的函数本身，在递归中可用这个属性，因为如果函数名改变了，也不需要改变内部的实现。<br>arguments.callee()始终代表的是这个函数本身. </p>
+<ul>
+<li>arguments 是一个类数组，用来保存函数传递过来的参数。</li>
+<li>arguments 中还有一个很重要的属性就是callee，是一个指针变量，指向的是arguments所在的函数本身，在递归中可用这个属性，因为如果函数名改变了，也不需要改变内部的实现。</li>
+<li>arguments.callee()始终代表的是这个函数本身. </li>
+</ul>
 </blockquote>
 <pre><code>function box(num){
     if(num&lt;=1){
@@ -217,13 +225,16 @@ alert(func(10));    //20</code></pre><hr>
     }
 }
 alert(box(3));//6</code></pre><h4 id="this"><a href="#this" class="headerlink" title="this:"></a>this:</h4><blockquote>
-<p>this 这个属性代表的是它所在的对象本身，this 引用的是函数据以执行的环境对象，也就是函数执行的作用域。<br>window是JS中最大的一个对象，在window对象中声明一个变量其实就是给window这个对象声明一个属性，var box=1;相当于 window.box=1;也就等价于this.box=1;</p>
+<ul>
+<li>this 这个属性代表的是它所在的对象本身，this 引用的是函数据以执行的环境对象，也就是函数执行的作用域。</li>
+<li>window是JS中最大的一个对象，在window对象中声明一个变量其实就是给window这个对象声明一个属性，var box=1;相当于 window.box=1;也就等价于this.box=1;</li>
+<li>当在全局作用域中调用函数时，this 对象引用的就是 window。</li>
+<li>在显示的声明一个对象box，这个box中使用的this就代表的是box本身，this.color就是返回的box中属性color的值，而不是window对象中color的值</li>
+</ul>
 </blockquote>
-<p>当在全局作用域中调用函数时，this 对象引用的就是 window。</p>
-<p>在显示的声明一个对象box，这个box中使用的this就代表的是box本身，this.color就是返回的box中属性color的值，而不是window对象中color的值</p>
-<pre><code>    var box={
-        color:&apos;blue&apos;,
-        run:function(){
+<pre><code>var box={
+    color:&apos;blue&apos;,
+    run:function(){
         alert(this.color);    //blue
         return this.color;
     }
@@ -238,27 +249,35 @@ alert(box.run());      //blue</code></pre><hr>
 <p>函数的属性length代表的是函数希望接收的参数的个数，是由声明函数时参数列表中的个数决定的。</p>
 </blockquote>
 <h4 id="prototype"><a href="#prototype" class="headerlink" title="prototype:"></a>prototype:</h4><blockquote>
-<p>prototype 是保存所有实例方法的实际所在，也就是原型。<br>prototype下面有两个方法：apply()，call()，这两个方法都是函数非继承而来的方法，是每一个函数都具有的方法。<br>这两个方法的用途都是在特定的作用域中调用函数(看this指向的作用域是谁) </p>
+<ul>
+<li>prototype 是保存所有实例方法的实际所在，也就是原型。  </li>
+<li>prototype下面有两个方法：apply()，call()，这两个方法都是函数非继承而来的方法，是每一个函数都具有的方法。</li>
+<li>这两个方法的用途都是在特定的作用域中调用函数(看this指向的作用域是谁) </li>
+</ul>
 </blockquote>
 <pre><code>function sum (num1, num2) {
     return num1 + num2;
 }
 var result = sum.apply(this,[10,20]);
 var result = sum.call(this,10,20);
-console.log(result);</code></pre><ol>
-<li><p>func.apply()；方法有两个参数，第一个参数是要执行这个方法的作用域，也就是传递一个对象，第二个参数是一个数组，这个数组中是存放的调用的函数func的实参，也就是要传递给func的值，当然这个参数可以省略。  </p>
-</li>
-<li><p>func.call()：方法和上面的apply()方法相似，不同的是参数，作用域和apply()一样，但其余的参数是逐个列举出传递给函数的，而不是传递一个数组。</p>
-</li>
-<li><p>使用这apply()和call()这两个方法来扩充作用域最大的好处是：对象不需要与方法发生任何的耦合关系。</p>
-<h4 id="代码示例："><a href="#代码示例：" class="headerlink" title="代码示例："></a>代码示例：</h4><p> var color=’red’;<br> var box={</p>
-<pre><code>color:&apos;green&apos;</code></pre><p> }</p>
-<p> function sayColor(){</p>
-<pre><code>return this.color;</code></pre><p> }</p>
-<p> alert(sayColor());          　　　　　　  //red 对象：window<br> alert(sayColor.apply(window));  　　　　 //red  对象：window<br> alert(sayColor.apply(this));            //red  对象：window<br> alert(sayColor.apply(box));     　　　　//green  对象：box</p>
-</li>
-</ol>
-
+console.log(result);</code></pre><blockquote>
+<ul>
+<li>func.apply()；方法有两个参数，第一个参数是要执行这个方法的作用域，也就是传递一个对象，第二个参数是一个数组，这个数组中是存放的调用的函数func的实参，也就是要传递给func的值，当然这个参数可以省略。  </li>
+<li>func.call()：方法和上面的apply()方法相似，不同的是参数，作用域和apply()一样，但其余的参数是逐个列举出传递给函数的，而不是传递一个数组。</li>
+<li>使用这apply()和call()这两个方法来扩充作用域最大的好处是：对象不需要与方法发生任何的耦合关系。</li>
+</ul>
+</blockquote>
+<h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例:"></a>代码示例:</h4><pre><code>var color=&apos;red&apos;;
+var box={
+    color:&apos;green&apos;
+}
+function sayColor(){
+    return this.color;
+}
+alert(sayColor());          　　//red 对象：window
+alert(sayColor.apply(window));  //red  对象：window
+alert(sayColor.apply(this));    //red  对象：window
+alert(sayColor.apply(box));     //green  对象：box</code></pre>
       
 
       
