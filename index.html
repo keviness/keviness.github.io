@@ -149,6 +149,168 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JavaScript/javascript_function1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/09/JavaScript/javascript_function1/">Function Type</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/09/JavaScript/javascript_function1/" class="archive-article-date">
+  	<time datetime="2020-04-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="理解Function类型"><a href="#理解Function类型" class="headerlink" title="理解Function类型"></a>理解Function类型</h3><blockquote>
+<p>JS 中Function类型实际上是一种对象，每一个函数实际上都是Function类型的一个实例，函数通常是用函数声明语法定义的，而且每一个函数都有默认的属性和方法。</p>
+</blockquote>
+<blockquote>
+<p>因为函数是一个对象，故函数名实际上也是一个指向函数对象的指针变量，不会与某个函数绑定。</p>
+</blockquote>
+<h4 id="函数声明与表达式（匿名函数）"><a href="#函数声明与表达式（匿名函数）" class="headerlink" title="函数声明与表达式（匿名函数）"></a>函数声明与表达式（匿名函数）</h4><p>函数声明会优先被读取使用（函数可提前访问）。</p>
+<pre><code>console.log(test(10,30))；　　//40
+function test(num1,num2) {
+    return num1+num2;
+};</code></pre><p>函数表达式则必须等到执行完它所在的表达行后再可以使用。</p>
+<pre><code>console.log(test(10,30));　　//error
+var test = function (num1,num2) {
+    return num1+num2;
+};</code></pre><h4 id="作为值的函数"><a href="#作为值的函数" class="headerlink" title="作为值的函数"></a>作为值的函数</h4><blockquote>
+<p>js中的函数名本身就是变量，所以函数也可以作为值来使用，可以像传递参数一样把一个函数传递给另一个函数。</p>
+</blockquote>
+<pre><code>function sum (num1, num2) {
+    return num1 + num2;
+}
+function fuc (num3, num4) {
+    return num3 + num4;
+}
+console.log(fuc(sum(2,3), 5));　　//10
+
+等同于：
+function sum (num1, num2) {
+    return num1+num2;
+}
+function func(num1){
+    return sum(num1,10);
+}
+alert(func(10));    //20</code></pre><hr>
+<h3 id="函数内部属性"><a href="#函数内部属性" class="headerlink" title="函数内部属性"></a>函数内部属性</h3><blockquote>
+<p>在函数内部包含两个特殊的对象：arguments和this</p>
+</blockquote>
+<h4 id="arguments"><a href="#arguments" class="headerlink" title="arguments:"></a>arguments:</h4><blockquote>
+<p>arguments 是一个类数组，用来保存函数传递过来的参数。<br>arguments 中还有一个很重要的属性就是callee，是一个指针变量，指向的是arguments所在的函数本身，在递归中可用这个属性，因为如果函数名改变了，也不需要改变内部的实现。<br>arguments.callee()始终代表的是这个函数本身. </p>
+</blockquote>
+<pre><code>function box(num){
+    if(num&lt;=1){
+        return 1;
+    }else{
+        return num*arguments.callee(num-1);
+            //arguments.callee代表的是函数的本身，故和上面是同样的效果
+    }
+}
+alert(box(3));//6</code></pre><h4 id="this"><a href="#this" class="headerlink" title="this:"></a>this:</h4><blockquote>
+<p>this 这个属性代表的是它所在的对象本身，this 引用的是函数据以执行的环境对象，也就是函数执行的作用域。<br>window是JS中最大的一个对象，在window对象中声明一个变量其实就是给window这个对象声明一个属性，var box=1;相当于 window.box=1;也就等价于this.box=1;</p>
+</blockquote>
+<p>当在全局作用域中调用函数时，this 对象引用的就是 window。</p>
+<p>在显示的声明一个对象box，这个box中使用的this就代表的是box本身，this.color就是返回的box中属性color的值，而不是window对象中color的值</p>
+<pre><code>    var box={
+        color:&apos;blue&apos;,
+        run:function(){
+        alert(this.color);    //blue
+        return this.color;
+    }
+}
+alert(window.color);    //red
+alert(this.color);     //red 此处this代表的是window对象，故this.color是代表的window的属性
+alert(box.run());      //blue</code></pre><hr>
+<h3 id="函数的属性和方法"><a href="#函数的属性和方法" class="headerlink" title="函数的属性和方法"></a>函数的属性和方法</h3><blockquote>
+<p>每个函数都包含两个属性：length和prototype</p>
+</blockquote>
+<h4 id="length"><a href="#length" class="headerlink" title="length:"></a>length:</h4><blockquote>
+<p>函数的属性length代表的是函数希望接收的参数的个数，是由声明函数时参数列表中的个数决定的。</p>
+</blockquote>
+<h4 id="prototype"><a href="#prototype" class="headerlink" title="prototype:"></a>prototype:</h4><blockquote>
+<p>prototype 是保存所有实例方法的实际所在，也就是原型。<br>prototype下面有两个方法：apply()，call()，这两个方法都是函数非继承而来的方法，是每一个函数都具有的方法。<br>这两个方法的用途都是在特定的作用域中调用函数(看this指向的作用域是谁) </p>
+</blockquote>
+<pre><code>function sum (num1, num2) {
+    return num1 + num2;
+}
+var result = sum.apply(this,[10,20]);
+var result = sum.call(this,10,20);
+console.log(result);</code></pre><ol>
+<li><p>func.apply()；方法有两个参数，第一个参数是要执行这个方法的作用域，也就是传递一个对象，第二个参数是一个数组，这个数组中是存放的调用的函数func的实参，也就是要传递给func的值，当然这个参数可以省略。  </p>
+</li>
+<li><p>func.call()：方法和上面的apply()方法相似，不同的是参数，作用域和apply()一样，但其余的参数是逐个列举出传递给函数的，而不是传递一个数组。</p>
+</li>
+<li><p>使用这apply()和call()这两个方法来扩充作用域最大的好处是：对象不需要与方法发生任何的耦合关系。</p>
+<h4 id="代码示例："><a href="#代码示例：" class="headerlink" title="代码示例："></a>代码示例：</h4><p> var color=’red’;<br> var box={</p>
+<pre><code>color:&apos;green&apos;</code></pre><p> }</p>
+<p> function sayColor(){</p>
+<pre><code>return this.color;</code></pre><p> }</p>
+<p> alert(sayColor());          　　　　　　  //red 对象：window<br> alert(sayColor.apply(window));  　　　　 //red  对象：window<br> alert(sayColor.apply(this));            //red  对象：window<br> alert(sayColor.apply(box));     　　　　//green  对象：box</p>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/09/JavaScript/javascript_function1/">Read more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-HtmlNote/Html_form" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1228,106 +1390,6 @@ flex-flow: flex-direction || flex-wrap</code></pre><h4 id="2，容器内项目�
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/03/15/JavaScript/javascript_event/">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript/javascript_DOM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/14/JavaScript/javascript_DOM/">JavaScript DOM</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/14/JavaScript/javascript_DOM/" class="archive-article-date">
-  	<time datetime="2020-03-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JavaScript-DOM"><a href="#JavaScript-DOM" class="headerlink" title="JavaScript DOM"></a>JavaScript DOM</h2><blockquote>
-<p>DOM Document Object Model</p>
-</blockquote>
-<ul>
-<li><p>DOM是JavaScript核心模型之一，它也是DOMcore的重要表现之一。</p>
-</li>
-<li><p>DOM实质应用表现为一个DOM节点树，除html根元素之外，都有父元素，且每个元素仅有一个父元素。</p>
-<h3 id="DOM重要点："><a href="#DOM重要点：" class="headerlink" title="DOM重要点："></a>DOM重要点：</h3><h4 id="访问节点树"><a href="#访问节点树" class="headerlink" title="访问节点树"></a>访问节点树</h4><p>  object.getElementById()<br>  object.getElementsByClassName()<br>  object.getElementsByTagName()<br>  object.getElementsByName()</p>
-</li>
-</ul>
-<h4 id="操作节点"><a href="#操作节点" class="headerlink" title="操作节点"></a>操作节点</h4><pre><code>document.createElement()
-document.createTextNode()
-object.appendChild()
-object.insertBefore()
-object.removeChild()
-object.cloneNode(true/false)
-object.replace(newNode, oldNode)</code></pre><hr>
-<h4 id="操作节点属性"><a href="#操作节点属性" class="headerlink" title="操作节点属性"></a>操作节点属性</h4><h5 id="位置信息"><a href="#位置信息" class="headerlink" title="位置信息"></a>位置信息</h5><pre><code>parentNode  
-childNode
-firstNode   
-lastNode
-previousSibling     
-nextSibling</code></pre><h5 id="节点属性信息"><a href="#节点属性信息" class="headerlink" title="节点属性信息"></a>节点属性信息</h5><pre><code>attributes
-nodeType
-nodeName
-nodeValue
-innerHTML
-innerText</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/14/JavaScript/javascript_DOM/">Read more >></a>
         </p>
       
 
