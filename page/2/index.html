@@ -149,6 +149,118 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JavaScript/javascript_event" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/15/JavaScript/javascript_event/">JavaScript Event</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/15/JavaScript/javascript_event/" class="archive-article-date">
+  	<time datetime="2020-03-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JavaScript事件"><a href="#JavaScript事件" class="headerlink" title="JavaScript事件"></a>JavaScript事件</h2><h3 id="JavaScript-Event-示意图"><a href="#JavaScript-Event-示意图" class="headerlink" title="JavaScript Event 示意图"></a>JavaScript Event 示意图</h3><p><img src="http://q7u2d5quo.bkt.clouddn.com/javascript_event.png" alt="javascript"></p>
+<h4 id="事件流：描述从页面接收事件的次序"><a href="#事件流：描述从页面接收事件的次序" class="headerlink" title="事件流：描述从页面接收事件的次序"></a>事件流：描述从页面接收事件的次序</h4><ul>
+<li><p>事件冒泡（event bubbling）</p>
+<blockquote>
+<p>由嵌套层次最深节点元素（具体事件发生元素）接收，然后向上级元素传播到不具体元素。</p>
+</blockquote>
+</li>
+<li><p>事件捕获（event capturing）</p>
+<blockquote>
+<p>由不具体元素到具体元素传播。</p>
+</blockquote>
+<h4 id="事件处理程序：事件发生后响应的处理函数（方法）"><a href="#事件处理程序：事件发生后响应的处理函数（方法）" class="headerlink" title="事件处理程序：事件发生后响应的处理函数（方法）"></a>事件处理程序：事件发生后响应的处理函数（方法）</h4></li>
+<li><p>HTML事件处理程序</p>
+<blockquote>
+<p>在HTML文档内部为指定元素赋予事件处理程序。<br>例如：在input元素中直接调用事件处理程序。</p>
+</blockquote>
+</li>
+<li><p>DOM0级事件处理程序</p>
+<blockquote>
+<p>在script tag中为元素节点绑定事件处理程序</p>
+</blockquote>
+<p>  element.onclick = function(){statements;}</p>
+</li>
+<li><p>DOM2级事件处理程序</p>
+<blockquote>
+<p>应用事件监听程序为元素节点绑定事件处理程序。</p>
+</blockquote>
+<p>  element.addEventListener(“click”, function,usecapture)</p>
+</li>
+</ul>
+<h4 id="事件委托（事件代理）"><a href="#事件委托（事件代理）" class="headerlink" title="事件委托（事件代理）"></a>事件委托（事件代理）</h4><blockquote>
+<p>利用事件冒泡，只指定一个事件处理程序，可管理某一类型的所有事件。<br>事件代理可有效减少对DOM文档的操作，在父元素中统一执行子元素中某一类型的事件，可大大优化运行性能。</p>
+</blockquote>
+<ul>
+<li>举例<blockquote>
+<p>页面上有这么一个节点树，div&gt;ul&gt;li&gt;a;比如给最里面的a加一个click点击事件，那么这个事件就会一层一层的往外执行，执行顺序a&gt;li&gt;ul&gt;div，有这样一个机制，那么我们给最外面的div加点击事件，那么里面的ul，li，a做点击事件的时候，都会冒泡到最外层的div上，所以都会触发，这就是事件委托，委托它们父级代为执行事件。</p>
+</blockquote>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/15/JavaScript/javascript_event/">Read more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JavaScript/javascript_DOM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -658,6 +770,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">CSS layout</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CSS background</a>
               </li>
             
             <div class="clearfix"></div>
