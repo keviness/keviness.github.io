@@ -149,6 +149,186 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JavaScript/javascript_variable" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/14/JavaScript/javascript_variable/">JavaScript 变量与作用域</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/14/JavaScript/javascript_variable/" class="archive-article-date">
+  	<time datetime="2020-04-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="基本类型和引用类型的值"><a href="#基本类型和引用类型的值" class="headerlink" title="基本类型和引用类型的值"></a>基本类型和引用类型的值</h3><h4 id="基本类型值："><a href="#基本类型值：" class="headerlink" title="基本类型值："></a>基本类型值：</h4><blockquote>
+<ul>
+<li>指那些保存在栈内存中的简单数据，即这种值完全保存在内存中的一个位置，其占据的空间大小是固定的。</li>
+<li>基本类型的复制：基本类型在内存中占有的空间大小是固定的，复制的时候会重新在栈内存中开辟一块空间，按值来访问。 </li>
+</ul>
+</blockquote>
+<h4 id="引用类型值："><a href="#引用类型值：" class="headerlink" title="引用类型值："></a>引用类型值：</h4><blockquote>
+<ul>
+<li>指那些保存在堆内存中的对象，这些类型的真正数据是保存在堆内存中的，而在栈内存中保存的只是一个指针，这个指针指向的是这个对象在堆内存中的地址。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>引用类型的复制：引用类型所占的空间大小是不固定的，存放在堆内存中。</li>
+<li>但内存的地址大小是固定的，故栈中存放的是对象在堆内存的地址。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>查找引用类型值时，先从栈内存中取出地址，然后再到堆内存中找到对应的值，这就是引用访问。</li>
+<li>复制时是复制的栈内存的值，只是拷贝一个引用，两个引用变量指向的堆内存中的对象是同一个对象。</li>
+</ul>
+</blockquote>
+<h3 id="函数中传递参数"><a href="#函数中传递参数" class="headerlink" title="函数中传递参数"></a>函数中传递参数</h3><blockquote>
+<ul>
+<li>在js中参数传递都是值传递，不存在引用传递。 </li>
+</ul>
+</blockquote>
+<h4 id="值类型："><a href="#值类型：" class="headerlink" title="值类型："></a>值类型：</h4><blockquote>
+<ul>
+<li>传递的是变量本身的值，和复制是一样的，函数中改变了变量的值，不会影响源变量值    </li>
+</ul>
+</blockquote>
+<h4 id="引用类型："><a href="#引用类型：" class="headerlink" title="引用类型："></a>引用类型：</h4><blockquote>
+<ul>
+<li>同样是值传递，传递的是变量在栈内存空间中的地址值，如果在函数中改变了对象某一个属性的值，源变量中的值也会改变，因为在堆内存中它们是指向的同一个对象。</li>
+</ul>
+</blockquote>
+<pre><code>function func(num){
+    num.name=123;
+}
+var box={};
+box.name=&apos;abcd&apos;;
+alert(box.name);    //abcd
+func(box);
+alert(box.name);    //123   值在函数func中被改变了</code></pre><h3 id="检测变量数据类型"><a href="#检测变量数据类型" class="headerlink" title="检测变量数据类型"></a>检测变量数据类型</h3><h4 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h4><blockquote>
+<ul>
+<li>只返回的几大基本的数据类型，在检测Object类型时则不宜使用。</li>
+<li>Null，Object，Array，RegExp等都会返回object，那样就不知道变量到底是什么类型。    </li>
+<li>instanceof：确定变量是哪种具体的引用类型。</li>
+</ul>
+</blockquote>
+<pre><code>var box = [1,2,3]
+alert(box instanceof Object);　　//true
+alert(box instanceof Array);　　
+console.log(Array.isArray(box))　　//true</code></pre><h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><blockquote>
+<ul>
+<li>作用域规定了变量或者函数有权访问其他数据的权限，规定了各自的行为。    </li>
+</ul>
+</blockquote>
+<h4 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h4><blockquote>
+<ul>
+<li>在web浏览器中，全局执行环境被认为是window对象，所有的全局变量和函数都是以window对象的属性和方法创建的,</li>
+<li>全局作用域在网页关闭或者应用程序退出后才会被销毁。</li>
+</ul>
+</blockquote>
+<h4 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h4><blockquote>
+<ul>
+<li>当代码在一个环境中执行时，会创建变量对象的一个作用域链，作用域链的用途是保证执行环境有权访问的所有变量和函数的有序访问。</li>
+<li>函数体内还包含着函数，只有这个函数才可以访问内一层的函数。而内部函数的变量可以通过作用域链访问外部函数的变量，可以向上搜索作用域链，以查询变量。但是不能反过来。</li>
+</ul>
+</blockquote>
+<h4 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h4><blockquote>
+<ul>
+<li>块级作用域表示诸如if等有花括号封闭的代码段块，所以支持条件判断来定义变量。 像 if，for 等代码块中定义的变量在花括号外面是可以访问的，这和其他语言中有很大的差别。</li>
+</ul>
+</blockquote>
+<pre><code>if(true){
+    var color = &apos;red&apos;;
+}
+console.log(color);     //red</code></pre><h4 id="var关键字在函数中的区别"><a href="#var关键字在函数中的区别" class="headerlink" title="var关键字在函数中的区别"></a>var关键字在函数中的区别</h4><blockquote>
+<ul>
+<li>在函数中声明变量的时候，如果不加上关键字 var 那变量会被认为是全局的，函数外面也可以访问它，当然在访问之前要先执行一次函数，加了则是局部的。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>一般确定某一个变量的时候是通过搜索来确定的，现在本级作用域上找。若无，则在向上级作用域找，依次类推，故访问局部变量要比访问全局变量的效率更高。</li>
+</ul>
+</blockquote>
+<h3 id="内存问题"><a href="#内存问题" class="headerlink" title="内存问题"></a>内存问题</h3><blockquote>
+<ul>
+<li>js中存在垃圾回收机制会自动的管理内存的分配和无用内存的回收。  </li>
+<li>JS中最常用的垃圾回收的方式是标记清除，就是在运行的时候会给内存中的所有变量加上一个标记，然后去掉环境中正在使用的变量的标记。</li>
+<li>最后垃圾清理器完成内存清理的工作，销毁那些带有标记的变量，并且回收他们所占用的内存空间 。   </li>
+</ul>
+</blockquote>
+<h4 id="删除引用"><a href="#删除引用" class="headerlink" title="删除引用"></a>删除引用</h4><blockquote>
+<ul>
+<li>box = null 来释放引用，这种方式叫做删除引用，这种方式使用大多数的全局变量和全局对象。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>为确保页面占用的内存更少可以让页面获得更好的性能，最好的减少内存占用量的方式就是：一旦变量或者对象不再使用的时候，将其赋值为空（null）</li>
+</ul>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/14/JavaScript/javascript_variable/">Read more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-CSS/CSS_background" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -216,7 +396,7 @@
 <li>值:  length | left | center | right | top | center | bottom </li>
 </ul>
 </blockquote>
-<pre><code>background-position:center ;        
+<pre><code>background-position: center ;        
 background-position: 10px 20px;  </code></pre><h3 id="背景裁切"><a href="#背景裁切" class="headerlink" title="背景裁切"></a>背景裁切</h3><blockquote>
 <ul>
 <li>背景裁切(background-clip)属性用来定义背景图像的裁剪区域。</li>
@@ -1312,123 +1492,6 @@ childNode{
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/03/17/CSS/CSS_Layout1/">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CSS/CSS_Flex" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/16/CSS/CSS_Flex/">CSS Flex</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/16/CSS/CSS_Flex/" class="archive-article-date">
-  	<time datetime="2020-03-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="CSS-Flex"><a href="#CSS-Flex" class="headerlink" title="CSS Flex"></a>CSS Flex</h2><blockquote>
-<p>Flexible Box</p>
-</blockquote>
-<h3 id="Flex示意图"><a href="#Flex示意图" class="headerlink" title="Flex示意图"></a>Flex示意图</h3><p><img src="http://q7u2d5quo.bkt.clouddn.com/CSSFlex.png" alt="CSSFlex"></p>
-<h4 id="1，任何容器都可指定为flex布局-webkit内核浏览器应加前缀-webkit"><a href="#1，任何容器都可指定为flex布局-webkit内核浏览器应加前缀-webkit" class="headerlink" title="1，任何容器都可指定为flex布局(webkit内核浏览器应加前缀-webkit)"></a>1，任何容器都可指定为flex布局(webkit内核浏览器应加前缀-webkit)</h4><pre><code>.block_box{display:flex}
-.inline_box{display:inline-flex}</code></pre><h4 id="2，flex布局之后：子元素float-clear-vertical-align将失效。"><a href="#2，flex布局之后：子元素float-clear-vertical-align将失效。" class="headerlink" title="2，flex布局之后：子元素float,clear,vertical-align将失效。"></a>2，flex布局之后：子元素float,clear,vertical-align将失效。</h4><hr>
-<h3 id="一，容器属性"><a href="#一，容器属性" class="headerlink" title="一，容器属性"></a>一，容器属性</h3><h4 id="1，容器内项目排列属性"><a href="#1，容器内项目排列属性" class="headerlink" title="1，容器内项目排列属性"></a>1，容器内项目排列属性</h4><pre><code>flex-direction: row(default) | row-recerse |colum | colum-reverse
-flex-wrap: nowrap | wrap | wrap-reverse
-flex-flow: flex-direction || flex-wrap</code></pre><h4 id="2，容器内项目在主轴对齐方式"><a href="#2，容器内项目在主轴对齐方式" class="headerlink" title="2，容器内项目在主轴对齐方式"></a>2，容器内项目在主轴对齐方式</h4><pre><code>justify-content: flex-start | flex-end | center | space-around | space-between</code></pre><h4 id="3，容器内项目在交叉轴的对齐方式"><a href="#3，容器内项目在交叉轴的对齐方式" class="headerlink" title="3，容器内项目在交叉轴的对齐方式"></a>3，容器内项目在交叉轴的对齐方式</h4><pre><code>align-items: flex-start | flex-end | baseline | stretch</code></pre><h4 id="4，定义多样轴线对齐方式"><a href="#4，定义多样轴线对齐方式" class="headerlink" title="4，定义多样轴线对齐方式"></a>4，定义多样轴线对齐方式</h4><pre><code>align-content: flex-start | flex-end | center | stretch | space-between | space-around</code></pre><h3 id="二，项目属性"><a href="#二，项目属性" class="headerlink" title="二，项目属性"></a>二，项目属性</h3><ul>
-<li><p>ord: 定义排列顺序</p>
-<blockquote>
-<p>.item{ord:integer}</p>
-</blockquote>
-</li>
-<li><p>flex-grow：定义放大比例（default:0）</p>
-<blockquote>
-<p>.item{flex-grow:integer}</p>
-</blockquote>
-</li>
-<li><p>flex-shrink：定义缩小比例（default:1）</p>
-<blockquote>
-<p>.item{flex-shrink:integer}</p>
-</blockquote>
-</li>
-<li><p>flex-basis：定义项目占据主轴空间</p>
-<blockquote>
-<p>.item{flex-basis:integer | auto}</p>
-</blockquote>
-</li>
-<li><p>flex：混合定义</p>
-<blockquote>
-<p>.item{flex: flex-grow | flex-shrink | flex-basis}</p>
-</blockquote>
-<h3 id="三，align-self"><a href="#三，align-self" class="headerlink" title="三，align-self"></a>三，align-self</h3><p>允许单个项目与其他项目相比有不一样的对齐方式</p>
-<blockquote>
-<p>与align-items属性相似，如无父元素，等同于stretch</p>
-</blockquote>
-<p>  align-self: auto | flex-start | flex-end | flex-center | baseline | stretch</p>
-</li>
-</ul>
-<hr>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
-<li><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">阮一峰：Flex布局教程</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS Flex</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/16/CSS/CSS_Flex/">Read more >></a>
         </p>
       
 
