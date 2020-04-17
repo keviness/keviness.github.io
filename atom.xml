@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/keviness/"/>
-  <updated>2020-04-14T14:24:20.619Z</updated>
+  <updated>2020-04-17T13:15:13.519Z</updated>
   <id>https://github.com/keviness/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript Date类型</title>
+    <link href="https://github.com/keviness/2020/04/17/JavaScript/javascript_Date/"/>
+    <id>https://github.com/keviness/2020/04/17/JavaScript/javascript_Date/</id>
+    <published>2020-04-16T16:00:00.000Z</published>
+    <updated>2020-04-17T13:15:13.519Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="创建Date对象"><a href="#创建Date对象" class="headerlink" title="创建Date对象"></a>创建Date对象</h3><pre><code>var now = new Date();   console.log(now);  //中国标准时间</code></pre><h3 id="Date解析"><a href="#Date解析" class="headerlink" title="Date解析"></a>Date解析</h3><blockquote><ul><li>Date.parse() 传入一个日期格式的字符串，该方法会返回特定的时间格式。</li></ul></blockquote><h4 id="月-日-年"><a href="#月-日-年" class="headerlink" title="月/日/年"></a>月/日/年</h4><pre><code>var date = Date.parse(&quot;06/07/2017&quot;);console.log(new Date(date));  </code></pre><h4 id="英文月名-日，年"><a href="#英文月名-日，年" class="headerlink" title="英文月名 日，年"></a>英文月名 日，年</h4><pre><code>var date = Date.parse(&quot;June 07, 2017&quot;);console.log(new Date(date));  </code></pre><hr><h3 id="Date-UTC"><a href="#Date-UTC" class="headerlink" title="Date.UTC()"></a>Date.UTC()</h3><blockquote><ul><li>接收7个参数，年，基于0的月，天，时，分，秒以及毫秒数</li></ul></blockquote><pre><code>var date = new Date(2017, 05, 06, 18, 0, 0);console.log(new Date.UTC(date)); </code></pre><h4 id="Date-now"><a href="#Date-now" class="headerlink" title="Date.now()"></a>Date.now()</h4><blockquote><ul><li>返回调用该方法时的毫秒数。</li></ul></blockquote><hr><h3 id="Date对象的格式化"><a href="#Date对象的格式化" class="headerlink" title="Date对象的格式化"></a>Date对象的格式化</h3><ul><li><p>dateObject.toLocaleString() </p><blockquote><p>按照与浏览器设置的地区相适应的格式返回日期和时间。</p></blockquote></li><li><p>dateObject.toString() </p><blockquote><p>返回带有时区的日期和时间。</p></blockquote></li><li><p>dateObject.valueOf() </p><blockquote><p>返回毫秒数</p></blockquote></li></ul><hr><h3 id="日期格式化方法"><a href="#日期格式化方法" class="headerlink" title="日期格式化方法"></a>日期格式化方法</h3><ul><li><p>toDateString() </p><blockquote><p>以特定于实现的格式显示星期几，月，日和年</p></blockquote><p>  dateObject.toDateString(); </p></li></ul><ul><li><p>toLocaleDateString() </p><blockquote><p>以特定于地区的格式显示星期几，月，日和年</p></blockquote><p>  dateObject.toLocaleDateString();</p></li><li><p>toTimeString() </p><blockquote><p>以特定于实现的格式显示时，分，秒和时区</p></blockquote><p>  dateObject.toTimeString();  </p></li><li><p>toLocaleTimeString() </p><blockquote><p>以特定于实现的格式显示时，分，秒</p></blockquote><p>  dateObject.toLocaleTimeString(); </p></li><li><p>toUTCString() </p><blockquote><p>显示完整的UTC日期</p></blockquote><p>  dateObject.toUTCString();</p></li></ul><hr><h3 id="访问Date对象的方法"><a href="#访问Date对象的方法" class="headerlink" title="访问Date对象的方法"></a>访问Date对象的方法</h3><pre><code>dateObject.getFullYear() 获取年dateObject.getMonth() 获取月dateObject.getDate() 获取日dateObject.getHours() 获取小时dateObject.getMinutes() 获取分钟dateObject.getSeconds() 获取秒</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;创建Date对象&quot;&gt;&lt;a href=&quot;#创建Date对象&quot; class=&quot;headerlink&quot; title=&quot;创建Date对象&quot;&gt;&lt;/a&gt;创建Date对象&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;var now = new Date();   
+console.log(n
+      
+    
+    </summary>
+    
+    
+    
+      <category term="JavaScript" scheme="https://github.com/keviness/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript 变量与作用域</title>

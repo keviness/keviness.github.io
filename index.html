@@ -149,6 +149,158 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JavaScript/javascript_Date" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/17/JavaScript/javascript_Date/">JavaScript Date类型</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/17/JavaScript/javascript_Date/" class="archive-article-date">
+  	<time datetime="2020-04-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="创建Date对象"><a href="#创建Date对象" class="headerlink" title="创建Date对象"></a>创建Date对象</h3><pre><code>var now = new Date();   
+console.log(now);  //中国标准时间</code></pre><h3 id="Date解析"><a href="#Date解析" class="headerlink" title="Date解析"></a>Date解析</h3><blockquote>
+<ul>
+<li>Date.parse() 传入一个日期格式的字符串，该方法会返回特定的时间格式。</li>
+</ul>
+</blockquote>
+<h4 id="月-日-年"><a href="#月-日-年" class="headerlink" title="月/日/年"></a>月/日/年</h4><pre><code>var date = Date.parse(&quot;06/07/2017&quot;);
+console.log(new Date(date));  </code></pre><h4 id="英文月名-日，年"><a href="#英文月名-日，年" class="headerlink" title="英文月名 日，年"></a>英文月名 日，年</h4><pre><code>var date = Date.parse(&quot;June 07, 2017&quot;);
+console.log(new Date(date));  </code></pre><hr>
+<h3 id="Date-UTC"><a href="#Date-UTC" class="headerlink" title="Date.UTC()"></a>Date.UTC()</h3><blockquote>
+<ul>
+<li>接收7个参数，年，基于0的月，天，时，分，秒以及毫秒数</li>
+</ul>
+</blockquote>
+<pre><code>var date = new Date(2017, 05, 06, 18, 0, 0);
+console.log(new Date.UTC(date)); </code></pre><h4 id="Date-now"><a href="#Date-now" class="headerlink" title="Date.now()"></a>Date.now()</h4><blockquote>
+<ul>
+<li>返回调用该方法时的毫秒数。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="Date对象的格式化"><a href="#Date对象的格式化" class="headerlink" title="Date对象的格式化"></a>Date对象的格式化</h3><ul>
+<li><p>dateObject.toLocaleString() </p>
+<blockquote>
+<p>按照与浏览器设置的地区相适应的格式返回日期和时间。</p>
+</blockquote>
+</li>
+<li><p>dateObject.toString() </p>
+<blockquote>
+<p>返回带有时区的日期和时间。</p>
+</blockquote>
+</li>
+<li><p>dateObject.valueOf() </p>
+<blockquote>
+<p>返回毫秒数</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h3 id="日期格式化方法"><a href="#日期格式化方法" class="headerlink" title="日期格式化方法"></a>日期格式化方法</h3><ul>
+<li><p>toDateString() </p>
+<blockquote>
+<p>以特定于实现的格式显示星期几，月，日和年</p>
+</blockquote>
+<p>  dateObject.toDateString(); </p>
+</li>
+</ul>
+<ul>
+<li><p>toLocaleDateString() </p>
+<blockquote>
+<p>以特定于地区的格式显示星期几，月，日和年</p>
+</blockquote>
+<p>  dateObject.toLocaleDateString();</p>
+</li>
+<li><p>toTimeString() </p>
+<blockquote>
+<p>以特定于实现的格式显示时，分，秒和时区</p>
+</blockquote>
+<p>  dateObject.toTimeString();  </p>
+</li>
+<li><p>toLocaleTimeString() </p>
+<blockquote>
+<p>以特定于实现的格式显示时，分，秒</p>
+</blockquote>
+<p>  dateObject.toLocaleTimeString(); </p>
+</li>
+<li><p>toUTCString() </p>
+<blockquote>
+<p>显示完整的UTC日期</p>
+</blockquote>
+<p>  dateObject.toUTCString();</p>
+</li>
+</ul>
+<hr>
+<h3 id="访问Date对象的方法"><a href="#访问Date对象的方法" class="headerlink" title="访问Date对象的方法"></a>访问Date对象的方法</h3><pre><code>dateObject.getFullYear() 获取年
+dateObject.getMonth() 获取月
+dateObject.getDate() 获取日
+dateObject.getHours() 获取小时
+dateObject.getMinutes() 获取分钟
+dateObject.getSeconds() 获取秒</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/17/JavaScript/javascript_Date/">Read more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JavaScript/javascript_variable" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1384,114 +1536,6 @@ childNode{
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/03/18/CSS/CSS_Layout2/">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CSS/CSS_Layout1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/17/CSS/CSS_Layout1/">CSS Layout 之两栏布局实现</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/17/CSS/CSS_Layout1/" class="archive-article-date">
-  	<time datetime="2020-03-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="实现两栏布局的方法（左侧固定右侧自适应）"><a href="#实现两栏布局的方法（左侧固定右侧自适应）" class="headerlink" title="实现两栏布局的方法（左侧固定右侧自适应）"></a>实现两栏布局的方法（左侧固定右侧自适应）</h3><pre><code>&lt;div class=&quot;wrap&quot;&gt;
-&lt;div class=&quot;left&quot;&gt;left&lt;/div&gt;
-&lt;div class=&quot;right&quot;&gt;right&lt;/right&gt;
-&lt;/div&gt;</code></pre><h4 id="一，双inline-block方案"><a href="#一，双inline-block方案" class="headerlink" title="一，双inline-block方案"></a>一，双inline-block方案</h4><pre><code>.wrap{font-size:0}
-.left, .right{
-    display:inline-block;
-    vertical-align:top;
-    font-size:14px;
-    box-sizing:border-box;
-}
-.right{width:calc(100%-140px)}</code></pre><h4 id="二，双float方案"><a href="#二，双float方案" class="headerlink" title="二，双float方案"></a>二，双float方案</h4><pre><code>.wrap{overflow:auto;
-    box-sizing:content-box;
-}
-.left, .right{
-    float:left;
-    box-sizing:border-box;
-}
-.right{
-    width:calc(100%-140px);
-}</code></pre><h4 id="三，float-margin-left方案"><a href="#三，float-margin-left方案" class="headerlink" title="三，float + margin-left方案"></a>三，float + margin-left方案</h4><pre><code>.wrap{overflow:hidden;}
-.left{float:left;}
-.right{margin-left:150px;}</code></pre><h4 id="四，absolute-margin-left方案"><a href="#四，absolute-margin-left方案" class="headerlink" title="四，absolute + margin-left方案"></a>四，absolute + margin-left方案</h4><pre><code>.left{position:absolute;}
-.right{margin-left:150px;}</code></pre><h4 id="五，float-BFC方案"><a href="#五，float-BFC方案" class="headerlink" title="五，float + BFC方案"></a>五，float + BFC方案</h4><pre><code>.wrap{overflow:auto;}
-.left{
-    float:left;
-    margin-left:20px;
-}
-.right{
-    margin-left:0;
-    overflow:auto; //形成BFC
-}</code></pre><h4 id="六，flex方案"><a href="#六，flex方案" class="headerlink" title="六，flex方案"></a>六，flex方案</h4><pre><code>.wrap{
-    display:flex;
-    align-items:flex-start;
-}
-.left{flex:0 0 auto}
-.right{flex:1 1 auto}</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">CSS Layout</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/17/CSS/CSS_Layout1/">Read more >></a>
         </p>
       
 

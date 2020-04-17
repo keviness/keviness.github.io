@@ -149,6 +149,114 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CSS/CSS_Layout1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/17/CSS/CSS_Layout1/">CSS Layout 之两栏布局实现</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/17/CSS/CSS_Layout1/" class="archive-article-date">
+  	<time datetime="2020-03-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="实现两栏布局的方法（左侧固定右侧自适应）"><a href="#实现两栏布局的方法（左侧固定右侧自适应）" class="headerlink" title="实现两栏布局的方法（左侧固定右侧自适应）"></a>实现两栏布局的方法（左侧固定右侧自适应）</h3><pre><code>&lt;div class=&quot;wrap&quot;&gt;
+&lt;div class=&quot;left&quot;&gt;left&lt;/div&gt;
+&lt;div class=&quot;right&quot;&gt;right&lt;/right&gt;
+&lt;/div&gt;</code></pre><h4 id="一，双inline-block方案"><a href="#一，双inline-block方案" class="headerlink" title="一，双inline-block方案"></a>一，双inline-block方案</h4><pre><code>.wrap{font-size:0}
+.left, .right{
+    display:inline-block;
+    vertical-align:top;
+    font-size:14px;
+    box-sizing:border-box;
+}
+.right{width:calc(100%-140px)}</code></pre><h4 id="二，双float方案"><a href="#二，双float方案" class="headerlink" title="二，双float方案"></a>二，双float方案</h4><pre><code>.wrap{overflow:auto;
+    box-sizing:content-box;
+}
+.left, .right{
+    float:left;
+    box-sizing:border-box;
+}
+.right{
+    width:calc(100%-140px);
+}</code></pre><h4 id="三，float-margin-left方案"><a href="#三，float-margin-left方案" class="headerlink" title="三，float + margin-left方案"></a>三，float + margin-left方案</h4><pre><code>.wrap{overflow:hidden;}
+.left{float:left;}
+.right{margin-left:150px;}</code></pre><h4 id="四，absolute-margin-left方案"><a href="#四，absolute-margin-left方案" class="headerlink" title="四，absolute + margin-left方案"></a>四，absolute + margin-left方案</h4><pre><code>.left{position:absolute;}
+.right{margin-left:150px;}</code></pre><h4 id="五，float-BFC方案"><a href="#五，float-BFC方案" class="headerlink" title="五，float + BFC方案"></a>五，float + BFC方案</h4><pre><code>.wrap{overflow:auto;}
+.left{
+    float:left;
+    margin-left:20px;
+}
+.right{
+    margin-left:0;
+    overflow:auto; //形成BFC
+}</code></pre><h4 id="六，flex方案"><a href="#六，flex方案" class="headerlink" title="六，flex方案"></a>六，flex方案</h4><pre><code>.wrap{
+    display:flex;
+    align-items:flex-start;
+}
+.left{flex:0 0 auto}
+.right{flex:1 1 auto}</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">CSS Layout</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/17/CSS/CSS_Layout1/">Read more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-CSS/CSS_Flex" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
