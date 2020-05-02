@@ -149,6 +149,115 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CLanguage/Clanguage_first" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/02/CLanguage/Clanguage_first/">用C语言实现贪吃蛇</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/02/CLanguage/Clanguage_first/" class="archive-article-date">
+  	<time datetime="2020-05-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>四月份，随着考研复试的临近，毕业论文也在此刻提上了日程，我停下了手边的前端学习计划。<br>我想着在四月底实现心心念念的<a href="https://github.com/keviness/ExerciseProject/blob/master/snakes/snake2.c">贪吃蛇游戏</a>，于是就开始多线程工作啦。<br>当一个个贪吃蛇游戏的功能模块在自己手里逐步实现时，那种快乐难以描述哈。以下是一些个工作。</p>
+<h3 id="头文件准备工作"><a href="#头文件准备工作" class="headerlink" title="头文件准备工作"></a>头文件准备工作</h3><pre><code>&lt;windows.h&gt;
+&lt;conio.h&gt;
+&lt;time.h&gt;</code></pre><p>以上这头文件需要先了解，对其中常用的API需要掌握。</p>
+<h3 id="贪吃蛇的实现原理"><a href="#贪吃蛇的实现原理" class="headerlink" title="贪吃蛇的实现原理"></a>贪吃蛇的实现原理</h3><pre><code>struct snakes{
+    unsigned int len;
+    unsigned int speed;
+    unsigned int x[MAXSNAKE];
+    unsigned int y[MAXSNAKE];
+}snake;
+
+struct foods{
+    unsigned int x;
+    unsigned int y;
+}food;</code></pre><blockquote>
+<ul>
+<li>贪吃蛇的实现原理在于用结构体中的数组储存贪吃蛇的x轴与y轴的坐标。</li>
+<li>再在相应坐标位置是打印需要的符号。</li>
+<li>蛇的移动效果：蛇每次向前移动一个位置时，清除最后一个坐标的打印符号（” “）</li>
+<li>蛇吃食物的增长原理：每次吃完食物后，长度加一，尾部坐标不清除其符号。</li>
+</ul>
+</blockquote>
+<h3 id="各个功能的实现"><a href="#各个功能的实现" class="headerlink" title="各个功能的实现"></a>各个功能的实现</h3><p>贪吃蛇的实现主要依靠以下函数：</p>
+<pre><code>void welcome(void);  //欢迎用户图形界面
+void initGraph(void);  //游戏初始化界面
+void createFood(void);  //随机产生食物
+void eatFood(void);   //当蛇吃到食物时
+void movingSnake(void);   //移动蛇身
+void controlSnake(void);   //控制蛇运动
+void gotoxy(int x, int y); //移动光标到对应坐标
+void hidenCursor(void);  //隐藏光标
+bool snakeStatus(void);  //判断蛇的状态</code></pre><blockquote>
+<ul>
+<li>其中对蛇的控制，和蛇身的移动是游戏的核心。</li>
+</ul>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/02/CLanguage/Clanguage_first/">Read more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JavaScript/javascript_Date" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1361,221 +1470,6 @@ childNode{
 
 
   
-    <article id="post-CSS/CSS_Layout2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/18/CSS/CSS_Layout2/">CSS Layout 之三栏布局实现</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/18/CSS/CSS_Layout2/" class="archive-article-date">
-  	<time datetime="2020-03-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="实现三栏布局（网页宽度自适应）"><a href="#实现三栏布局（网页宽度自适应）" class="headerlink" title="实现三栏布局（网页宽度自适应）"></a>实现三栏布局（网页宽度自适应）</h3><h4 id="一，absolute绝对定位法（main置于中间）"><a href="#一，absolute绝对定位法（main置于中间）" class="headerlink" title="一，absolute绝对定位法（main置于中间）"></a>一，absolute绝对定位法（main置于中间）</h4><p>HTML代码:</p>
-<pre><code>&lt;body&gt;
-    &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;main&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;</code></pre><hr>
-<p>CSS:</p>
-<pre><code>#left, #right{
-    position:absolute;
-    top:0;
-    height:100%;
-    width:200px;
-}
-#left{
-    left:0;
-}
-#right{
-    right:0;
-}
-#main{
-    margin: 210px;
-}</code></pre><hr>
-<h4 id="magrin负值法（negative-margin）"><a href="#magrin负值法（negative-margin）" class="headerlink" title="magrin负值法（negative margin）"></a>magrin负值法（negative margin）</h4><p>HTML代码：main要用双重嵌套标签。</p>
-<pre><code>&lt;body&gt;
-    &lt;div id=&quot;main&quot;&gt;
-        &lt;div id=&quot;body&quot;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;</code></pre><hr>
-<p>CSS:</p>
-<pre><code>#main{
-    width:100%;
-    height:100%;
-    float:left;
-}
-#main #body{
-    margin:0 210px;
-    height:100%;
-}
-#left, #right{
-    width:200px;
-    height:100px;
-    float:float;
-}
-#left{
-    margin-left: -100%;
-}
-#right{
-    margin-right: -200px;
-}</code></pre><hr>
-<h4 id="float自身浮动法"><a href="#float自身浮动法" class="headerlink" title="float自身浮动法"></a>float自身浮动法</h4><p>HTML代码：main放于最后。</p>
-<pre><code>&lt;body&gt;
-    &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;main&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;</code></pre><hr>
-<p>CSS：</p>
-<pre><code>#main{
-    height:100%;
-    margin:0 210px;
-}
-#left, #right{
-    right:100%;
-    width:200px;
-}
-#left{
-    float:left;
-}
-#right{
-    float:right;
-}</code></pre><hr>
-<h4 id="双飞翼布局"><a href="#双飞翼布局" class="headerlink" title="双飞翼布局"></a>双飞翼布局</h4><p>HTML代码：</p>
-<pre><code>&lt;body&gt;
-    &lt;div id=&quot;main&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;sub&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;extra&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;</code></pre><hr>
-<h5 id="法一-（类似方案三）"><a href="#法一-（类似方案三）" class="headerlink" title="法一:（类似方案三）"></a>法一:（类似方案三）</h5><p>HTML代码：不变。</p>
-<hr>
-<p>CSS：</p>
-<pre><code>body{
-    padding:0 230px 0 190px;
-}
-#main{
-    float:left;
-    width:100%;
-}
-#sub{
-    float:left;
-    margin-left:-100%;
-    width:190px;
-    position:relative;
-    left:-190px;
-}
-#extra{
-    float:left;
-    margin-left:-230px;
-    width:230px;
-    position:relative;
-    right:-230px;
-}</code></pre><hr>
-<h5 id="法二：在main元素外加一层包装元素。"><a href="#法二：在main元素外加一层包装元素。" class="headerlink" title="法二：在main元素外加一层包装元素。"></a>法二：在main元素外加一层包装元素。</h5><p>HTML代码：id=”main”元素外加一个盒子，封装为id=”main-content”</p>
-<pre><code>&lt;div id=&quot;main-content&quot;&gt;
-    &lt;div id=&quot;main&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre><hr>
-<p>CSS：</p>
-<pre><code>#main{
-    float:left;
-    width:100%;
-}
-#main-content{
-    margin:0 230px 0 190px;
-}
-#sub{
-    float:left;
-    margin-left:-100%;
-    width:190px;
-}
-#extra{
-    float:left;
-    margin-left:-230px;
-    width:230px;
-}</code></pre><hr>
-<h5 id="法三：对main用padding。"><a href="#法三：对main用padding。" class="headerlink" title="法三：对main用padding。"></a>法三：对main用padding。</h5><p>HTML代码：不变。</p>
-<hr>
-<p>CSS：</p>
-<pre><code>#main{
-    float:left;
-    width:100%;
-    box-sizing:border-box;
-    padding:0 210px 0 190px;
-}
-#sub{
-    float:left;
-    margin-left:-100%;
-    width:190px;
-}
-#extra{
-    float:left;
-    margin-left:-230px;
-    width:230px;
-}</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">CSS layout</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/18/CSS/CSS_Layout2/">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1703,6 +1597,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS background</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">C</a>
               </li>
             
             <div class="clearfix"></div>
