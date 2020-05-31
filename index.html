@@ -149,6 +149,145 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JavaScript/javascript_Encode" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/31/JavaScript/javascript_Encode/">JavaScript对HTML进行编码与解码</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/31/JavaScript/javascript_Encode/" class="archive-article-date">
+  	<time datetime="2020-05-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h3><p>&emsp;在项目中，经常遇到一些字符需要进行转义后才能显示到界面上，这时候，就需要进行编码与解码。</p>
+<h3 id="代码示例："><a href="#代码示例：" class="headerlink" title="代码示例："></a>代码示例：</h3><pre><code>&lt;script&gt;
+var HtmlUtil = {
+
+        /*1.用浏览器内部转换器实现html转码*/
+
+        htmlEncode:function (html){
+            //首先动态创建一个容器标签元素
+            var temp = document.createElement (&quot;div&quot;);
+
+            //将要转换的字符串设置为这个元素的innerText(ie支持)或textContent(火狐，google支持)
+            (temp.textContent != undefined ) ? (temp.textContent = html) : (temp.innerText = html);
+
+            //3返回这个元素的innerHTML，即得HTML编码转换的字符串
+            var output = temp.innerHTML;
+            temp = null;
+            return output;
+        },
+
+        /*2.用浏览器内部转换器实现html解码*/
+
+        htmlDecode:function (text){
+
+            //动态创建一个容器标签元素
+            var temp = document.createElement(&quot;div&quot;);
+
+            //将要转换的字符串设置为这个元素的innerHTML(ie，firefox，google)
+            temp.innerHTML = text;
+
+            //返回这个元素的innerText(ie)或者textContent(firefox，google支持)，即得到HTML解码的字符串。
+            var output = temp.innerText || temp.textContent;
+            temp = null;
+            return output;
+        },
+
+        /*3.用正则表达式实现html转码*/
+
+        htmlEncodeByRegExp:function (str){ 
+            var s = &quot;&quot;;
+            if(str.length == 0) return &quot;&quot;;
+            s = str.replace(/&amp;/g,&quot;&amp;&quot;);
+            s = s.replace(/&lt;/g,&quot;&lt;&quot;);
+            s = s.replace(/&gt;/g,&quot;&gt;&quot;);
+            s = s.replace(/ /g,&quot; &quot;);
+            s = s.replace(/\&apos;/g,&quot;&apos;&quot;);
+            s = s.replace(/\&quot;/g,&quot;&quot;&quot;);
+            return s; 
+        },
+
+        /*4.用正则表达式实现html解码*/
+
+        htmlDecodeByRegExp:function (str){ 
+            var s = &quot;&quot;;
+            if(str.length == 0) return &quot;&quot;;
+            s = str.replace(/&amp;/g,&quot;&amp;&quot;);
+            s = s.replace(/&lt;/g,&quot;&lt;&quot;);
+            s = s.replace(/&gt;/g,&quot;&gt;&quot;);
+            s = s.replace(/ /g,&quot; &quot;);
+            s = s.replace(/&apos;/g,&quot;\&apos;&quot;);
+            s = s.replace(/&quot;/g,&quot;\&quot;&quot;);
+            return s; 
+        }
+    };
+&lt;/script&gt;</code></pre><h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><ul>
+<li><a href="https://www.cnblogs.com/GumpYan/p/7883133.html" target="_blank" rel="noopener">JavaScript对HTML进行编码与解码</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/31/JavaScript/javascript_Encode/">Read more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JavaScript/javascript_ArraySort" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1404,119 +1543,6 @@ childNode{
 
 
   
-    <article id="post-Algorithms/Algorithms_second" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/22/Algorithms/Algorithms_second/">Algorithms(second)</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/22/Algorithms/Algorithms_second/" class="archive-article-date">
-  	<time datetime="2020-03-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="算法（Algorithms）"><a href="#算法（Algorithms）" class="headerlink" title="算法（Algorithms）"></a>算法（Algorithms）</h2><h3 id="算法定义："><a href="#算法定义：" class="headerlink" title="算法定义："></a>算法定义：</h3><blockquote>
-<p>算法是解决特定问题求解步骤的描述，在计算机表现为指令的有限序列，且每个指令表示一个或多个操作。</p>
-</blockquote>
-<hr>
-<h3 id="算法特性"><a href="#算法特性" class="headerlink" title="算法特性"></a>算法特性</h3><h4 id="一，输入输出："><a href="#一，输入输出：" class="headerlink" title="一，输入输出："></a>一，输入输出：</h4><ol>
-<li>输入：算法具有零个或一个输入。</li>
-<li>输出：算法具有至少一个输出。</li>
-</ol>
-<hr>
-<h4 id="二，有穷性："><a href="#二，有穷性：" class="headerlink" title="二，有穷性："></a>二，有穷性：</h4><ol>
-<li>算法在执行有限的步骤之后，会自动结束而不会出现无限循环，且每个步骤须在有限的时间内完成。</li>
-</ol>
-<hr>
-<h4 id="三，确定性："><a href="#三，确定性：" class="headerlink" title="三，确定性："></a>三，确定性：</h4><ol>
-<li>算法的每一个步骤都有明确的含义，不会出现二义性</li>
-<li>一定条件下，只有一条执行路径，相同输入只能获得的一个输出结果，每个步骤被精确定义，无歧义。</li>
-</ol>
-<hr>
-<h4 id="四，可行性："><a href="#四，可行性：" class="headerlink" title="四，可行性："></a>四，可行性：</h4><ol>
-<li>算法的每一个步骤都是可执行的，每一步都可执行有限步骤完成。</li>
-</ol>
-<hr>
-<h3 id="算法时间复杂度"><a href="#算法时间复杂度" class="headerlink" title="算法时间复杂度"></a>算法时间复杂度</h3><blockquote>
-<p>时间复杂度：算法的时间度量。</p>
-</blockquote>
-<hr>
-<h4 id="算法时间复杂度表示方法：大O阶表示方法"><a href="#算法时间复杂度表示方法：大O阶表示方法" class="headerlink" title="算法时间复杂度表示方法：大O阶表示方法"></a>算法时间复杂度表示方法：大O阶表示方法</h4><blockquote>
-<p>T(n) = O(f(n))：随问题规模n的增大，执行时间的增长率与f(n)的增长率相同。<br>n：问题规模；f(n)：运行次数函数（基本操作数量）。</p>
-</blockquote>
-<ol>
-<li>加法常数：用常数1取代。</li>
-<li>只保留运行次数函数中的最高阶项。</li>
-<li>若最高阶存在，且不是1，去处最高阶项常数。</li>
-</ol>
-<hr>
-<h4 id="常见的算法时间复杂度表示："><a href="#常见的算法时间复杂度表示：" class="headerlink" title="常见的算法时间复杂度表示："></a>常见的算法时间复杂度表示：</h4><img src="/2020/03/22/Algorithms/Algorithms_second/Algorithms_second.png" class title="algorithms">
-<hr>
-<h3 id="算法空间复杂度"><a href="#算法空间复杂度" class="headerlink" title="算法空间复杂度"></a>算法空间复杂度</h3><blockquote>
-<p>计算算法所需的存储空间的实现。<br>计算公式：S(n) = O(f(n))<br>n：问题规模； f(n)：关于n所占存储空间内存的函数。</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Algorithms</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/22/Algorithms/Algorithms_second/">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1607,15 +1633,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CSS BFC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Algorithms</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS Layout</a>
+                <a href="javascript:void(0)" class="js-tag color3">CSS BFC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1623,15 +1645,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">CSS Layout</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+                <a href="javascript:void(0)" class="js-tag color2">C</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">C</a>
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
               </li>
              
               <li class="article-tag-list-item">
