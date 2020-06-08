@@ -149,6 +149,138 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CSS/CSS_align" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/02/CSS/CSS_align/">CSS 常见对齐方式</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/02/CSS/CSS_align/" class="archive-article-date">
+  	<time datetime="2020-04-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="CSS-水平居中"><a href="#CSS-水平居中" class="headerlink" title="CSS 水平居中"></a>CSS 水平居中</h3><h4 id="若子元素为行内元素（inline）"><a href="#若子元素为行内元素（inline）" class="headerlink" title="若子元素为行内元素（inline）"></a>若子元素为行内元素（inline）</h4><pre><code>parentNode{
+    text-align:center;
+}</code></pre><h4 id="若子元素为块元素（block）"><a href="#若子元素为块元素（block）" class="headerlink" title="若子元素为块元素（block）"></a>若子元素为块元素（block）</h4><h5 id="宽度固定"><a href="#宽度固定" class="headerlink" title="宽度固定"></a>宽度固定</h5><pre><code>childNode{
+    margin:0 auto;
+}</code></pre><h5 id="宽度不固定"><a href="#宽度不固定" class="headerlink" title="宽度不固定"></a>宽度不固定</h5><pre><code>parentNode{
+    text-align:center;
+}
+childNode{
+    display:inline-block(inline);
+}</code></pre><hr>
+<h3 id="CSS垂直居中"><a href="#CSS垂直居中" class="headerlink" title="CSS垂直居中"></a>CSS垂直居中</h3><h4 id="若子元素为行内元素（inline）-1"><a href="#若子元素为行内元素（inline）-1" class="headerlink" title="若子元素为行内元素（inline）"></a>若子元素为行内元素（inline）</h4><pre><code>parentNode{
+    height:A px;
+}
+childNode{
+    line-heght:A px;
+}</code></pre><h4 id="若子元素为块元素（block）-1"><a href="#若子元素为块元素（block）-1" class="headerlink" title="若子元素为块元素（block）"></a>若子元素为块元素（block）</h4><blockquote>
+<p>块级元素的高度由内容撑起。</p>
+</blockquote>
+<h5 id="高度未定"><a href="#高度未定" class="headerlink" title="高度未定"></a>高度未定</h5><pre><code>parentNode{
+    display:table-cell;
+    vertical-align:middle;
+}</code></pre><h5 id="高度已定"><a href="#高度已定" class="headerlink" title="高度已定"></a>高度已定</h5><pre><code>parentNode{
+    height:A px;
+}
+childNode{
+    height:B px;
+    margin-top/margin-bottom:(A-B)/2px; 
+}</code></pre><hr>
+<h3 id="CSS垂直居中万能语法"><a href="#CSS垂直居中万能语法" class="headerlink" title="CSS垂直居中万能语法"></a>CSS垂直居中万能语法</h3><pre><code>parentNode{
+    position:relative;
+}
+childNode{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:Xpx;
+    height:Ypx;
+    margin-top:-(Y/2)px;
+    margin-left:-(X/2)px;
+}</code></pre><hr>
+<h3 id="CSS水平垂直居中"><a href="#CSS水平垂直居中" class="headerlink" title="CSS水平垂直居中"></a>CSS水平垂直居中</h3><h4 id="水平对齐-行高（子元素为inline元素）"><a href="#水平对齐-行高（子元素为inline元素）" class="headerlink" title="水平对齐+行高（子元素为inline元素）"></a>水平对齐+行高（子元素为inline元素）</h4><pre><code>parentNode{
+    height:A px;
+    text-align:center;
+}
+childNode{
+    line-height:A px;
+}</code></pre><h4 id="水平对齐-垂直对齐（子元素为block元素）"><a href="#水平对齐-垂直对齐（子元素为block元素）" class="headerlink" title="水平对齐+垂直对齐（子元素为block元素）"></a>水平对齐+垂直对齐（子元素为block元素）</h4><pre><code>parentNode{
+    display:table-cell;
+    text-align:center;
+    vertical-align:center;
+}
+childNode{
+    diaplay:inline-block;
+}</code></pre><h4 id="relative-absolute（任意元素）"><a href="#relative-absolute（任意元素）" class="headerlink" title="relative+absolute（任意元素）"></a>relative+absolute（任意元素）</h4><pre><code>parentNode{
+    position:relative;
+}
+childNode{
+    position:absolute;
+    margin:auto;
+}</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/02/CSS/CSS_align/">Read more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Algorithms/Algorithms_second" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1250,83 +1382,9 @@ innerText</code></pre>
 
 
   
-    <article id="post-HtmlNote/First-post" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/09/HtmlNote/First-post/">First Step</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/09/HtmlNote/First-post/" class="archive-article-date">
-  	<time datetime="2020-02-09T09:05:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Hello-program-world"><a href="#Hello-program-world" class="headerlink" title="Hello program world"></a>Hello program world</h3><p>&emsp;本博客会长期更新，记录我的编程历程，学习心得。<br>&emsp;漫漫长途，心向远方~</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/09/HtmlNote/First-post/">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
     </nav>
   
 
