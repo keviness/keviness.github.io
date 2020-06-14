@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/keviness/"/>
-  <updated>2020-06-08T09:26:38.036Z</updated>
+  <updated>2020-06-08T12:11:02.211Z</updated>
   <id>https://github.com/keviness/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://github.com/keviness/2020/06/08/JavaScript/javascript_preventDefault/"/>
     <id>https://github.com/keviness/2020/06/08/JavaScript/javascript_preventDefault/</id>
     <published>2020-06-07T16:00:00.000Z</published>
-    <updated>2020-06-08T09:26:38.036Z</updated>
+    <updated>2020-06-08T12:11:02.211Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>&emsp;在JavaScript Event中经常需要对事件进行阻止，主要有以下方法：<br>&emsp;event.preventDefault()阻止浏览器默认事件。<br>&emsp;event.stopPropagation()阻止元素事件冒泡。</p><h3 id="一，event-preventDefault"><a href="#一，event-preventDefault" class="headerlink" title="一，event.preventDefault()"></a>一，event.preventDefault()</h3><p>&emsp;阻止浏览器默认行为</p><pre><code>&lt;html&gt;&lt;head&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;/jquery/jquery.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;$(document).ready(function(){    $(&quot;a&quot;).click(function(event){    event.preventDefault();    });});&lt;/script&gt;&lt;/head&gt;&lt;body&gt;&lt;a href=&quot;http://w3school.com.cn/&quot;&gt;W3School&lt;/a&gt;&lt;/body&gt;&lt;/html&gt;//event.preventDefault() 方法将防止上面的链接打开 URL</code></pre><h3 id="event-stopPropagation"><a href="#event-stopPropagation" class="headerlink" title="event.stopPropagation()"></a>event.stopPropagation()</h3><p>&emsp;阻止元素事件冒泡。</p><pre><code>var btn = document.getElementById(&apos;myBtn&apos;);document.onclick = function(){    alert(1);}btn.onclick = function(event){    event.stopPropagation();}</code></pre><p>&emsp;这样当点击btn时，绑定在document的事件不会被触发，因为btn的事件冒泡机制被组织了。</p><h3 id="三，兼容IE浏览器"><a href="#三，兼容IE浏览器" class="headerlink" title="三，兼容IE浏览器"></a>三，兼容IE浏览器</h3><pre><code>if (event.stopPropagation){      event.stopPropagation();  }else{      event.cancelBubble=true;  }  if (event.preventDefault){  event.preventDefault();  }else{      event.returnValue=false;  }  </code></pre>]]></content>
+    <content type="html"><![CDATA[<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>&emsp;在JavaScript Event中经常需要对事件进行阻止，主要有以下方法：<br>&emsp;event.preventDefault()阻止浏览器默认事件。<br>&emsp;event.stopPropagation()阻止元素事件冒泡。</p><h3 id="一，event-preventDefault"><a href="#一，event-preventDefault" class="headerlink" title="一，event.preventDefault()"></a>一，event.preventDefault()</h3><blockquote><p>阻止浏览器默认行为</p></blockquote><pre><code>&lt;html&gt;&lt;head&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;/jquery/jquery.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;$(document).ready(function(){    $(&quot;a&quot;).click(function(event){    event.preventDefault();    });});&lt;/script&gt;&lt;/head&gt;&lt;body&gt;&lt;a href=&quot;http://w3school.com.cn/&quot;&gt;W3School&lt;/a&gt;&lt;/body&gt;&lt;/html&gt;//event.preventDefault() 方法将防止上面的链接打开 URL</code></pre><h3 id="二，event-stopPropagation"><a href="#二，event-stopPropagation" class="headerlink" title="二，event.stopPropagation()"></a>二，event.stopPropagation()</h3><blockquote><p>阻止元素事件冒泡。</p></blockquote><pre><code>var btn = document.getElementById(&apos;myBtn&apos;);document.onclick = function(){    alert(1);}btn.onclick = function(event){    event.stopPropagation();}</code></pre><p>&emsp;这样当点击btn时，绑定在document的事件不会被触发，因为btn的事件冒泡机制被组织了。</p><h3 id="三，兼容IE浏览器"><a href="#三，兼容IE浏览器" class="headerlink" title="三，兼容IE浏览器"></a>三，兼容IE浏览器</h3><pre><code>if (event.stopPropagation){      event.stopPropagation();  }else{      event.cancelBubble=true;  }  if (event.preventDefault){  event.preventDefault();  }else{      event.returnValue=false;  }  </code></pre>]]></content>
     
     <summary type="html">
     
