@@ -173,43 +173,9 @@
 <h3 id="一，event-preventDefault"><a href="#一，event-preventDefault" class="headerlink" title="一，event.preventDefault()"></a>一，event.preventDefault()</h3><blockquote>
 <p>阻止浏览器默认行为</p>
 </blockquote>
-<pre><code>&lt;html&gt;
-&lt;head&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;/jquery/jquery.js&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-$(document).ready(function(){
-    $(&quot;a&quot;).click(function(event){
-    event.preventDefault();
-    });
-});
-&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;a href=&quot;http://w3school.com.cn/&quot;&gt;W3School&lt;/a&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-
-//event.preventDefault() 方法将防止上面的链接打开 URL</code></pre><h3 id="二，event-stopPropagation"><a href="#二，event-stopPropagation" class="headerlink" title="二，event.stopPropagation()"></a>二，event.stopPropagation()</h3><blockquote>
-<p>阻止元素事件冒泡。</p>
-</blockquote>
-<pre><code>var btn = document.getElementById(&apos;myBtn&apos;);
-document.onclick = function(){
-    alert(1);
-}
-btn.onclick = function(event){
-    event.stopPropagation();
-}</code></pre><p>&emsp;这样当点击btn时，绑定在document的事件不会被触发，因为btn的事件冒泡机制被组织了。</p>
-<h3 id="三，兼容IE浏览器"><a href="#三，兼容IE浏览器" class="headerlink" title="三，兼容IE浏览器"></a>三，兼容IE浏览器</h3><pre><code>if (event.stopPropagation){  
-    event.stopPropagation();  
-}else{  
-    event.cancelBubble=true;  
-}  
-
-if (event.preventDefault){  
-event.preventDefault();  
-}else{  
-    event.returnValue=false;  
-}  </code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"/jquery/jquery.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">    $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        $(<span class="string">"a"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span></span><br><span class="line">        event.preventDefault();</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://w3school.com.cn/"</span>&gt;</span>W3School<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    //event.preventDefault() 方法将防止上面的链接打开 URL</span><br><span class="line">~~~ </span><br><span class="line">### 二，event.stopPropagation()</span><br><span class="line">&gt;阻止元素事件冒泡。</span><br><span class="line">~~~js</span><br><span class="line">    var btn = document.getElementById('myBtn');</span><br><span class="line">    document.onclick = function()&#123;</span><br><span class="line">        alert(1);</span><br><span class="line">    &#125;</span><br><span class="line">    btn.onclick = function(event)&#123;</span><br><span class="line">        event.stopPropagation();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>&emsp;这样当点击btn时，绑定在document的事件不会被触发，因为btn的事件冒泡机制被组织了。</p>
+<h3 id="三，兼容IE浏览器"><a href="#三，兼容IE浏览器" class="headerlink" title="三，兼容IE浏览器"></a>三，兼容IE浏览器</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (event.stopPropagation)&#123;  </span><br><span class="line">    event.stopPropagation();  </span><br><span class="line">&#125;<span class="keyword">else</span>&#123;  </span><br><span class="line">    event.cancelBubble=<span class="literal">true</span>;  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (event.preventDefault)&#123;  </span><br><span class="line">event.preventDefault();  </span><br><span class="line">&#125;<span class="keyword">else</span>&#123;  </span><br><span class="line">    event.returnValue=<span class="literal">false</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -283,69 +249,8 @@ event.preventDefault();
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h3><p>&emsp;经常遇到一些字符需要进行转义后才能显示到界面上。此时，就需要进行编码与解码。</p>
-<h3 id="代码示例："><a href="#代码示例：" class="headerlink" title="代码示例："></a>代码示例：</h3><pre><code>&lt;script&gt;
-var HtmlUtil = {
-
-    /*1.用浏览器内部转换器实现html编码*/
-
-    htmlEncode:function (html){
-        //动态创建一个容器标签元素
-        var temp = document.createElement (&quot;div&quot;);
-
-        //将要转换的字符串设置为元素的innerText(ie)或textContent(firefox，google支持)
-        (temp.textContent != undefined ) ? (temp.textContent = html) : (temp.innerText = html);
-
-        //返回元素的innerHTML，即得HTML编码的字符串
-        var output = temp.innerHTML;
-        temp = null;
-        return output;
-    },
-
-    /*2.用浏览器内部转换器实现html解码*/
-
-    htmlDecode:function (text){
-
-        //动态创建一个容器标签元素
-        var temp = document.createElement(&quot;div&quot;);
-
-        //将要转换的字符串设置为元素的innerHTML(ie，firefox，google)
-        temp.innerHTML = text;
-
-        //返回这个元素的innerText(ie)或textContent(firefox，google)，即得到经HTML解码的字符串
-        var output = temp.innerText || temp.textContent;
-        temp = null;
-        return output;
-    },
-
-    /*3.用正则表达式实现html编码*/
-
-    htmlEncodeByRegExp:function (str){ 
-        var s = &quot;&quot;;
-        if(str.length == 0) return &quot;&quot;;
-        s = str.replace(/&amp;/g,&quot;&amp;&quot;);
-        s = s.replace(/&lt;/g,&quot;&lt;&quot;);
-        s = s.replace(/&gt;/g,&quot;&gt;&quot;);
-        s = s.replace(/ /g,&quot; &quot;);
-        s = s.replace(/\&apos;/g,&quot;&apos;&quot;);
-        s = s.replace(/\&quot;/g,&quot;&quot;&quot;);
-        return s; 
-    },
-
-    /*4.用正则表达式实现html解码*/
-
-    htmlDecodeByRegExp:function (str){ 
-        var s = &quot;&quot;;
-        if(str.length == 0) return &quot;&quot;;
-        s = str.replace(&quot;&amp;&quot;, /&amp;/g);
-        s = s.replace(&quot;&gt;&quot;, /&lt;/g);
-        s = s.replace(&quot;&lt;&quot;, /&gt;/g);
-        s = s.replace(&quot; &quot;, / /g);
-        s = s.replace(&quot;\&apos;&quot;, /&apos;/g);
-        s = s.replace(&quot;\&quot;&quot;, /&quot;/g);
-        return s; 
-    }
-};
-&lt;/script&gt;</code></pre><h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><ul>
+<h3 id="代码示例："><a href="#代码示例：" class="headerlink" title="代码示例："></a>代码示例：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">var</span> HtmlUtil = &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*1.用浏览器内部转换器实现html编码*/</span></span><br><span class="line"></span><br><span class="line">    htmlEncode:<span class="function"><span class="keyword">function</span> (<span class="params">html</span>)</span>&#123;</span><br><span class="line">        <span class="comment">//动态创建一个容器标签元素</span></span><br><span class="line">        <span class="keyword">var</span> temp = <span class="built_in">document</span>.createElement (<span class="string">"div"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//将要转换的字符串设置为元素的innerText(ie)或textContent(firefox，google支持)</span></span><br><span class="line">        (temp.textContent != <span class="literal">undefined</span> ) ? (temp.textContent = html) : (temp.innerText = html);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//返回元素的innerHTML，即得HTML编码的字符串</span></span><br><span class="line">        <span class="keyword">var</span> output = temp.innerHTML;</span><br><span class="line">        temp = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">return</span> output;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*2.用浏览器内部转换器实现html解码*/</span></span><br><span class="line"></span><br><span class="line">    htmlDecode:<span class="function"><span class="keyword">function</span> (<span class="params">text</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//动态创建一个容器标签元素</span></span><br><span class="line">        <span class="keyword">var</span> temp = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//将要转换的字符串设置为元素的innerHTML(ie，firefox，google)</span></span><br><span class="line">        temp.innerHTML = text;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//返回这个元素的innerText(ie)或textContent(firefox，google)，即得到经HTML解码的字符串</span></span><br><span class="line">        <span class="keyword">var</span> output = temp.innerText || temp.textContent;</span><br><span class="line">        temp = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">return</span> output;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*3.用正则表达式实现html编码*/</span></span><br><span class="line"></span><br><span class="line">    htmlEncodeByRegExp:<span class="function"><span class="keyword">function</span> (<span class="params">str</span>)</span>&#123; </span><br><span class="line">        <span class="keyword">var</span> s = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">if</span>(str.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        s = str.replace(<span class="regexp">/&amp;/g</span>,<span class="string">"&amp;"</span>);</span><br><span class="line">        s = s.replace(<span class="regexp">/&lt;/g</span>,<span class="string">"&lt;"</span>);</span><br><span class="line">        s = s.replace(<span class="regexp">/&gt;/g</span>,<span class="string">"&gt;"</span>);</span><br><span class="line">        s = s.replace(<span class="regexp">/ /g</span>,<span class="string">" "</span>);</span><br><span class="line">        s = s.replace(<span class="regexp">/\'/g</span>,<span class="string">"'"</span>);</span><br><span class="line">        s = s.replace(<span class="regexp">/\"/g</span>,<span class="string">""</span><span class="string">");</span></span><br><span class="line"><span class="string">        return s; </span></span><br><span class="line"><span class="string">    &#125;,</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    /*4.用正则表达式实现html解码*/</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    htmlDecodeByRegExp:function (str)&#123; </span></span><br><span class="line"><span class="string">        var s = "</span><span class="string">";</span></span><br><span class="line"><span class="string">        if(str.length == 0) return "</span><span class="string">";</span></span><br><span class="line"><span class="string">        s = str.replace("</span>&amp;<span class="string">", /&amp;/g);</span></span><br><span class="line"><span class="string">        s = s.replace("</span>&gt;<span class="string">", /&lt;/g);</span></span><br><span class="line"><span class="string">        s = s.replace("</span>&lt;<span class="string">", /&gt;/g);</span></span><br><span class="line"><span class="string">        s = s.replace("</span> <span class="string">", / /g);</span></span><br><span class="line"><span class="string">        s = s.replace("</span>\<span class="string">'", /'</span>/g);</span><br><span class="line">        s = s.replace(<span class="string">"\""</span>, /<span class="string">"/g);</span></span><br><span class="line"><span class="string">        return s; </span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><ul>
 <li><a href="https://www.cnblogs.com/GumpYan/p/7883133.html" target="_blank" rel="noopener">JavaScript对HTML进行编码与解码</a></li>
 </ul>
 
@@ -436,74 +341,26 @@ var HtmlUtil = {
 <li>如果指明了compareFunction，那么数组会按照调用该函数的返回值排序。a和b是两个将要被比较的元素：</li>
 </ul>
 </blockquote>
-<pre><code>compareFunction(a, b)&lt;0，a会被排列到b之前；
-compareFunction(a, b)==0，a和b的相对位置不变。
-compareFunction(a, b)&gt;0，b排列到a之前。</code></pre><h3 id="compare-a-b-函数"><a href="#compare-a-b-函数" class="headerlink" title="compare(a, b)函数"></a>compare(a, b)函数</h3><h4 id="比较Number与String（通用）"><a href="#比较Number与String（通用）" class="headerlink" title="比较Number与String（通用）"></a>比较Number与String（通用）</h4><pre><code>function compare(a, b) {
-    if (a &lt; b ) {   
-        return -1;
-    }
-    if (a &gt; b ) {
-        return 1;
-    }
-    return 0;
-}</code></pre><h4 id="比较Number"><a href="#比较Number" class="headerlink" title="比较Number"></a>比较Number</h4><pre><code>function compareNumbers(a, b) {
-    return a - b;
-}</code></pre><h3 id="排序示例"><a href="#排序示例" class="headerlink" title="排序示例"></a>排序示例</h3><h4 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h4><pre><code>var numbers = [4, 2, 5, 1, 3];
-numbers.sort(function(a, b) {
-    return a - b;
-});
-console.log(numbers);
-等价于：
-var numbers = [4, 2, 5, 1, 3]; 
-numbers.sort((a, b) =&gt; a - b); 
-console.log(numbers);</code></pre><h4 id="对象类型排序"><a href="#对象类型排序" class="headerlink" title="对象类型排序"></a>对象类型排序</h4><pre><code>var items = [
-    { name: &apos;Edward&apos;, value: 21 },
-    { name: &apos;Sharpe&apos;, value: 37 },
-    { name: &apos;And&apos;, value: 45 },
-    { name: &apos;The&apos;, value: -12 },
-    { name: &apos;Magnetic&apos; },
-    { name: &apos;Zeros&apos;, value: 37 }
-];
-// sort by value
-items.sort(function (a, b) {
-    return (a.value - b.value)
-});
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">compareFunction(a, b)&lt;<span class="number">0</span>，a会被排列到b之前；</span><br><span class="line">compareFunction(a, b)==<span class="number">0</span>，a和b的相对位置不变。</span><br><span class="line">compareFunction(a, b)&gt;<span class="number">0</span>，b排列到a之前。</span><br></pre></td></tr></table></figure>
+<h3 id="compare-a-b-函数"><a href="#compare-a-b-函数" class="headerlink" title="compare(a, b)函数"></a>compare(a, b)函数</h3><h4 id="比较Number与String（通用）"><a href="#比较Number与String（通用）" class="headerlink" title="比较Number与String（通用）"></a>比较Number与String（通用）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compare</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a &lt; b ) &#123;   </span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (a &gt; b ) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="比较Number"><a href="#比较Number" class="headerlink" title="比较Number"></a>比较Number</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compareNumbers</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a - b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="排序示例"><a href="#排序示例" class="headerlink" title="排序示例"></a>排序示例</h3><h4 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers = [<span class="number">4</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">3</span>];</span><br><span class="line">numbers.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a - b;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(numbers);</span><br><span class="line">等价于：</span><br><span class="line"><span class="keyword">var</span> numbers = [<span class="number">4</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">3</span>]; </span><br><span class="line">numbers.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b); </span><br><span class="line"><span class="built_in">console</span>.log(numbers);</span><br></pre></td></tr></table></figure>
 
-// sort by name
-items.sort(function(a, b) {
-    var nameA = a.name.toUpperCase(); 
-    var nameB = b.name.toUpperCase(); 
-    if (nameA &lt; nameB) {
-        return -1;
-    }
-    if (nameA &gt; nameB) {
-        return 1;
-    }
-    return 0;
-});</code></pre><h3 id="非ASCII字符排序"><a href="#非ASCII字符排序" class="headerlink" title="非ASCII字符排序"></a>非ASCII字符排序</h3><blockquote>
+<h4 id="对象类型排序"><a href="#对象类型排序" class="headerlink" title="对象类型排序"></a>对象类型排序</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> items = [</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">'Edward'</span>, <span class="attr">value</span>: <span class="number">21</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">'Sharpe'</span>, <span class="attr">value</span>: <span class="number">37</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">'And'</span>, <span class="attr">value</span>: <span class="number">45</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">'The'</span>, <span class="attr">value</span>: <span class="number">-12</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">'Magnetic'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">'Zeros'</span>, <span class="attr">value</span>: <span class="number">37</span> &#125;</span><br><span class="line">];</span><br><span class="line"><span class="comment">// sort by value</span></span><br><span class="line">items.sort(<span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (a.value - b.value)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// sort by name</span></span><br><span class="line">items.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> nameA = a.name.toUpperCase(); </span><br><span class="line">    <span class="keyword">var</span> nameB = b.name.toUpperCase(); </span><br><span class="line">    <span class="keyword">if</span> (nameA &lt; nameB) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (nameA &gt; nameB) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="非ASCII字符排序"><a href="#非ASCII字符排序" class="headerlink" title="非ASCII字符排序"></a>非ASCII字符排序</h3><blockquote>
 <p>当排序非ASCII字符的字符串（如包含类似e、é、è、a、ä等字符的字符串）。一些非英语语言的字符串需要使用String.localeCompare。</p>
 </blockquote>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><pre><code>var items = [&apos;réservé&apos;, &apos;premier&apos;, &apos;cliché&apos;];
-items.sort(function (a, b) {
-    return a.localeCompare(b);
-});</code></pre><h3 id="用映射辅助排序"><a href="#用映射辅助排序" class="headerlink" title="用映射辅助排序"></a>用映射辅助排序</h3><blockquote>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> items = [<span class="string">'réservé'</span>, <span class="string">'premier'</span>, <span class="string">'cliché'</span>];</span><br><span class="line">items.sort(<span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.localeCompare(b);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="用映射辅助排序"><a href="#用映射辅助排序" class="headerlink" title="用映射辅助排序"></a>用映射辅助排序</h3><blockquote>
 <ul>
 <li>compareFunction可能需要对元素做多次映射以实现排序，当 compareFunction较为复杂，且元素较多的时候，可能会导致很高的负载。可使用 map()辅助排序。</li>
 <li>基本思想是首先将数组中的每个元素比较的实际值取出来，排序后再将数组恢复。</li>
 </ul>
 </blockquote>
-<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h4><pre><code>var list = [&apos;Delta&apos;, &apos;alpha&apos;, &apos;CHARLIE&apos;, &apos;bravo&apos;];
-var mapped = list.map(function(el, i) {
-    return { index: i, value: el.toLowerCase() };
-})
+<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> list = [<span class="string">'Delta'</span>, <span class="string">'alpha'</span>, <span class="string">'CHARLIE'</span>, <span class="string">'bravo'</span>];</span><br><span class="line"><span class="keyword">var</span> mapped = list.map(<span class="function"><span class="keyword">function</span>(<span class="params">el, i</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123; <span class="attr">index</span>: i, <span class="attr">value</span>: el.toLowerCase() &#125;;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">mapped.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> +(a.value &gt; b.value) || +(a.value === b.value) - <span class="number">1</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = mapped.map(<span class="function"><span class="keyword">function</span>(<span class="params">el</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> list[el.index];</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-mapped.sort(function(a, b) {
-    return +(a.value &gt; b.value) || +(a.value === b.value) - 1;
-});
-
-var result = mapped.map(function(el){
-    return list[el.index];
-});</code></pre>
       
 
       
@@ -577,20 +434,10 @@ var result = mapped.map(function(el){
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>&emsp;四月份，随着考研复试的临近，毕业论文也在此刻提上了日程，我停下了手边的前端学习计划。<br>&emsp;我想着在四月底实现心心念念的<a href="https://github.com/keviness/ExerciseProject/blob/master/snakes/snake_try.c">贪吃蛇游戏</a>，于是就开始多线程工作啦。<br>&emsp;当一个个贪吃蛇游戏的功能模块在自己手里逐步实现时，那种快乐难以描述哈。以下是一些个工作。</p>
-<h3 id="头文件准备工作"><a href="#头文件准备工作" class="headerlink" title="头文件准备工作"></a>头文件准备工作</h3><pre><code>&lt;windows.h&gt;
-&lt;conio.h&gt;
-&lt;time.h&gt;</code></pre><p>以上这头文件需要先了解，对其中常用的API需要掌握。</p>
-<h3 id="贪吃蛇的实现原理"><a href="#贪吃蛇的实现原理" class="headerlink" title="贪吃蛇的实现原理"></a>贪吃蛇的实现原理</h3><pre><code>struct snakes{
-    unsigned int len;
-    unsigned int speed;
-    unsigned int x[MAXSNAKE];
-    unsigned int y[MAXSNAKE];
-}snake;
-
-struct foods{
-    unsigned int x;
-    unsigned int y;
-}food;</code></pre><blockquote>
+<h3 id="头文件准备工作"><a href="#头文件准备工作" class="headerlink" title="头文件准备工作"></a>头文件准备工作</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;windows.h&gt;</span><br><span class="line">&lt;conio.h&gt;</span><br><span class="line">&lt;time.h&gt;</span><br></pre></td></tr></table></figure>
+<p>以上这头文件需要先了解，对其中常用的API需要掌握。</p>
+<h3 id="贪吃蛇的实现原理"><a href="#贪吃蛇的实现原理" class="headerlink" title="贪吃蛇的实现原理"></a>贪吃蛇的实现原理</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">snakes</span>&#123;</span></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> len;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> speed;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> x[MAXSNAKE];</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> y[MAXSNAKE];</span><br><span class="line">&#125;snake;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">foods</span>&#123;</span></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> y;</span><br><span class="line">&#125;food;</span><br></pre></td></tr></table></figure>
+<blockquote>
 <ul>
 <li>贪吃蛇的实现原理在于用结构体中的数组储存贪吃蛇的x轴与y轴的坐标。</li>
 <li>再在相应坐标位置是打印需要的符号。</li>
@@ -599,15 +446,8 @@ struct foods{
 </ul>
 </blockquote>
 <h3 id="各个功能的实现"><a href="#各个功能的实现" class="headerlink" title="各个功能的实现"></a>各个功能的实现</h3><p>贪吃蛇的实现主要依靠以下函数：</p>
-<pre><code>void welcome(void);  //欢迎用户图形界面
-void initGraph(void);  //游戏初始化界面
-void createFood(void);  //随机产生食物
-void eatFood(void);   //当蛇吃到食物时
-void movingSnake(void);   //移动蛇身
-void controlSnake(void);   //控制蛇运动
-void gotoxy(int x, int y); //移动光标到对应坐标
-void hidenCursor(void);  //隐藏光标
-bool snakeStatus(void);  //判断蛇的状态</code></pre><blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">welcome</span><span class="params">(<span class="keyword">void</span>)</span></span>;  <span class="comment">//欢迎用户图形界面</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">initGraph</span><span class="params">(<span class="keyword">void</span>)</span></span>;  <span class="comment">//游戏初始化界面</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">createFood</span><span class="params">(<span class="keyword">void</span>)</span></span>;  <span class="comment">//随机产生食物</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">eatFood</span><span class="params">(<span class="keyword">void</span>)</span></span>;   <span class="comment">//当蛇吃到食物时</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">movingSnake</span><span class="params">(<span class="keyword">void</span>)</span></span>;   <span class="comment">//移动蛇身</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">controlSnake</span><span class="params">(<span class="keyword">void</span>)</span></span>;   <span class="comment">//控制蛇运动</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">gotoxy</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>; <span class="comment">//移动光标到对应坐标</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">hidenCursor</span><span class="params">(<span class="keyword">void</span>)</span></span>;  <span class="comment">//隐藏光标</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">snakeStatus</span><span class="params">(<span class="keyword">void</span>)</span></span>;  <span class="comment">//判断蛇的状态</span></span><br></pre></td></tr></table></figure>
+<blockquote>
 <ul>
 <li>其中对蛇的控制，和蛇身的移动是游戏的核心。</li>
 </ul>
@@ -685,22 +525,22 @@ bool snakeStatus(void);  //判断蛇的状态</code></pre><blockquote>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="创建Date对象"><a href="#创建Date对象" class="headerlink" title="创建Date对象"></a>创建Date对象</h3><pre><code>var now = new Date();   
-console.log(now);  //中国标准时间</code></pre><h3 id="Date解析"><a href="#Date解析" class="headerlink" title="Date解析"></a>Date解析</h3><blockquote>
+        <h3 id="创建Date对象"><a href="#创建Date对象" class="headerlink" title="创建Date对象"></a>创建Date对象</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();   </span><br><span class="line"><span class="built_in">console</span>.log(now);  <span class="comment">//中国标准时间</span></span><br></pre></td></tr></table></figure>
+<h3 id="Date解析"><a href="#Date解析" class="headerlink" title="Date解析"></a>Date解析</h3><blockquote>
 <ul>
 <li>Date.parse() 传入一个日期格式的字符串，该方法会返回特定的时间格式。</li>
 </ul>
 </blockquote>
-<h4 id="月-日-年"><a href="#月-日-年" class="headerlink" title="月/日/年"></a>月/日/年</h4><pre><code>var date = Date.parse(&quot;06/07/2017&quot;);
-console.log(new Date(date));  </code></pre><h4 id="英文月名-日，年"><a href="#英文月名-日，年" class="headerlink" title="英文月名 日，年"></a>英文月名 日，年</h4><pre><code>var date = Date.parse(&quot;June 07, 2017&quot;);
-console.log(new Date(date));  </code></pre><hr>
+<h4 id="月-日-年"><a href="#月-日-年" class="headerlink" title="月/日/年"></a>月/日/年</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="built_in">Date</span>.parse(<span class="string">"06/07/2017"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>(date));</span><br></pre></td></tr></table></figure>
+<h4 id="英文月名-日，年"><a href="#英文月名-日，年" class="headerlink" title="英文月名 日，年"></a>英文月名 日，年</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="built_in">Date</span>.parse(<span class="string">"June 07, 2017"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>(date));</span><br></pre></td></tr></table></figure>
+<hr>
 <h3 id="Date-UTC"><a href="#Date-UTC" class="headerlink" title="Date.UTC()"></a>Date.UTC()</h3><blockquote>
 <ul>
 <li>接收7个参数，年，基于0的月，天，时，分，秒以及毫秒数</li>
 </ul>
 </blockquote>
-<pre><code>var date = new Date(2017, 05, 06, 18, 0, 0);
-console.log(new Date.UTC(date)); </code></pre><h4 id="Date-now"><a href="#Date-now" class="headerlink" title="Date.now()"></a>Date.now()</h4><blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2017</span>, <span class="number">05</span>, <span class="number">06</span>, <span class="number">18</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>.UTC(date));</span><br></pre></td></tr></table></figure>
+<h4 id="Date-now"><a href="#Date-now" class="headerlink" title="Date.now()"></a>Date.now()</h4><blockquote>
 <ul>
 <li>返回调用该方法时的毫秒数。</li>
 </ul>
@@ -770,12 +610,7 @@ console.log(new Date.UTC(date)); </code></pre><h4 id="Date-now"><a href="#Date-n
 </ul>
 </blockquote>
 <hr>
-<h3 id="访问Date对象的方法"><a href="#访问Date对象的方法" class="headerlink" title="访问Date对象的方法"></a>访问Date对象的方法</h3><pre><code>dateObject.getFullYear() 获取年
-dateObject.getMonth() 获取月
-dateObject.getDate() 获取日
-dateObject.getHours() 获取小时
-dateObject.getMinutes() 获取分钟
-dateObject.getSeconds() 获取秒</code></pre>
+<h3 id="访问Date对象的方法"><a href="#访问Date对象的方法" class="headerlink" title="访问Date对象的方法"></a>访问Date对象的方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dateObject.getFullYear() 获取年</span><br><span class="line">dateObject.getMonth() 获取月</span><br><span class="line">dateObject.getDate() 获取日</span><br><span class="line">dateObject.getHours() 获取小时</span><br><span class="line">dateObject.getMinutes() 获取分钟</span><br><span class="line">dateObject.getSeconds() 获取秒</span><br></pre></td></tr></table></figure>
       
 
       
@@ -886,24 +721,16 @@ dateObject.getSeconds() 获取秒</code></pre>
 <li>同样是值传递，传递的是变量在栈内存空间中的地址值，如果在函数中改变了对象某一个属性的值，源变量中的值也会改变，因为在堆内存中它们是指向的同一个对象。</li>
 </ul>
 </blockquote>
-<pre><code>function func(num){
-    num.name=123;
-}
-var box={};
-box.name=&apos;abcd&apos;;
-alert(box.name);    //abcd
-func(box);
-alert(box.name);    //123   值在函数func中被改变了</code></pre><h3 id="检测变量数据类型"><a href="#检测变量数据类型" class="headerlink" title="检测变量数据类型"></a>检测变量数据类型</h3><h4 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h4><blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">    num.name=<span class="number">123</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> box=&#123;&#125;;</span><br><span class="line">box.name=<span class="string">'abcd'</span>;</span><br><span class="line">alert(box.name);    <span class="comment">//abcd</span></span><br><span class="line">func(box);</span><br><span class="line">alert(box.name);    <span class="comment">//123   值在函数func中被改变了</span></span><br></pre></td></tr></table></figure>
+<h3 id="检测变量数据类型"><a href="#检测变量数据类型" class="headerlink" title="检测变量数据类型"></a>检测变量数据类型</h3><h4 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h4><blockquote>
 <ul>
 <li>只返回的几大基本的数据类型，在检测Object类型时则不宜使用。</li>
 <li>Null，Object，Array，RegExp等都会返回object，那样就不知道变量到底是什么类型。    </li>
 <li>instanceof：确定变量是哪种具体的引用类型。</li>
 </ul>
 </blockquote>
-<pre><code>var box = [1,2,3]
-alert(box instanceof Object);　　//true
-alert(box instanceof Array);　　
-console.log(Array.isArray(box))　　//true</code></pre><h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">alert(box <span class="keyword">instanceof</span> <span class="built_in">Object</span>);　　<span class="comment">//true</span></span><br><span class="line">alert(box <span class="keyword">instanceof</span> <span class="built_in">Array</span>);　　</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray(box))　　<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><blockquote>
 <ul>
 <li>作用域规定了变量或者函数有权访问其他数据的权限，规定了各自的行为。    </li>
 </ul>
@@ -925,10 +752,11 @@ console.log(Array.isArray(box))　　//true</code></pre><h3 id="作用域"><a hr
 <li>块级作用域表示诸如if等有花括号封闭的代码段块，所以支持条件判断来定义变量。 像 if，for 等代码块中定义的变量在花括号外面是可以访问的，这和其他语言中有很大的差别。</li>
 </ul>
 </blockquote>
-<pre><code>if(true){
-    var color = &apos;red&apos;;
+<pre><code class="js"><span class="keyword">if</span>(<span class="literal">true</span>){
+    <span class="keyword">var</span> color = <span class="string">'red'</span>;
 }
-console.log(color);     //red</code></pre><h4 id="var关键字在函数中的区别"><a href="#var关键字在函数中的区别" class="headerlink" title="var关键字在函数中的区别"></a>var关键字在函数中的区别</h4><blockquote>
+<span class="built_in">console</span>.log(color);     <span class="comment">//red</span></code></pre>
+<h4 id="var关键字在函数中的区别"><a href="#var关键字在函数中的区别" class="headerlink" title="var关键字在函数中的区别"></a>var关键字在函数中的区别</h4><blockquote>
 <ul>
 <li>在函数中声明变量的时候，如果不加上关键字 var 那变量会被认为是全局的，函数外面也可以访问它，当然在访问之前要先执行一次函数，加了则是局部的。</li>
 </ul>
@@ -1167,34 +995,16 @@ background-position: 10px 20px;  </code></pre><h3 id="背景裁切"><a href="#�
 </ul>
 </blockquote>
 <h4 id="函数声明与表达式（匿名函数）"><a href="#函数声明与表达式（匿名函数）" class="headerlink" title="函数声明与表达式（匿名函数）"></a>函数声明与表达式（匿名函数）</h4><p>函数声明会优先被读取使用（函数可提前访问）。</p>
-<pre><code>console.log(test(10,30))；　　//40
-function test(num1,num2) {
-    return num1+num2;
-};</code></pre><p>函数表达式则必须等到执行完它所在的表达行后再可以使用。</p>
-<pre><code>console.log(test(10,30));　　//error
-var test = function (num1,num2) {
-    return num1+num2;
-};</code></pre><h4 id="作为值的函数"><a href="#作为值的函数" class="headerlink" title="作为值的函数"></a>作为值的函数</h4><blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(test(<span class="number">10</span>,<span class="number">30</span>))；　　<span class="comment">//40</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">num1,num2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num1+num2;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>函数表达式则必须等到执行完它所在的表达行后再可以使用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(test(<span class="number">10</span>,<span class="number">30</span>));　　<span class="comment">//error</span></span><br><span class="line"><span class="keyword">var</span> test = <span class="function"><span class="keyword">function</span> (<span class="params">num1,num2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num1+num2;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="作为值的函数"><a href="#作为值的函数" class="headerlink" title="作为值的函数"></a>作为值的函数</h4><blockquote>
 <ul>
 <li>js中的函数名本身就是变量，所以函数也可以作为值来使用，可以像传递参数一样把一个函数传递给另一个函数。</li>
 </ul>
 </blockquote>
-<pre><code>function sum (num1, num2) {
-    return num1 + num2;
-}
-function fuc (num3, num4) {
-    return num3 + num4;
-}
-console.log(fuc(sum(2,3), 5));　　//10
-
-等同于：
-function sum (num1, num2) {
-    return num1+num2;
-}
-function func(num1){
-    return sum(num1,5);
-}
-alert(func(5));    //10</code></pre><hr>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span> (<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fuc</span> (<span class="params">num3, num4</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num3 + num4;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(fuc(sum(<span class="number">2</span>,<span class="number">3</span>), <span class="number">5</span>));　　<span class="comment">//10</span></span><br><span class="line"></span><br><span class="line">等同于：</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span> (<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num1+num2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">num1</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> sum(num1,<span class="number">5</span>);</span><br><span class="line">&#125;</span><br><span class="line">alert(func(<span class="number">5</span>));    <span class="comment">//10</span></span><br></pre></td></tr></table></figure>
+<hr>
 <h3 id="函数内部属性"><a href="#函数内部属性" class="headerlink" title="函数内部属性"></a>函数内部属性</h3><blockquote>
 <ul>
 <li>在函数内部包含两个特殊的对象：arguments和this</li>
@@ -1207,15 +1017,8 @@ alert(func(5));    //10</code></pre><hr>
 <li>arguments.callee()始终代表的是这个函数本身. </li>
 </ul>
 </blockquote>
-<pre><code>function box(num){
-    if(num&lt;=1){
-        return 1;
-    }else{
-        return num*arguments.callee(num-1);
-            //arguments.callee代表的是函数的本身，故和上面是同样的效果
-    }
-}
-alert(box(3));//6</code></pre><h4 id="this"><a href="#this" class="headerlink" title="this:"></a>this:</h4><blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">box</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(num&lt;=<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num*<span class="built_in">arguments</span>.callee(num<span class="number">-1</span>);</span><br><span class="line">            <span class="comment">//arguments.callee代表的是函数的本身，故和上面是同样的效果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">alert(box(<span class="number">3</span>));<span class="comment">//6</span></span><br></pre></td></tr></table></figure>
+<h4 id="this"><a href="#this" class="headerlink" title="this:"></a>this:</h4><blockquote>
 <ul>
 <li>this 这个属性代表的是它所在的对象本身，this 引用的是函数据以执行的环境对象，也就是函数执行的作用域。</li>
 <li>window是JS中最大的一个对象，在window对象中声明一个变量其实就是给window这个对象声明一个属性，var box=1;相当于 window.box=1;也就等价于this.box=1;</li>
@@ -1223,16 +1026,8 @@ alert(box(3));//6</code></pre><h4 id="this"><a href="#this" class="headerlink" t
 <li>在显示的声明一个对象box，这个box中使用的this就代表的是box本身，this.color就是返回的box中属性color的值，而不是window对象中color的值</li>
 </ul>
 </blockquote>
-<pre><code>var box={
-    color:&apos;blue&apos;,
-    run:function(){
-        alert(this.color);    //blue
-        return this.color;
-    }
-}
-alert(window.color);    //red
-alert(this.color);     //red 此处this代表的是window对象，故this.color是代表的window的属性
-alert(box.run());      //blue</code></pre><hr>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box=&#123;</span><br><span class="line">    color:<span class="string">'blue'</span>,</span><br><span class="line">    run:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.color);    <span class="comment">//blue</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.color;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">alert(<span class="built_in">window</span>.color);    <span class="comment">//red</span></span><br><span class="line">alert(<span class="keyword">this</span>.color);     <span class="comment">//red 此处this代表的是window对象，故this.color是代表的window的属性</span></span><br><span class="line">alert(box.run());      <span class="comment">//blue</span></span><br></pre></td></tr></table></figure>
+<hr>
 <h3 id="函数的属性和方法"><a href="#函数的属性和方法" class="headerlink" title="函数的属性和方法"></a>函数的属性和方法</h3><blockquote>
 <p>每个函数都包含两个属性：length和prototype</p>
 </blockquote>
@@ -1246,29 +1041,15 @@ alert(box.run());      //blue</code></pre><hr>
 <li>这两个方法的用途都是在特定的作用域中调用函数(看this指向的作用域是谁) </li>
 </ul>
 </blockquote>
-<pre><code>function sum (num1, num2) {
-    return num1 + num2;
-}
-var result = sum.apply(this,[10,20]);
-var result = sum.call(this,10,20);
-console.log(result);</code></pre><blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span> (<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> result = sum.apply(<span class="keyword">this</span>,[<span class="number">10</span>,<span class="number">20</span>]);</span><br><span class="line"><span class="keyword">var</span> result = sum.call(<span class="keyword">this</span>,<span class="number">10</span>,<span class="number">20</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br></pre></td></tr></table></figure>
+<blockquote>
 <ul>
 <li>func.apply()；方法有两个参数，第一个参数是要执行这个方法的作用域，也就是传递一个对象，第二个参数是一个数组，这个数组中是存放的调用的函数func的实参，也就是要传递给func的值，当然这个参数可以省略。  </li>
 <li>func.call()：方法和上面的apply()方法相似，不同的是参数，作用域和apply()一样，但其余的参数是逐个列举出传递给函数的，而不是传递一个数组。</li>
 <li>使用这apply()和call()这两个方法来扩充作用域最大的好处是：对象不需要与方法发生任何的耦合关系。</li>
 </ul>
 </blockquote>
-<h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例:"></a>代码示例:</h4><pre><code>var color=&apos;red&apos;;
-var box={
-    color:&apos;green&apos;
-}
-function sayColor(){
-    return this.color;
-}
-alert(sayColor());          　　//red 对象：window
-alert(sayColor.apply(window));  //red  对象：window
-alert(sayColor.apply(this));    //red  对象：window
-alert(sayColor.apply(box));     //green  对象：box</code></pre>
+<h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例:"></a>代码示例:</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> color=<span class="string">'red'</span>;</span><br><span class="line"><span class="keyword">var</span> box=&#123;</span><br><span class="line">    color:<span class="string">'green'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayColor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.color;</span><br><span class="line">&#125;</span><br><span class="line">alert(sayColor());          　　<span class="comment">//red 对象：window</span></span><br><span class="line">alert(sayColor.apply(<span class="built_in">window</span>));  <span class="comment">//red  对象：window</span></span><br><span class="line">alert(sayColor.apply(<span class="keyword">this</span>));    <span class="comment">//red  对象：window</span></span><br><span class="line">alert(sayColor.apply(box));     <span class="comment">//green  对象：box</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -1349,35 +1130,8 @@ alert(sayColor.apply(box));     //green  对象：box</code></pre>
 </ol>
 <hr>
 <h3 id="常见表单元素"><a href="#常见表单元素" class="headerlink" title="常见表单元素"></a>常见表单元素</h3><h4 id="常见表单元素应用场景"><a href="#常见表单元素应用场景" class="headerlink" title="常见表单元素应用场景"></a>常见表单元素应用场景</h4><img src="/2020/04/08/HtmlNote/Html_form/form.png" class title="FormApplication">
-<h4 id="代码举例："><a href="#代码举例：" class="headerlink" title="代码举例："></a>代码举例：</h4><pre><code>单行文本框
-&lt;input type=&quot;text&quot; name=&quot;key&quot; value=&quot;123&quot; readonly=&quot;readonly&quot; 
-disabled=&quot;disabled&quot;/&gt;  
-密码框
-&lt;input type=&quot;password&quot;/&gt;　　
-下拉列表
-&lt;selected&gt;
-    &lt;option value=&quot;1&quot; selected&gt;1&lt;/option&gt;
-    &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
-    &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
-&lt;/selected&gt;
-单选框
-&lt;input type=&quot;radio&quot; name=&quot;like&quot; value=&quot;喜欢&quot; checked=&quot;checked&quot;/&gt;　　
-&lt;input type=&quot;radio&quot; name=&quot;like&quot; value=&quot;不喜欢&quot;/&gt;
-多选框
-&lt;input type=&quot;checkbox&quot; name=&quot;run&quot; value=&quot;跑&quot; checked=&quot;checked&quot;/&gt;　　
-&lt;input type=&quot;checkbox&quot; name=&quot;climb&quot; value=&quot;爬山&quot;/&gt;
-文件域
-&lt;input type=&quot;file&quot;&gt;
-多行文本框
-&lt;textarea rows=&quot;5&quot; cols=&quot;10&quot;&gt;&lt;/textarea&gt;
-提交按钮
-&lt;input type=&quot;submit&quot; value=&quot;提交&quot;/&gt;　
-重置按钮
-&lt;input type=&quot;reset&quot; value=&quot;重置&quot;/&gt;  
-按钮
-&lt;input type=&quot;button&quot; value=&quot;按钮&quot;/&gt;  
-图像按钮
-&lt;input type=&quot;image&quot; src=&quot;img.jpg&quot;&gt;</code></pre>
+<h4 id="代码举例："><a href="#代码举例：" class="headerlink" title="代码举例："></a>代码举例：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">单行文本框</span><br><span class="line">&lt;input type=<span class="string">"text"</span> name=<span class="string">"key"</span> value=<span class="string">"123"</span> readonly=<span class="string">"readonly"</span> </span><br><span class="line">disabled=<span class="string">"disabled"</span>/&gt;  </span><br><span class="line">密码框</span><br><span class="line">&lt;input type=<span class="string">"password"</span>/&gt;　　</span><br><span class="line">下拉列表</span><br><span class="line">&lt;selected&gt;</span><br><span class="line">    &lt;option value=<span class="string">"1"</span> selected&gt;<span class="number">1</span>&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">    &lt;option value="2"&gt;2&lt;/</span>option&gt;</span><br><span class="line">    &lt;option value=<span class="string">"3"</span>&gt;<span class="number">3</span>&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>selected&gt;</span><br><span class="line">单选框</span><br><span class="line">&lt;input type=<span class="string">"radio"</span> name=<span class="string">"like"</span> value=<span class="string">"喜欢"</span> checked=<span class="string">"checked"</span>/&gt;　　</span><br><span class="line">&lt;input type=<span class="string">"radio"</span> name=<span class="string">"like"</span> value=<span class="string">"不喜欢"</span>/&gt;</span><br><span class="line">多选框</span><br><span class="line">&lt;input type=<span class="string">"checkbox"</span> name=<span class="string">"run"</span> value=<span class="string">"跑"</span> checked=<span class="string">"checked"</span>/&gt;　　</span><br><span class="line">&lt;input type=<span class="string">"checkbox"</span> name=<span class="string">"climb"</span> value=<span class="string">"爬山"</span>/&gt;</span><br><span class="line">文件域</span><br><span class="line">&lt;input type=<span class="string">"file"</span>&gt;</span><br><span class="line">多行文本框</span><br><span class="line">&lt;textarea rows=<span class="string">"5"</span> cols=<span class="string">"10"</span>&gt;&lt;<span class="regexp">/textarea&gt;</span></span><br><span class="line"><span class="regexp">提交按钮</span></span><br><span class="line"><span class="regexp">&lt;input type="submit" value="提交"/</span>&gt;　</span><br><span class="line">重置按钮</span><br><span class="line">&lt;input type=<span class="string">"reset"</span> value=<span class="string">"重置"</span>/&gt;  </span><br><span class="line">按钮</span><br><span class="line">&lt;input type=<span class="string">"button"</span> value=<span class="string">"按钮"</span>/&gt;  </span><br><span class="line">图像按钮</span><br><span class="line">&lt;input type=<span class="string">"image"</span> src=<span class="string">"img.jpg"</span>&gt;</span><br></pre></td></tr></table></figure>
+
       
 
       

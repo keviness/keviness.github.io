@@ -1097,27 +1097,13 @@ flex-flow: flex-direction || flex-wrap</code></pre><h4 id="2，容器内项目�
 <li><p>DOM是JavaScript核心模型之一，它也是DOMcore的重要表现之一。</p>
 </li>
 <li><p>DOM实质应用表现为一个DOM节点树，除html根元素之外，都有父元素，且每个元素仅有一个父元素。</p>
-<h3 id="DOM重要点："><a href="#DOM重要点：" class="headerlink" title="DOM重要点："></a>DOM重要点：</h3><h4 id="访问节点树"><a href="#访问节点树" class="headerlink" title="访问节点树"></a>访问节点树</h4><p>  object.getElementById()<br>  object.getElementsByClassName()<br>  object.getElementsByTagName()<br>  object.getElementsByName()</p>
+<h3 id="DOM重要点："><a href="#DOM重要点：" class="headerlink" title="DOM重要点："></a>DOM重要点：</h3><h4 id="访问节点树"><a href="#访问节点树" class="headerlink" title="访问节点树"></a>访问节点树</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">object.getElementById()</span><br><span class="line">object.getElementsByClassName()</span><br><span class="line">object.getElementsByTagName()</span><br><span class="line">object.getElementsByName()</span><br></pre></td></tr></table></figure>
+<h4 id="操作节点"><a href="#操作节点" class="headerlink" title="操作节点"></a>操作节点</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.createElement()</span><br><span class="line"><span class="built_in">document</span>.createTextNode()</span><br><span class="line">object.appendChild()</span><br><span class="line">object.insertBefore()</span><br><span class="line">object.removeChild()</span><br><span class="line">object.cloneNode(<span class="literal">true</span>/<span class="literal">false</span>)</span><br><span class="line">object.replace(newNode, oldNode)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="操作节点"><a href="#操作节点" class="headerlink" title="操作节点"></a>操作节点</h4><pre><code>document.createElement()
-document.createTextNode()
-object.appendChild()
-object.insertBefore()
-object.removeChild()
-object.cloneNode(true/false)
-object.replace(newNode, oldNode)</code></pre><hr>
-<h4 id="操作节点属性"><a href="#操作节点属性" class="headerlink" title="操作节点属性"></a>操作节点属性</h4><h5 id="位置信息"><a href="#位置信息" class="headerlink" title="位置信息"></a>位置信息</h5><pre><code>parentNode  
-childNode
-firstNode   
-lastNode
-previousSibling     
-nextSibling</code></pre><h5 id="节点属性信息"><a href="#节点属性信息" class="headerlink" title="节点属性信息"></a>节点属性信息</h5><pre><code>attributes
-nodeType
-nodeName
-nodeValue
-innerHTML
-innerText</code></pre>
+<hr>
+<h4 id="操作节点属性"><a href="#操作节点属性" class="headerlink" title="操作节点属性"></a>操作节点属性</h4><h5 id="位置信息"><a href="#位置信息" class="headerlink" title="位置信息"></a>位置信息</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">parentNode  </span><br><span class="line">childNode</span><br><span class="line">firstNode   </span><br><span class="line">lastNode</span><br><span class="line">previousSibling     </span><br><span class="line">nextSibling</span><br></pre></td></tr></table></figure>
+<h5 id="节点属性信息"><a href="#节点属性信息" class="headerlink" title="节点属性信息"></a>节点属性信息</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">attributes</span><br><span class="line">nodeType</span><br><span class="line">nodeName</span><br><span class="line">nodeValue</span><br><span class="line">innerHTML</span><br><span class="line">innerText</span><br></pre></td></tr></table></figure>
       
 
       
@@ -1280,15 +1266,8 @@ innerText</code></pre>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Html5基本结构元素"><a href="#Html5基本结构元素" class="headerlink" title="Html5基本结构元素"></a>Html5基本结构元素</h2><pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;   //this is root node
-&lt;head&gt;
-    &lt;title&gt;&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;  //this is body node
-    &lt;div&gt;&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre><hr>
+        <h2 id="Html5基本结构元素"><a href="#Html5基本结构元素" class="headerlink" title="Html5基本结构元素"></a>Html5基本结构元素</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span>   //this is root node</span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>  //this is body node</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
 <h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h2><ol>
 <li><blockquote>
 <p>HTML日常使用的结构标签并不多，但结构语义化是html文档的灵魂所在，在使用标签时应特别注意。</p>
