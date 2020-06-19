@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://github.com/keviness">
   <title>CSS 常见对齐方式 | Keviness&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="CSS 水平居中若子元素为行内元素（inline）parentNode{     text-align:center; }若子元素为块元素（block）宽度固定childNode{     margin:0 auto; }宽度不固定parentNode{     text-align:center; } childNode{     display:inline-block(inline); }">
+  <meta name="description" content="背景&amp;emsp;在对HTML文档进行CSS渲染时，经常需要进行元素的对齐。鉴于此，各种对齐方式总结如下：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS 常见对齐方式">
 <meta property="og:url" content="https://github.com/keviness/2020/04/02/CSS/CSS_align/index.html">
 <meta property="og:site_name" content="Keviness&#39;s Blog">
-<meta property="og:description" content="CSS 水平居中若子元素为行内元素（inline）parentNode{     text-align:center; }若子元素为块元素（block）宽度固定childNode{     margin:0 auto; }宽度不固定parentNode{     text-align:center; } childNode{     display:inline-block(inline); }">
+<meta property="og:description" content="背景&amp;emsp;在对HTML文档进行CSS渲染时，经常需要进行元素的对齐。鉴于此，各种对齐方式总结如下：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-01T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-04-06T14:01:55.354Z">
+<meta property="article:modified_time" content="2020-06-19T11:36:27.300Z">
 <meta property="article:author" content="keviness">
 <meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
@@ -169,66 +169,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="CSS-水平居中"><a href="#CSS-水平居中" class="headerlink" title="CSS 水平居中"></a>CSS 水平居中</h3><h4 id="若子元素为行内元素（inline）"><a href="#若子元素为行内元素（inline）" class="headerlink" title="若子元素为行内元素（inline）"></a>若子元素为行内元素（inline）</h4><pre><code>parentNode{
-    text-align:center;
-}</code></pre><h4 id="若子元素为块元素（block）"><a href="#若子元素为块元素（block）" class="headerlink" title="若子元素为块元素（block）"></a>若子元素为块元素（block）</h4><h5 id="宽度固定"><a href="#宽度固定" class="headerlink" title="宽度固定"></a>宽度固定</h5><pre><code>childNode{
-    margin:0 auto;
-}</code></pre><h5 id="宽度不固定"><a href="#宽度不固定" class="headerlink" title="宽度不固定"></a>宽度不固定</h5><pre><code>parentNode{
-    text-align:center;
-}
-childNode{
-    display:inline-block(inline);
-}</code></pre><hr>
-<h3 id="CSS垂直居中"><a href="#CSS垂直居中" class="headerlink" title="CSS垂直居中"></a>CSS垂直居中</h3><h4 id="若子元素为行内元素（inline）-1"><a href="#若子元素为行内元素（inline）-1" class="headerlink" title="若子元素为行内元素（inline）"></a>若子元素为行内元素（inline）</h4><pre><code>parentNode{
-    height:A px;
-}
-childNode{
-    line-heght:A px;
-}</code></pre><h4 id="若子元素为块元素（block）-1"><a href="#若子元素为块元素（block）-1" class="headerlink" title="若子元素为块元素（block）"></a>若子元素为块元素（block）</h4><blockquote>
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>&emsp;在对HTML文档进行CSS渲染时，经常需要进行元素的对齐。鉴于此，各种对齐方式总结如下：</p>
+<a id="more"></a>
+<h3 id="CSS-水平居中"><a href="#CSS-水平居中" class="headerlink" title="CSS 水平居中"></a>CSS 水平居中</h3><h4 id="若子元素为行内元素（inline）"><a href="#若子元素为行内元素（inline）" class="headerlink" title="若子元素为行内元素（inline）"></a>若子元素为行内元素（inline）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">parentNode</span>&#123;</span><br><span class="line">    <span class="attribute">text-align</span>:center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="若子元素为块元素（block）"><a href="#若子元素为块元素（block）" class="headerlink" title="若子元素为块元素（block）"></a>若子元素为块元素（block）</h4><h5 id="宽度固定"><a href="#宽度固定" class="headerlink" title="宽度固定"></a>宽度固定</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">childNode</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="宽度不固定"><a href="#宽度不固定" class="headerlink" title="宽度不固定"></a>宽度不固定</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">parentNode</span>&#123;</span><br><span class="line">    <span class="attribute">text-align</span>:center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">childNode</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>:<span class="built_in">inline-block</span>(inline);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="CSS垂直居中"><a href="#CSS垂直居中" class="headerlink" title="CSS垂直居中"></a>CSS垂直居中</h3><h4 id="若子元素为行内元素（inline）-1"><a href="#若子元素为行内元素（inline）-1" class="headerlink" title="若子元素为行内元素（inline）"></a>若子元素为行内元素（inline）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">parentNode</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>:A px;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">childNode</span>&#123;</span><br><span class="line">    <span class="attribute">line-heght</span>:A px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="若子元素为块元素（block）-1"><a href="#若子元素为块元素（block）-1" class="headerlink" title="若子元素为块元素（block）"></a>若子元素为块元素（block）</h4><blockquote>
 <p>块级元素的高度由内容撑起。</p>
 </blockquote>
-<h5 id="高度未定"><a href="#高度未定" class="headerlink" title="高度未定"></a>高度未定</h5><pre><code>parentNode{
-    display:table-cell;
-    vertical-align:middle;
-}</code></pre><h5 id="高度已定"><a href="#高度已定" class="headerlink" title="高度已定"></a>高度已定</h5><pre><code>parentNode{
-    height:A px;
-}
-childNode{
-    height:B px;
-    margin-top/margin-bottom:(A-B)/2px; 
-}</code></pre><hr>
-<h3 id="CSS垂直居中万能语法"><a href="#CSS垂直居中万能语法" class="headerlink" title="CSS垂直居中万能语法"></a>CSS垂直居中万能语法</h3><pre><code>parentNode{
-    position:relative;
-}
-childNode{
-    position:absolute;
-    top:50%;
-    left:50%;
-    width:Xpx;
-    height:Ypx;
-    margin-top:-(Y/2)px;
-    margin-left:-(X/2)px;
-}</code></pre><hr>
-<h3 id="CSS水平垂直居中"><a href="#CSS水平垂直居中" class="headerlink" title="CSS水平垂直居中"></a>CSS水平垂直居中</h3><h4 id="水平对齐-行高（子元素为inline元素）"><a href="#水平对齐-行高（子元素为inline元素）" class="headerlink" title="水平对齐+行高（子元素为inline元素）"></a>水平对齐+行高（子元素为inline元素）</h4><pre><code>parentNode{
-    height:A px;
-    text-align:center;
-}
-childNode{
-    line-height:A px;
-}</code></pre><h4 id="水平对齐-垂直对齐（子元素为block元素）"><a href="#水平对齐-垂直对齐（子元素为block元素）" class="headerlink" title="水平对齐+垂直对齐（子元素为block元素）"></a>水平对齐+垂直对齐（子元素为block元素）</h4><pre><code>parentNode{
-    display:table-cell;
-    text-align:center;
-    vertical-align:center;
-}
-childNode{
-    diaplay:inline-block;
-}</code></pre><h4 id="relative-absolute（任意元素）"><a href="#relative-absolute（任意元素）" class="headerlink" title="relative+absolute（任意元素）"></a>relative+absolute（任意元素）</h4><pre><code>parentNode{
-    position:relative;
-}
-childNode{
-    position:absolute;
-    margin:auto;
-}</code></pre>
+<h5 id="高度未定"><a href="#高度未定" class="headerlink" title="高度未定"></a>高度未定</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">parentNode</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>:table-cell;</span><br><span class="line">    <span class="attribute">vertical-align</span>:middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="高度已定"><a href="#高度已定" class="headerlink" title="高度已定"></a>高度已定</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">parentNode</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>:A px;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">childNode</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>:B px;</span><br><span class="line">    margin-top/margin-bottom:(A-B)/2px; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="CSS垂直居中万能语法"><a href="#CSS垂直居中万能语法" class="headerlink" title="CSS垂直居中万能语法"></a>CSS垂直居中万能语法</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">parentNode</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>:relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">childNode</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>:absolute;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">width</span>:Xpx;</span><br><span class="line">    <span class="attribute">height</span>:Ypx;</span><br><span class="line">    <span class="attribute">margin-top</span>:<span class="built_in">-</span>(Y/<span class="number">2</span>)<span class="built_in">px</span>;</span><br><span class="line">    <span class="attribute">margin-left</span>:<span class="built_in">-</span>(X/<span class="number">2</span>)<span class="built_in">px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="CSS水平垂直居中"><a href="#CSS水平垂直居中" class="headerlink" title="CSS水平垂直居中"></a>CSS水平垂直居中</h3><h4 id="水平对齐-行高（子元素为inline元素）"><a href="#水平对齐-行高（子元素为inline元素）" class="headerlink" title="水平对齐+行高（子元素为inline元素）"></a>水平对齐+行高（子元素为inline元素）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">parentNode</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>:A px;</span><br><span class="line">    <span class="attribute">text-align</span>:center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">childNode</span>&#123;</span><br><span class="line">    <span class="attribute">line-height</span>:A px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="水平对齐-垂直对齐（子元素为block元素）"><a href="#水平对齐-垂直对齐（子元素为block元素）" class="headerlink" title="水平对齐+垂直对齐（子元素为block元素）"></a>水平对齐+垂直对齐（子元素为block元素）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">parentNode</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>:table-cell;</span><br><span class="line">    <span class="attribute">text-align</span>:center;</span><br><span class="line">    <span class="attribute">vertical-align</span>:center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">childNode</span>&#123;</span><br><span class="line">    <span class="attribute">diaplay</span>:inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="relative-absolute（任意元素）"><a href="#relative-absolute（任意元素）" class="headerlink" title="relative+absolute（任意元素）"></a>relative+absolute（任意元素）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">parentNode</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>:relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">childNode</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>:absolute;</span><br><span class="line">    <span class="attribute">margin</span>:auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -452,15 +410,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CSS BFC</a>
+                <a href="javascript:void(0)" class="js-tag color1">Algorithms</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS Flex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS layout</a>
+                <a href="javascript:void(0)" class="js-tag color2">C</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -468,15 +422,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS Layout</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CSS background</a>
+                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -484,15 +430,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Flex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Layout</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">layout</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">background</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Algorithms</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">C</a>
               </li>
             
             <div class="clearfix"></div>

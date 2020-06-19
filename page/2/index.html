@@ -169,66 +169,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="CSS-水平居中"><a href="#CSS-水平居中" class="headerlink" title="CSS 水平居中"></a>CSS 水平居中</h3><h4 id="若子元素为行内元素（inline）"><a href="#若子元素为行内元素（inline）" class="headerlink" title="若子元素为行内元素（inline）"></a>若子元素为行内元素（inline）</h4><pre><code>parentNode{
-    text-align:center;
-}</code></pre><h4 id="若子元素为块元素（block）"><a href="#若子元素为块元素（block）" class="headerlink" title="若子元素为块元素（block）"></a>若子元素为块元素（block）</h4><h5 id="宽度固定"><a href="#宽度固定" class="headerlink" title="宽度固定"></a>宽度固定</h5><pre><code>childNode{
-    margin:0 auto;
-}</code></pre><h5 id="宽度不固定"><a href="#宽度不固定" class="headerlink" title="宽度不固定"></a>宽度不固定</h5><pre><code>parentNode{
-    text-align:center;
-}
-childNode{
-    display:inline-block(inline);
-}</code></pre><hr>
-<h3 id="CSS垂直居中"><a href="#CSS垂直居中" class="headerlink" title="CSS垂直居中"></a>CSS垂直居中</h3><h4 id="若子元素为行内元素（inline）-1"><a href="#若子元素为行内元素（inline）-1" class="headerlink" title="若子元素为行内元素（inline）"></a>若子元素为行内元素（inline）</h4><pre><code>parentNode{
-    height:A px;
-}
-childNode{
-    line-heght:A px;
-}</code></pre><h4 id="若子元素为块元素（block）-1"><a href="#若子元素为块元素（block）-1" class="headerlink" title="若子元素为块元素（block）"></a>若子元素为块元素（block）</h4><blockquote>
-<p>块级元素的高度由内容撑起。</p>
-</blockquote>
-<h5 id="高度未定"><a href="#高度未定" class="headerlink" title="高度未定"></a>高度未定</h5><pre><code>parentNode{
-    display:table-cell;
-    vertical-align:middle;
-}</code></pre><h5 id="高度已定"><a href="#高度已定" class="headerlink" title="高度已定"></a>高度已定</h5><pre><code>parentNode{
-    height:A px;
-}
-childNode{
-    height:B px;
-    margin-top/margin-bottom:(A-B)/2px; 
-}</code></pre><hr>
-<h3 id="CSS垂直居中万能语法"><a href="#CSS垂直居中万能语法" class="headerlink" title="CSS垂直居中万能语法"></a>CSS垂直居中万能语法</h3><pre><code>parentNode{
-    position:relative;
-}
-childNode{
-    position:absolute;
-    top:50%;
-    left:50%;
-    width:Xpx;
-    height:Ypx;
-    margin-top:-(Y/2)px;
-    margin-left:-(X/2)px;
-}</code></pre><hr>
-<h3 id="CSS水平垂直居中"><a href="#CSS水平垂直居中" class="headerlink" title="CSS水平垂直居中"></a>CSS水平垂直居中</h3><h4 id="水平对齐-行高（子元素为inline元素）"><a href="#水平对齐-行高（子元素为inline元素）" class="headerlink" title="水平对齐+行高（子元素为inline元素）"></a>水平对齐+行高（子元素为inline元素）</h4><pre><code>parentNode{
-    height:A px;
-    text-align:center;
-}
-childNode{
-    line-height:A px;
-}</code></pre><h4 id="水平对齐-垂直对齐（子元素为block元素）"><a href="#水平对齐-垂直对齐（子元素为block元素）" class="headerlink" title="水平对齐+垂直对齐（子元素为block元素）"></a>水平对齐+垂直对齐（子元素为block元素）</h4><pre><code>parentNode{
-    display:table-cell;
-    text-align:center;
-    vertical-align:center;
-}
-childNode{
-    diaplay:inline-block;
-}</code></pre><h4 id="relative-absolute（任意元素）"><a href="#relative-absolute（任意元素）" class="headerlink" title="relative+absolute（任意元素）"></a>relative+absolute（任意元素）</h4><pre><code>parentNode{
-    position:relative;
-}
-childNode{
-    position:absolute;
-    margin:auto;
-}</code></pre>
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>&emsp;在对HTML文档进行CSS渲染时，经常需要进行元素的对齐。鉴于此，各种对齐方式总结如下：</p>
+        
       
 
       
@@ -301,47 +243,8 @@ childNode{
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="算法（Algorithms）"><a href="#算法（Algorithms）" class="headerlink" title="算法（Algorithms）"></a>算法（Algorithms）</h2><h3 id="算法定义："><a href="#算法定义：" class="headerlink" title="算法定义："></a>算法定义：</h3><blockquote>
-<p>算法是解决特定问题求解步骤的描述，在计算机表现为指令的有限序列，且每个指令表示一个或多个操作。</p>
-</blockquote>
-<hr>
-<h3 id="算法特性"><a href="#算法特性" class="headerlink" title="算法特性"></a>算法特性</h3><h4 id="一，输入输出："><a href="#一，输入输出：" class="headerlink" title="一，输入输出："></a>一，输入输出：</h4><ol>
-<li>输入：算法具有零个或一个输入。</li>
-<li>输出：算法具有至少一个输出。</li>
-</ol>
-<hr>
-<h4 id="二，有穷性："><a href="#二，有穷性：" class="headerlink" title="二，有穷性："></a>二，有穷性：</h4><ol>
-<li>算法在执行有限的步骤之后，会自动结束而不会出现无限循环，且每个步骤须在有限的时间内完成。</li>
-</ol>
-<hr>
-<h4 id="三，确定性："><a href="#三，确定性：" class="headerlink" title="三，确定性："></a>三，确定性：</h4><ol>
-<li>算法的每一个步骤都有明确的含义，不会出现二义性</li>
-<li>一定条件下，只有一条执行路径，相同输入只能获得的一个输出结果，每个步骤被精确定义，无歧义。</li>
-</ol>
-<hr>
-<h4 id="四，可行性："><a href="#四，可行性：" class="headerlink" title="四，可行性："></a>四，可行性：</h4><ol>
-<li>算法的每一个步骤都是可执行的，每一步都可执行有限步骤完成。</li>
-</ol>
-<hr>
-<h3 id="算法时间复杂度"><a href="#算法时间复杂度" class="headerlink" title="算法时间复杂度"></a>算法时间复杂度</h3><blockquote>
-<p>时间复杂度：算法的时间度量。</p>
-</blockquote>
-<hr>
-<h4 id="算法时间复杂度表示方法：大O阶表示方法"><a href="#算法时间复杂度表示方法：大O阶表示方法" class="headerlink" title="算法时间复杂度表示方法：大O阶表示方法"></a>算法时间复杂度表示方法：大O阶表示方法</h4><blockquote>
-<p>T(n) = O(f(n))：随问题规模n的增大，执行时间的增长率与f(n)的增长率相同。<br>n：问题规模；f(n)：运行次数函数（基本操作数量）。</p>
-</blockquote>
-<ol>
-<li>加法常数：用常数1取代。</li>
-<li>只保留运行次数函数中的最高阶项。</li>
-<li>若最高阶存在，且不是1，去处最高阶项常数。</li>
-</ol>
-<hr>
-<h4 id="常见的算法时间复杂度表示："><a href="#常见的算法时间复杂度表示：" class="headerlink" title="常见的算法时间复杂度表示："></a>常见的算法时间复杂度表示：</h4><img src="/2020/03/22/Algorithms/Algorithms_second/Algorithms_second.png" class title="algorithms">
-<hr>
-<h3 id="算法空间复杂度"><a href="#算法空间复杂度" class="headerlink" title="算法空间复杂度"></a>算法空间复杂度</h3><blockquote>
-<p>计算算法所需的存储空间的实现。<br>计算公式：S(n) = O(f(n))<br>n：问题规模； f(n)：关于n所占存储空间内存的函数。</p>
-</blockquote>
-
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>&emsp;我们知道，我们在完成一件事情时，总会有一些计划，比如在什么时候用什么方法去完成。在数据结构的世界中，算法就是如此，它是解决特定问题求解步骤的描述，以下是一些总结：</p>
+        
       
 
       
@@ -414,59 +317,11 @@ childNode{
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><blockquote>
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><blockquote>
 <p>if you give someone a program you will frustrate him for a day, if you teach someone how to program you will frustrate him for a lifetime（如果你给了一个人一串代码，你将折磨他一整天；如果你教会他如何编程，你将折磨他一辈子。）</p>
 </blockquote>
 <p>&emsp;很荣幸，我找到了自己喜爱的事情：”frustrate myself for lifetime.”，最近在准备考研复试，在闲余时间，想着顺便把心心念念的算法过一遍，以下是一些个记录。</p>
-<hr>
-<h4 id="数据结构基本概念与术语"><a href="#数据结构基本概念与术语" class="headerlink" title="数据结构基本概念与术语"></a>数据结构基本概念与术语</h4><ul>
-<li>数据：实质是描述客观事物的符号，是能够被计算机识别并输入给计算机处理的符号集合。</li>
-<li>数据元素（记录）：组成数据的具有一定意义的基本单位。</li>
-<li>数据项：组成数据元素的最小单位，一个数据可由若干个数据项组成。</li>
-<li>数据对象：由性质相同数据元素组成的集合，为数据的子集。</li>
-<li>数据结构：相互之间存在一种或多种特定关系的数据元素的集合。<blockquote>
-<p>结构：实质上可以理解为各组成部分相互搭配和排列的方式。</p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<h4 id="数据结构分类"><a href="#数据结构分类" class="headerlink" title="数据结构分类"></a>数据结构分类</h4><p>一，逻辑结构</p>
-<blockquote>
-<p>数据对象中数据元素之间的相互关系。（该结构是面向实际问题而言） </p>
-</blockquote>
-<ul>
-<li>集合结构：集合结构中数据元素除了同属于一个集合外无其他关系。</li>
-</ul>
-<img src="/2020/03/20/Algorithms/Algorithms_start/jihe.png" class title="jihe">
-
-<ul>
-<li>线性结构：线性结构中数据元素为一对一的关系。</li>
-</ul>
-<img src="/2020/03/20/Algorithms/Algorithms_start/xianxing.png" class title="xianxing">
-
-<ul>
-<li>树形结构：树形结构中数据元素存在一对多的关系。</li>
-</ul>
-<img src="/2020/03/20/Algorithms/Algorithms_start/shuxing.png" class title="shuxing">
-
-<ul>
-<li>图形结构：图形结构中数据元素存在多对多的关系。</li>
-</ul>
-<img src="/2020/03/20/Algorithms/Algorithms_start/tuxing.png" class title="tuxing">
-
-<p>二，物理结构</p>
-<blockquote>
-<p>数据的逻辑结构在计算机中的存储方式。</p>
-</blockquote>
-<ul>
-<li>顺序存储结构：将数据元素存放到练习的存储单元中。（如线性表）<img src="/2020/03/20/Algorithms/Algorithms_start/shunxucunchu.png" class title="shunxucunchu"></li>
-<li>链式存储结构：将数据元素存放在任意的存储单元中，该组存储单元可以连续也可以是非连续的。<blockquote>
-<p>通过指针指向下一个存储单元，从而找到相应元素的位置。</p>
-</blockquote>
-</li>
-</ul>
-<img src="/2020/03/20/Algorithms/Algorithms_start/lianshicunchu.png" class title="lianshicunchu">
-
+        
       
 
       
@@ -539,149 +394,8 @@ childNode{
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="实现三栏布局（网页宽度自适应）"><a href="#实现三栏布局（网页宽度自适应）" class="headerlink" title="实现三栏布局（网页宽度自适应）"></a>实现三栏布局（网页宽度自适应）</h3><h4 id="一，absolute绝对定位法（main置于中间）"><a href="#一，absolute绝对定位法（main置于中间）" class="headerlink" title="一，absolute绝对定位法（main置于中间）"></a>一，absolute绝对定位法（main置于中间）</h4><p>HTML代码:</p>
-<pre><code>&lt;body&gt;
-    &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;main&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;</code></pre><hr>
-<p>CSS:</p>
-<pre><code>#left, #right{
-    position:absolute;
-    top:0;
-    height:100%;
-    width:200px;
-}
-#left{
-    left:0;
-}
-#right{
-    right:0;
-}
-#main{
-    margin: 210px;
-}</code></pre><hr>
-<h4 id="magrin负值法（negative-margin）"><a href="#magrin负值法（negative-margin）" class="headerlink" title="magrin负值法（negative margin）"></a>magrin负值法（negative margin）</h4><p>HTML代码：main要用双重嵌套标签。</p>
-<pre><code>&lt;body&gt;
-    &lt;div id=&quot;main&quot;&gt;
-        &lt;div id=&quot;body&quot;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;</code></pre><hr>
-<p>CSS:</p>
-<pre><code>#main{
-    width:100%;
-    height:100%;
-    float:left;
-}
-#main #body{
-    margin:0 210px;
-    height:100%;
-}
-#left, #right{
-    width:200px;
-    height:100px;
-    float:float;
-}
-#left{
-    margin-left: -100%;
-}
-#right{
-    margin-right: -200px;
-}</code></pre><hr>
-<h4 id="float自身浮动法"><a href="#float自身浮动法" class="headerlink" title="float自身浮动法"></a>float自身浮动法</h4><p>HTML代码：main放于最后。</p>
-<pre><code>&lt;body&gt;
-    &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;main&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;</code></pre><hr>
-<p>CSS：</p>
-<pre><code>#main{
-    height:100%;
-    margin:0 210px;
-}
-#left, #right{
-    right:100%;
-    width:200px;
-}
-#left{
-    float:left;
-}
-#right{
-    float:right;
-}</code></pre><hr>
-<h4 id="双飞翼布局"><a href="#双飞翼布局" class="headerlink" title="双飞翼布局"></a>双飞翼布局</h4><p>HTML代码：</p>
-<pre><code>&lt;body&gt;
-    &lt;div id=&quot;main&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;sub&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;extra&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;</code></pre><hr>
-<h5 id="法一-（类似方案三）"><a href="#法一-（类似方案三）" class="headerlink" title="法一:（类似方案三）"></a>法一:（类似方案三）</h5><p>HTML代码：不变。</p>
-<hr>
-<p>CSS：</p>
-<pre><code>body{
-    padding:0 230px 0 190px;
-}
-#main{
-    float:left;
-    width:100%;
-}
-#sub{
-    float:left;
-    margin-left:-100%;
-    width:190px;
-    position:relative;
-    left:-190px;
-}
-#extra{
-    float:left;
-    margin-left:-230px;
-    width:230px;
-    position:relative;
-    right:-230px;
-}</code></pre><hr>
-<h5 id="法二：在main元素外加一层包装元素。"><a href="#法二：在main元素外加一层包装元素。" class="headerlink" title="法二：在main元素外加一层包装元素。"></a>法二：在main元素外加一层包装元素。</h5><p>HTML代码：id=”main”元素外加一个盒子，封装为id=”main-content”</p>
-<pre><code>&lt;div id=&quot;main-content&quot;&gt;
-    &lt;div id=&quot;main&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre><hr>
-<p>CSS：</p>
-<pre><code>#main{
-    float:left;
-    width:100%;
-}
-#main-content{
-    margin:0 230px 0 190px;
-}
-#sub{
-    float:left;
-    margin-left:-100%;
-    width:190px;
-}
-#extra{
-    float:left;
-    margin-left:-230px;
-    width:230px;
-}</code></pre><hr>
-<h5 id="法三：对main用padding。"><a href="#法三：对main用padding。" class="headerlink" title="法三：对main用padding。"></a>法三：对main用padding。</h5><p>HTML代码：不变。</p>
-<hr>
-<p>CSS：</p>
-<pre><code>#main{
-    float:left;
-    width:100%;
-    box-sizing:border-box;
-    padding:0 210px 0 190px;
-}
-#sub{
-    float:left;
-    margin-left:-100%;
-    width:190px;
-}
-#extra{
-    float:left;
-    margin-left:-230px;
-    width:230px;
-}</code></pre>
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>&emsp;三栏布局和两栏布局一样，是经典的web布局方法，以下介绍四种实现三栏布局的常用方法：</p>
+        
       
 
       
@@ -694,7 +408,11 @@ childNode{
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">CSS layout</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">layout</a>
         		</li>
       		
 		</ul>
@@ -754,42 +472,8 @@ childNode{
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="实现两栏布局的方法（左侧固定右侧自适应）"><a href="#实现两栏布局的方法（左侧固定右侧自适应）" class="headerlink" title="实现两栏布局的方法（左侧固定右侧自适应）"></a>实现两栏布局的方法（左侧固定右侧自适应）</h3><pre><code>&lt;div class=&quot;wrap&quot;&gt;
-&lt;div class=&quot;left&quot;&gt;left&lt;/div&gt;
-&lt;div class=&quot;right&quot;&gt;right&lt;/right&gt;
-&lt;/div&gt;</code></pre><h4 id="一，双inline-block方案"><a href="#一，双inline-block方案" class="headerlink" title="一，双inline-block方案"></a>一，双inline-block方案</h4><pre><code>.wrap{font-size:0}
-.left, .right{
-    display:inline-block;
-    vertical-align:top;
-    font-size:14px;
-    box-sizing:border-box;
-}
-.right{width:calc(100%-140px)}</code></pre><h4 id="二，双float方案"><a href="#二，双float方案" class="headerlink" title="二，双float方案"></a>二，双float方案</h4><pre><code>.wrap{overflow:auto;
-    box-sizing:content-box;
-}
-.left, .right{
-    float:left;
-    box-sizing:border-box;
-}
-.right{
-    width:calc(100%-140px);
-}</code></pre><h4 id="三，float-margin-left方案"><a href="#三，float-margin-left方案" class="headerlink" title="三，float + margin-left方案"></a>三，float + margin-left方案</h4><pre><code>.wrap{overflow:hidden;}
-.left{float:left;}
-.right{margin-left:150px;}</code></pre><h4 id="四，absolute-margin-left方案"><a href="#四，absolute-margin-left方案" class="headerlink" title="四，absolute + margin-left方案"></a>四，absolute + margin-left方案</h4><pre><code>.left{position:absolute;}
-.right{margin-left:150px;}</code></pre><h4 id="五，float-BFC方案"><a href="#五，float-BFC方案" class="headerlink" title="五，float + BFC方案"></a>五，float + BFC方案</h4><pre><code>.wrap{overflow:auto;}
-.left{
-    float:left;
-    margin-left:20px;
-}
-.right{
-    margin-left:0;
-    overflow:auto; //形成BFC
-}</code></pre><h4 id="六，flex方案"><a href="#六，flex方案" class="headerlink" title="六，flex方案"></a>六，flex方案</h4><pre><code>.wrap{
-    display:flex;
-    align-items:flex-start;
-}
-.left{flex:0 0 auto}
-.right{flex:1 1 auto}</code></pre>
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>&emsp;两栏布局是web布局中的经典布局，在布局中的应用十分广泛，以下总结六种常用的CSS两栏布局方法：</p>
+        
       
 
       
@@ -802,7 +486,11 @@ childNode{
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">CSS Layout</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Layout</a>
         		</li>
       		
 		</ul>
@@ -862,51 +550,8 @@ childNode{
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="CSS-Flex"><a href="#CSS-Flex" class="headerlink" title="CSS Flex"></a>CSS Flex</h2><blockquote>
-<p>Flexible Box</p>
-</blockquote>
-<h3 id="Flex示意图"><a href="#Flex示意图" class="headerlink" title="Flex示意图"></a>Flex示意图</h3><img src="/2020/03/16/CSS/CSS_Flex/CSSFlex.png" class title="CSS flex">
-<h4 id="1，任何容器都可指定为flex布局-webkit内核浏览器应加前缀-webkit"><a href="#1，任何容器都可指定为flex布局-webkit内核浏览器应加前缀-webkit" class="headerlink" title="1，任何容器都可指定为flex布局(webkit内核浏览器应加前缀-webkit)"></a>1，任何容器都可指定为flex布局(webkit内核浏览器应加前缀-webkit)</h4><pre><code>.block_box{display:flex}
-.inline_box{display:inline-flex}</code></pre><h4 id="2，flex布局之后：子元素float-clear-vertical-align将失效。"><a href="#2，flex布局之后：子元素float-clear-vertical-align将失效。" class="headerlink" title="2，flex布局之后：子元素float,clear,vertical-align将失效。"></a>2，flex布局之后：子元素float,clear,vertical-align将失效。</h4><hr>
-<h3 id="一，容器属性"><a href="#一，容器属性" class="headerlink" title="一，容器属性"></a>一，容器属性</h3><h4 id="1，容器内项目排列属性"><a href="#1，容器内项目排列属性" class="headerlink" title="1，容器内项目排列属性"></a>1，容器内项目排列属性</h4><pre><code>flex-direction: row(default) | row-recerse |colum | colum-reverse
-flex-wrap: nowrap | wrap | wrap-reverse
-flex-flow: flex-direction || flex-wrap</code></pre><h4 id="2，容器内项目在主轴对齐方式"><a href="#2，容器内项目在主轴对齐方式" class="headerlink" title="2，容器内项目在主轴对齐方式"></a>2，容器内项目在主轴对齐方式</h4><pre><code>justify-content: flex-start | flex-end | center | space-around | space-between</code></pre><h4 id="3，容器内项目在交叉轴的对齐方式"><a href="#3，容器内项目在交叉轴的对齐方式" class="headerlink" title="3，容器内项目在交叉轴的对齐方式"></a>3，容器内项目在交叉轴的对齐方式</h4><pre><code>align-items: flex-start | flex-end | baseline | stretch</code></pre><h4 id="4，定义多样轴线对齐方式"><a href="#4，定义多样轴线对齐方式" class="headerlink" title="4，定义多样轴线对齐方式"></a>4，定义多样轴线对齐方式</h4><pre><code>align-content: flex-start | flex-end | center | stretch | space-between | space-around</code></pre><h3 id="二，项目属性"><a href="#二，项目属性" class="headerlink" title="二，项目属性"></a>二，项目属性</h3><ul>
-<li><p>ord: 定义排列顺序</p>
-<blockquote>
-<p>.item{ord:integer}</p>
-</blockquote>
-</li>
-<li><p>flex-grow：定义放大比例（default:0）</p>
-<blockquote>
-<p>.item{flex-grow:integer}</p>
-</blockquote>
-</li>
-<li><p>flex-shrink：定义缩小比例（default:1）</p>
-<blockquote>
-<p>.item{flex-shrink:integer}</p>
-</blockquote>
-</li>
-<li><p>flex-basis：定义项目占据主轴空间</p>
-<blockquote>
-<p>.item{flex-basis:integer | auto}</p>
-</blockquote>
-</li>
-<li><p>flex：混合定义</p>
-<blockquote>
-<p>.item{flex: flex-grow | flex-shrink | flex-basis}</p>
-</blockquote>
-<h3 id="三，align-self"><a href="#三，align-self" class="headerlink" title="三，align-self"></a>三，align-self</h3><p>允许单个项目与其他项目相比有不一样的对齐方式</p>
-<blockquote>
-<p>与align-items属性相似，如无父元素，等同于stretch</p>
-</blockquote>
-<p>  align-self: auto | flex-start | flex-end | flex-center | baseline | stretch</p>
-</li>
-</ul>
-<hr>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
-<li><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">阮一峰：Flex布局教程</a></li>
-</ul>
-
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>&emsp;我们经常需要对web页面的元素进行布局，在现代浏览器中，Flex功能强大，应用十分广泛，以下是一些个总结：</p>
+        
       
 
       
@@ -919,7 +564,11 @@ flex-flow: flex-direction || flex-wrap</code></pre><h4 id="2，容器内项目�
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS Flex</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Flex</a>
         		</li>
       		
 		</ul>
@@ -979,45 +628,8 @@ flex-flow: flex-direction || flex-wrap</code></pre><h4 id="2，容器内项目�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="JavaScript事件"><a href="#JavaScript事件" class="headerlink" title="JavaScript事件"></a>JavaScript事件</h2><h3 id="JavaScript-Event-示意图"><a href="#JavaScript-Event-示意图" class="headerlink" title="JavaScript Event 示意图"></a>JavaScript Event 示意图</h3><img src="/2020/03/15/JavaScript/javascript_event/javascript_event.png" class title="javascript event">
-
-<h4 id="事件流：描述从页面接收事件的次序"><a href="#事件流：描述从页面接收事件的次序" class="headerlink" title="事件流：描述从页面接收事件的次序"></a>事件流：描述从页面接收事件的次序</h4><ul>
-<li><p>事件冒泡（event bubbling）</p>
-<blockquote>
-<p>由嵌套层次最深节点元素（具体事件发生元素）接收，然后向上级元素传播到不具体元素。</p>
-</blockquote>
-</li>
-<li><p>事件捕获（event capturing）</p>
-<blockquote>
-<p>由不具体元素到具体元素传播。</p>
-</blockquote>
-<h4 id="事件处理程序：事件发生后响应的处理函数（方法）"><a href="#事件处理程序：事件发生后响应的处理函数（方法）" class="headerlink" title="事件处理程序：事件发生后响应的处理函数（方法）"></a>事件处理程序：事件发生后响应的处理函数（方法）</h4></li>
-<li><p>HTML事件处理程序</p>
-<blockquote>
-<p>在HTML文档内部为指定元素赋予事件处理程序。<br>例如：在input元素中直接调用事件处理程序。</p>
-</blockquote>
-</li>
-<li><p>DOM0级事件处理程序</p>
-<blockquote>
-<p>在script tag中为元素节点绑定事件处理程序</p>
-</blockquote>
-<p>  element.onclick = function(){statements;}</p>
-</li>
-<li><p>DOM2级事件处理程序</p>
-<blockquote>
-<p>应用事件监听程序为元素节点绑定事件处理程序。</p>
-</blockquote>
-<p>  element.addEventListener(“click”, function,usecapture)</p>
-</li>
-</ul>
-<h4 id="事件委托（事件代理）"><a href="#事件委托（事件代理）" class="headerlink" title="事件委托（事件代理）"></a>事件委托（事件代理）</h4><blockquote>
-<p>利用事件冒泡，只指定一个事件处理程序，可管理某一类型的所有事件。<br>事件代理可有效减少对DOM文档的操作，在父元素中统一执行子元素中某一类型的事件，可大大优化运行性能。</p>
-</blockquote>
-<ul>
-<li>举例<br>&emsp;页面上有这么一个节点树，div&gt;ul&gt;li&gt;a;比如给最里面的a加一个click点击事件，那么这个事件就会一层一层的往外执行，执行顺序a&gt;li&gt;ul&gt;div。</li>
-</ul>
-<p>&emsp;有这样一个机制，给最外面的div加点击事件，那么里面的ul，li，a做点击事件的时候，都会冒泡到最外层的div上，所以都会触发，这就是事件委托，委托它们父级代为执行事件。</p>
-
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>&emsp;众所周知，我们的世界处于动态之中，我们身边在无时无刻不发生一些变化。在web世界中，当我们让一些元素的状态发生改变时，会引发“事件”。</p>
+        
       
 
       
@@ -1090,20 +702,8 @@ flex-flow: flex-direction || flex-wrap</code></pre><h4 id="2，容器内项目�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="JavaScript-DOM"><a href="#JavaScript-DOM" class="headerlink" title="JavaScript DOM"></a>JavaScript DOM</h2><blockquote>
-<p>DOM Document Object Model</p>
-</blockquote>
-<ul>
-<li><p>DOM是JavaScript核心模型之一，它也是DOMcore的重要表现之一。</p>
-</li>
-<li><p>DOM实质应用表现为一个DOM节点树，除html根元素之外，都有父元素，且每个元素仅有一个父元素。</p>
-<h3 id="DOM重要点："><a href="#DOM重要点：" class="headerlink" title="DOM重要点："></a>DOM重要点：</h3><h4 id="访问节点树"><a href="#访问节点树" class="headerlink" title="访问节点树"></a>访问节点树</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">object.getElementById()</span><br><span class="line">object.getElementsByClassName()</span><br><span class="line">object.getElementsByTagName()</span><br><span class="line">object.getElementsByName()</span><br></pre></td></tr></table></figure>
-<h4 id="操作节点"><a href="#操作节点" class="headerlink" title="操作节点"></a>操作节点</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.createElement()</span><br><span class="line"><span class="built_in">document</span>.createTextNode()</span><br><span class="line">object.appendChild()</span><br><span class="line">object.insertBefore()</span><br><span class="line">object.removeChild()</span><br><span class="line">object.cloneNode(<span class="literal">true</span>/<span class="literal">false</span>)</span><br><span class="line">object.replace(newNode, oldNode)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<h4 id="操作节点属性"><a href="#操作节点属性" class="headerlink" title="操作节点属性"></a>操作节点属性</h4><h5 id="位置信息"><a href="#位置信息" class="headerlink" title="位置信息"></a>位置信息</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">parentNode  </span><br><span class="line">childNode</span><br><span class="line">firstNode   </span><br><span class="line">lastNode</span><br><span class="line">previousSibling     </span><br><span class="line">nextSibling</span><br></pre></td></tr></table></figure>
-<h5 id="节点属性信息"><a href="#节点属性信息" class="headerlink" title="节点属性信息"></a>节点属性信息</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">attributes</span><br><span class="line">nodeType</span><br><span class="line">nodeName</span><br><span class="line">nodeValue</span><br><span class="line">innerHTML</span><br><span class="line">innerText</span><br></pre></td></tr></table></figure>
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>&emsp;JavaScript DOM是JavaScript核心模型之一，是DOMcore的重要表现之一，它是用JavaScript进行前端开发的原生技术，是“祖先”级别的方法，以下是一些个总结：</p>
+        
       
 
       
@@ -1176,24 +776,8 @@ flex-flow: flex-direction || flex-wrap</code></pre><h4 id="2，容器内项目�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h2><blockquote>
-<p>normal flow 正常文档流<br>position: absolute/fix/relative; z-index; float形成脱离文档流 </p>
-</blockquote>
-<ol>
-<li>文档流包括正常文档流，脱离文档流。</li>
-<li>浮动元素具有破坏性，包裹性及浮动性。会造成父元素高度塌陷，但可以形成文字环绕的效果，应合理应用float元素。</li>
-<li>元素浮动后，块级元素将忽略他的存在，BFC将重新感知它的存在。</li>
-<li>block级元素具有流体性质，会自动填满父级元素，可利用该性质，在布局上形成自适应宽度的效果。</li>
-</ol>
-<hr>
-<h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><blockquote>
-<p>Block Format Context 块级元素格式上下文</p>
-</blockquote>
-<ol>
-<li>简单来说，块级元素形成BFC后，会在内部形成一个独立渲染区域，不管外部元素如何进行渲染，BFC总是“泰山崩于前而不改其色”。</li>
-<li>在浮动图片与块级元素（文字）同一布局时，文字形成环绕，可将块级文字用overflow:hidden;形成BFC独立渲染区域，文字将不再环绕图片。</li>
-</ol>
-
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>&emsp;欢迎来到CSS和HTML交汇的世界！BFC是CSS和HTML相互影响的概念，HTML世界中的各个元素各有特性，这一点如同我们现实生活中一样，HTML中的各个元素在应用中展现了不同的个性，然而都要遵守共同的法则，让我们一起来了解其中普遍的BFC法则吧…</p>
+        
       
 
       
@@ -1206,7 +790,15 @@ flex-flow: flex-direction || flex-wrap</code></pre><h4 id="2，容器内项目�
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CSS BFC</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFC</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
         		</li>
       		
 		</ul>
@@ -1266,49 +858,8 @@ flex-flow: flex-direction || flex-wrap</code></pre><h4 id="2，容器内项目�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Html5基本结构元素"><a href="#Html5基本结构元素" class="headerlink" title="Html5基本结构元素"></a>Html5基本结构元素</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span>   //this is root node</span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>  //this is body node</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h2><ol>
-<li><blockquote>
-<p>HTML日常使用的结构标签并不多，但结构语义化是html文档的灵魂所在，在使用标签时应特别注意。</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>结构语义化：通俗而言，就是让HTML文档标签标注合适的内容，如p代表文本段落，header代表页首，footer代表页尾等。</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>结构语义化，有便于HTML文档维护，XHTML在谨慎应用标签方面值得借鉴。</p>
-</blockquote>
-<h2 id="CSS基础内容概要"><a href="#CSS基础内容概要" class="headerlink" title="CSS基础内容概要"></a>CSS基础内容概要</h2></li>
-</ol>
-<hr>
-<h3 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h3><h4 id="CSS基本选择器"><a href="#CSS基本选择器" class="headerlink" title="CSS基本选择器"></a>CSS基本选择器</h4><ol>
-<li>元素选择器</li>
-<li>ID选择器</li>
-<li>Class选择器<h4 id="层次选择器"><a href="#层次选择器" class="headerlink" title="层次选择器"></a>层次选择器</h4><blockquote>
-<p>根据元素层次关系选择元素</p>
-</blockquote>
-</li>
-<li>父子选择器   M N</li>
-<li>后代选择器   M &gt; N</li>
-<li>兄弟选择器   M ~ N</li>
-<li>相邻选择器   M + N</li>
-</ol>
-<hr>
-<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><h3 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing:"></a>box-sizing:</h3><ol>
-<li>content box<img src="/2020/02/11/HtmlNote/HtmlNote/boxmodel.jpg" class title="box model"></li>
-<li>border box<br><img src="http://q7u2d5quo.bkt.clouddn.com/algorithms/20200407/wsouhYHgo5fb.jpg" alt="border box"></li>
-<li>padding box<h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2></li>
-<li>字体样式</li>
-<li>文本样式</li>
-<li>背景样式</li>
-<li>列表样式</li>
-<li>表格样式</li>
-<li>表单样式</li>
-<li>超链接样式</li>
-</ol>
-
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>&emsp;今天起，我就开始走进web世界了，我知道，这将是另一个充满冒险和快乐的地方，加油少年~<br>&emsp;闲话少叙，让我们进入正题吧，了解一下HTML的基本结构。</p>
+        
       
 
       
@@ -1451,15 +1002,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CSS BFC</a>
+                <a href="javascript:void(0)" class="js-tag color1">Algorithms</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS Flex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS layout</a>
+                <a href="javascript:void(0)" class="js-tag color2">C</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1467,15 +1014,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS Layout</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CSS background</a>
+                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1483,15 +1022,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Flex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Layout</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">layout</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">background</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Algorithms</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">C</a>
               </li>
             
             <div class="clearfix"></div>

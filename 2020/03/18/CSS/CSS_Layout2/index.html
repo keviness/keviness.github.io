@@ -8,17 +8,18 @@
   <link rel="dns-prefetch" href="https://github.com/keviness">
   <title>CSS Layout 之三栏布局实现 | Keviness&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="实现三栏布局（网页宽度自适应）一，absolute绝对定位法（main置于中间）HTML代码: &lt;body&gt;     &lt;div id&#x3D;&quot;left&quot;&gt;&lt;&#x2F;div&gt;     &lt;div id&#x3D;&quot;main&quot;&gt;&lt;&#x2F;div&gt;     &lt;div id&#x3D;&quot;right&quot;&gt;&lt;&#x2F;di">
+  <meta name="description" content="背景&amp;emsp;三栏布局和两栏布局一样，是经典的web布局方法，以下介绍四种实现三栏布局的常用方法：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS Layout 之三栏布局实现">
 <meta property="og:url" content="https://github.com/keviness/2020/03/18/CSS/CSS_Layout2/index.html">
 <meta property="og:site_name" content="Keviness&#39;s Blog">
-<meta property="og:description" content="实现三栏布局（网页宽度自适应）一，absolute绝对定位法（main置于中间）HTML代码: &lt;body&gt;     &lt;div id&#x3D;&quot;left&quot;&gt;&lt;&#x2F;div&gt;     &lt;div id&#x3D;&quot;main&quot;&gt;&lt;&#x2F;div&gt;     &lt;div id&#x3D;&quot;right&quot;&gt;&lt;&#x2F;di">
+<meta property="og:description" content="背景&amp;emsp;三栏布局和两栏布局一样，是经典的web布局方法，以下介绍四种实现三栏布局的常用方法：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-17T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-03-22T13:41:42.475Z">
+<meta property="article:modified_time" content="2020-06-19T11:50:08.446Z">
 <meta property="article:author" content="keviness">
-<meta property="article:tag" content="CSS layout">
+<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="layout">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Keviness&#39;s Blog" type="application/atom+xml">
@@ -169,149 +170,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="实现三栏布局（网页宽度自适应）"><a href="#实现三栏布局（网页宽度自适应）" class="headerlink" title="实现三栏布局（网页宽度自适应）"></a>实现三栏布局（网页宽度自适应）</h3><h4 id="一，absolute绝对定位法（main置于中间）"><a href="#一，absolute绝对定位法（main置于中间）" class="headerlink" title="一，absolute绝对定位法（main置于中间）"></a>一，absolute绝对定位法（main置于中间）</h4><p>HTML代码:</p>
-<pre><code>&lt;body&gt;
-    &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;main&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;</code></pre><hr>
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>&emsp;三栏布局和两栏布局一样，是经典的web布局方法，以下介绍四种实现三栏布局的常用方法：</p>
+<a id="more"></a>
+<h3 id="实现三栏布局（网页宽度自适应）"><a href="#实现三栏布局（网页宽度自适应）" class="headerlink" title="实现三栏布局（网页宽度自适应）"></a>实现三栏布局（网页宽度自适应）</h3><h4 id="一，absolute绝对定位法（main置于中间）"><a href="#一，absolute绝对定位法（main置于中间）" class="headerlink" title="一，absolute绝对定位法（main置于中间）"></a>一，absolute绝对定位法（main置于中间）</h4><p>HTML代码:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"main"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"right"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
 <p>CSS:</p>
-<pre><code>#left, #right{
-    position:absolute;
-    top:0;
-    height:100%;
-    width:200px;
-}
-#left{
-    left:0;
-}
-#right{
-    right:0;
-}
-#main{
-    margin: 210px;
-}</code></pre><hr>
-<h4 id="magrin负值法（negative-margin）"><a href="#magrin负值法（negative-margin）" class="headerlink" title="magrin负值法（negative margin）"></a>magrin负值法（negative margin）</h4><p>HTML代码：main要用双重嵌套标签。</p>
-<pre><code>&lt;body&gt;
-    &lt;div id=&quot;main&quot;&gt;
-        &lt;div id=&quot;body&quot;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;</code></pre><hr>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#left</span>, <span class="selector-id">#right</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>:absolute;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#left</span>&#123;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#right</span>&#123;</span><br><span class="line">    <span class="attribute">right</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#main</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">210px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="二，magrin负值法（negative-margin）"><a href="#二，magrin负值法（negative-margin）" class="headerlink" title="二，magrin负值法（negative margin）"></a>二，magrin负值法（negative margin）</h4><p>HTML代码：main要用双重嵌套标签。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"main"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"body"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"right"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
 <p>CSS:</p>
-<pre><code>#main{
-    width:100%;
-    height:100%;
-    float:left;
-}
-#main #body{
-    margin:0 210px;
-    height:100%;
-}
-#left, #right{
-    width:200px;
-    height:100px;
-    float:float;
-}
-#left{
-    margin-left: -100%;
-}
-#right{
-    margin-right: -200px;
-}</code></pre><hr>
-<h4 id="float自身浮动法"><a href="#float自身浮动法" class="headerlink" title="float自身浮动法"></a>float自身浮动法</h4><p>HTML代码：main放于最后。</p>
-<pre><code>&lt;body&gt;
-    &lt;div id=&quot;left&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;right&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;main&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;</code></pre><hr>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#main</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">float</span>:left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#main</span> <span class="selector-id">#body</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">0</span> <span class="number">210px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#left</span>, <span class="selector-id">#right</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">float</span>:float;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#left</span>&#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#right</span>&#123;</span><br><span class="line">    <span class="attribute">margin-right</span>: -<span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="三，float自身浮动法"><a href="#三，float自身浮动法" class="headerlink" title="三，float自身浮动法"></a>三，float自身浮动法</h4><p>HTML代码：main放于最后。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"right"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"main"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
 <p>CSS：</p>
-<pre><code>#main{
-    height:100%;
-    margin:0 210px;
-}
-#left, #right{
-    right:100%;
-    width:200px;
-}
-#left{
-    float:left;
-}
-#right{
-    float:right;
-}</code></pre><hr>
-<h4 id="双飞翼布局"><a href="#双飞翼布局" class="headerlink" title="双飞翼布局"></a>双飞翼布局</h4><p>HTML代码：</p>
-<pre><code>&lt;body&gt;
-    &lt;div id=&quot;main&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;sub&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;extra&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;</code></pre><hr>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#main</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">0</span> <span class="number">210px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#left</span>, <span class="selector-id">#right</span>&#123;</span><br><span class="line">    <span class="attribute">right</span>:<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#left</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>:left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#right</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>:right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="四，双飞翼布局"><a href="#四，双飞翼布局" class="headerlink" title="四，双飞翼布局"></a>四，双飞翼布局</h4><p>HTML代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"main"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"sub"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"extra"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
 <h5 id="法一-（类似方案三）"><a href="#法一-（类似方案三）" class="headerlink" title="法一:（类似方案三）"></a>法一:（类似方案三）</h5><p>HTML代码：不变。</p>
 <hr>
 <p>CSS：</p>
-<pre><code>body{
-    padding:0 230px 0 190px;
-}
-#main{
-    float:left;
-    width:100%;
-}
-#sub{
-    float:left;
-    margin-left:-100%;
-    width:190px;
-    position:relative;
-    left:-190px;
-}
-#extra{
-    float:left;
-    margin-left:-230px;
-    width:230px;
-    position:relative;
-    right:-230px;
-}</code></pre><hr>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>:<span class="number">0</span> <span class="number">230px</span> <span class="number">0</span> <span class="number">190px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#main</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>:left;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#sub</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>:left;</span><br><span class="line">    <span class="attribute">margin-left</span>:-<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">190px</span>;</span><br><span class="line">    <span class="attribute">position</span>:relative;</span><br><span class="line">    <span class="attribute">left</span>:-<span class="number">190px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#extra</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>:left;</span><br><span class="line">    <span class="attribute">margin-left</span>:-<span class="number">230px</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">230px</span>;</span><br><span class="line">    <span class="attribute">position</span>:relative;</span><br><span class="line">    <span class="attribute">right</span>:-<span class="number">230px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
 <h5 id="法二：在main元素外加一层包装元素。"><a href="#法二：在main元素外加一层包装元素。" class="headerlink" title="法二：在main元素外加一层包装元素。"></a>法二：在main元素外加一层包装元素。</h5><p>HTML代码：id=”main”元素外加一个盒子，封装为id=”main-content”</p>
-<pre><code>&lt;div id=&quot;main-content&quot;&gt;
-    &lt;div id=&quot;main&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre><hr>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"main-content"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"main"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
 <p>CSS：</p>
-<pre><code>#main{
-    float:left;
-    width:100%;
-}
-#main-content{
-    margin:0 230px 0 190px;
-}
-#sub{
-    float:left;
-    margin-left:-100%;
-    width:190px;
-}
-#extra{
-    float:left;
-    margin-left:-230px;
-    width:230px;
-}</code></pre><hr>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#main</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>:left;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#main-content</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">0</span> <span class="number">230px</span> <span class="number">0</span> <span class="number">190px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#sub</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>:left;</span><br><span class="line">    <span class="attribute">margin-left</span>:-<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">190px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#extra</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>:left;</span><br><span class="line">    <span class="attribute">margin-left</span>:-<span class="number">230px</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">230px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
 <h5 id="法三：对main用padding。"><a href="#法三：对main用padding。" class="headerlink" title="法三：对main用padding。"></a>法三：对main用padding。</h5><p>HTML代码：不变。</p>
 <hr>
 <p>CSS：</p>
-<pre><code>#main{
-    float:left;
-    width:100%;
-    box-sizing:border-box;
-    padding:0 210px 0 190px;
-}
-#sub{
-    float:left;
-    margin-left:-100%;
-    width:190px;
-}
-#extra{
-    float:left;
-    margin-left:-230px;
-    width:230px;
-}</code></pre>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#main</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>:left;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">box-sizing</span>:border-box;</span><br><span class="line">    <span class="attribute">padding</span>:<span class="number">0</span> <span class="number">210px</span> <span class="number">0</span> <span class="number">190px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#sub</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>:left;</span><br><span class="line">    <span class="attribute">margin-left</span>:-<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">190px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#extra</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>:left;</span><br><span class="line">    <span class="attribute">margin-left</span>:-<span class="number">230px</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">230px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -324,7 +220,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">CSS layout</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">layout</a>
         		</li>
       		
 		</ul>
@@ -535,15 +435,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CSS BFC</a>
+                <a href="javascript:void(0)" class="js-tag color1">Algorithms</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS Flex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS layout</a>
+                <a href="javascript:void(0)" class="js-tag color2">C</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -551,15 +447,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS Layout</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CSS background</a>
+                <a href="javascript:void(0)" class="js-tag color4">BFC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,15 +455,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Flex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Layout</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">layout</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">background</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Algorithms</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">C</a>
               </li>
             
             <div class="clearfix"></div>
