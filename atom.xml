@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/keviness/"/>
-  <updated>2020-06-24T14:58:13.455Z</updated>
+  <updated>2020-06-21T04:31:54.893Z</updated>
   <id>https://github.com/keviness/</id>
   
   <author>
@@ -15,30 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>《浪潮之巅》有感</title>
-    <link href="https://github.com/keviness/post/3118e087.html"/>
-    <id>https://github.com/keviness/post/3118e087.html</id>
-    <published>2020-06-24T14:58:13.455Z</published>
-    <updated>2020-06-24T14:58:13.455Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>&emsp;“我们处在一个大变革之中”，“2020年是世界见证历史的元年”。我在很多时候都见过这些话，但对2020我们将可能经历哪些变化，我却比较迷茫，最近阅读的《浪潮之巅》给了我们打开了一个窥探未来的小窗口。</p><h2 id="互联网的车轨将驶向何处？"><a href="#互联网的车轨将驶向何处？" class="headerlink" title="互联网的车轨将驶向何处？"></a>互联网的车轨将驶向何处？</h2><p>&emsp;特别是2020年在互联网发生或之前早已发生的变化将会如何激荡这个处于信息时代的世界，这一切都是未知数。《浪潮之巅》总结了互联网曾经发生过的种种，一个个互联网企业在新时代拔地而起，却又瞬间消弭，逐渐分崩离析。互联网想一步快速前行的列车，里面的乘客来去匆匆，转眼化为时空的残影，在这瞬息万变的时代，互联网的列车将驶向何方？</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;引言&quot;&gt;&lt;a href=&quot;#引言&quot; class=&quot;headerlink&quot; title=&quot;引言&quot;&gt;&lt;/a&gt;引言&lt;/h1&gt;&lt;p&gt;&amp;emsp;“我们处在一个大变革之中”，“2020年是世界见证历史的元年”。我在很多时候都见过这些话，但对2020我们将可能经历哪些变化，我
-      
-    
-    </summary>
-    
-    
-    
-      <category term="记录" scheme="https://github.com/keviness/tags/%E8%AE%B0%E5%BD%95/"/>
-    
-  </entry>
   
   <entry>
     <title>JavaScript实现跨行合并table中相同单元格</title>
@@ -461,6 +437,31 @@
     
     
       <category term="JavaScript" scheme="https://github.com/keviness/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>文档流与BFC感悟</title>
+    <link href="https://github.com/keviness/post/692e1ca0.html"/>
+    <id>https://github.com/keviness/post/692e1ca0.html</id>
+    <published>2020-02-13T16:00:00.000Z</published>
+    <updated>2020-02-13T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>&emsp;欢迎来到CSS和HTML交汇的世界！BFC是CSS和HTML相互影响的概念，HTML世界中的各个元素各有特性，这一点如同我们现实生活中一样，HTML中的各个元素在应用中展现了不同的个性，然而都要遵守共同的法则，让我们一起来了解其中普遍的BFC法则吧…</p><a id="more"></a><h2 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h2><blockquote><p>normal flow 正常文档流<br>position: absolute/fix/relative; z-index; float形成脱离文档流 </p></blockquote><ol><li>文档流包括正常文档流，脱离文档流。</li><li>浮动元素具有破坏性，包裹性及浮动性。会造成父元素高度塌陷，但可以形成文字环绕的效果，应合理应用float元素。</li><li>元素浮动后，块级元素将忽略他的存在，BFC将重新感知它的存在。</li><li>block级元素具有流体性质，会自动填满父级元素，可利用该性质，在布局上形成自适应宽度的效果。</li></ol><hr><h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><blockquote><p>Block Format Context 块级元素格式上下文</p></blockquote><ol><li>简单来说，块级元素形成BFC后，会在内部形成一个独立渲染区域，不管外部元素如何进行渲染，BFC总是“泰山崩于前而不改其色”。</li><li>在浮动图片与块级元素（文字）同一布局时，文字形成环绕，可将块级文字用overflow:hidden;形成BFC独立渲染区域，文字将不再环绕图片。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;&amp;emsp;欢迎来到CSS和HTML交汇的世界！BFC是CSS和HTML相互影响的概念，HTML世界中的各个元素各有特性，这一点如同我们现实生活中一样，HTML中的各个元素在应用中展现了不同的个性，然而都要遵守共同的法则，让我们一起来了解其中普遍的BFC法则吧…&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="CSS" scheme="https://github.com/keviness/tags/CSS/"/>
+    
+      <category term="BFC" scheme="https://github.com/keviness/tags/BFC/"/>
+    
+      <category term="HTML" scheme="https://github.com/keviness/tags/HTML/"/>
     
   </entry>
   
