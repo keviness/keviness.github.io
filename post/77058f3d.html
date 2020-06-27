@@ -9,12 +9,12 @@
   <link rel="dns-prefetch" href="https://github.com/keviness">
   <title>Function Type | Keviness&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="理解Function类型  JS 中Function类型实际上是一种对象，每一个函数实际上都是Function类型的一个实例，函数通常是用函数声明语法定义的，而且每一个函数都有默认的属性和方法。 因为函数是一个对象，故函数名实际上也是一个指向函数对象的指针变量，不会与某个函数绑定。">
+  <meta name="description" content="背景&amp;emsp;JavaScript中皆为对象，其中的函数也是如此。因此JavaScript中的函数调用十分地灵活，让我们来看看JavaScript中的函数类型吧。 理解Function类型  JavaScript中Function类型实际上是一种对象，每一个函数实际上都是Function类型的一个实例，函数通常是用函数声明语法定义的，而且每一个函数都有默认的属性和方法。 因为函数是一个对象，故函">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Function Type">
 <meta property="og:url" content="https://github.com/keviness/post/77058f3d.html">
 <meta property="og:site_name" content="Keviness&#39;s Blog">
-<meta property="og:description" content="理解Function类型  JS 中Function类型实际上是一种对象，每一个函数实际上都是Function类型的一个实例，函数通常是用函数声明语法定义的，而且每一个函数都有默认的属性和方法。 因为函数是一个对象，故函数名实际上也是一个指向函数对象的指针变量，不会与某个函数绑定。">
+<meta property="og:description" content="背景&amp;emsp;JavaScript中皆为对象，其中的函数也是如此。因此JavaScript中的函数调用十分地灵活，让我们来看看JavaScript中的函数类型吧。 理解Function类型  JavaScript中Function类型实际上是一种对象，每一个函数实际上都是Function类型的一个实例，函数通常是用函数声明语法定义的，而且每一个函数都有默认的属性和方法。 因为函数是一个对象，故函">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-08T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-04-08T16:00:00.000Z">
@@ -220,30 +220,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="理解Function类型"><a href="#理解Function类型" class="headerlink" title="理解Function类型"></a>理解Function类型</h3><blockquote>
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;JavaScript中皆为对象，其中的函数也是如此。因此JavaScript中的函数调用十分地灵活，让我们来看看JavaScript中的函数类型吧。</p>
+<h2 id="理解Function类型"><a href="#理解Function类型" class="headerlink" title="理解Function类型"></a>理解Function类型</h2><blockquote>
 <ul>
-<li>JS 中Function类型实际上是一种对象，每一个函数实际上都是Function类型的一个实例，函数通常是用函数声明语法定义的，而且每一个函数都有默认的属性和方法。</li>
+<li>JavaScript中Function类型实际上是一种对象，每一个函数实际上都是Function类型的一个实例，函数通常是用函数声明语法定义的，而且每一个函数都有默认的属性和方法。</li>
 <li>因为函数是一个对象，故函数名实际上也是一个指向函数对象的指针变量，不会与某个函数绑定。</li>
 </ul>
 </blockquote>
 <a id="more"></a>
-<h4 id="函数声明与表达式（匿名函数）"><a href="#函数声明与表达式（匿名函数）" class="headerlink" title="函数声明与表达式（匿名函数）"></a>函数声明与表达式（匿名函数）</h4><p>函数声明会优先被读取使用（函数可提前访问）。</p>
+<h3 id="函数声明与表达式（匿名函数）"><a href="#函数声明与表达式（匿名函数）" class="headerlink" title="函数声明与表达式（匿名函数）"></a>函数声明与表达式（匿名函数）</h3><p>函数声明会优先被读取使用（函数可提前访问）。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(test(<span class="number">10</span>,<span class="number">30</span>))；　　<span class="comment">//40</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">num1,num2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num1+num2;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>函数表达式则必须等到执行完它所在的表达行后再可以使用。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(test(<span class="number">10</span>,<span class="number">30</span>));　　<span class="comment">//error</span></span><br><span class="line"><span class="keyword">var</span> test = <span class="function"><span class="keyword">function</span> (<span class="params">num1,num2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num1+num2;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h4 id="作为值的函数"><a href="#作为值的函数" class="headerlink" title="作为值的函数"></a>作为值的函数</h4><blockquote>
+<h3 id="作为值的函数"><a href="#作为值的函数" class="headerlink" title="作为值的函数"></a>作为值的函数</h3><blockquote>
 <ul>
 <li>js中的函数名本身就是变量，所以函数也可以作为值来使用，可以像传递参数一样把一个函数传递给另一个函数。</li>
 </ul>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span> (<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fuc</span> (<span class="params">num3, num4</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num3 + num4;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(fuc(sum(<span class="number">2</span>,<span class="number">3</span>), <span class="number">5</span>));　　<span class="comment">//10</span></span><br><span class="line"></span><br><span class="line">等同于：</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span> (<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num1+num2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">num1</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> sum(num1,<span class="number">5</span>);</span><br><span class="line">&#125;</span><br><span class="line">alert(func(<span class="number">5</span>));    <span class="comment">//10</span></span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="函数内部属性"><a href="#函数内部属性" class="headerlink" title="函数内部属性"></a>函数内部属性</h3><blockquote>
+<h2 id="函数内部属性"><a href="#函数内部属性" class="headerlink" title="函数内部属性"></a>函数内部属性</h2><blockquote>
 <ul>
 <li>在函数内部包含两个特殊的对象：arguments和this</li>
 </ul>
 </blockquote>
-<h4 id="arguments"><a href="#arguments" class="headerlink" title="arguments:"></a>arguments:</h4><blockquote>
+<h3 id="arguments"><a href="#arguments" class="headerlink" title="arguments:"></a>arguments:</h3><blockquote>
 <ul>
 <li>arguments 是一个类数组，用来保存函数传递过来的参数。</li>
 <li>arguments 中还有一个很重要的属性就是callee，是一个指针变量，指向的是arguments所在的函数本身，在递归中可用这个属性，因为如果函数名改变了，也不需要改变内部的实现。</li>
@@ -251,7 +252,7 @@
 </ul>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">box</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(num&lt;=<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num*<span class="built_in">arguments</span>.callee(num<span class="number">-1</span>);</span><br><span class="line">            <span class="comment">//arguments.callee代表的是函数的本身，故和上面是同样的效果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">alert(box(<span class="number">3</span>));<span class="comment">//6</span></span><br></pre></td></tr></table></figure>
-<h4 id="this"><a href="#this" class="headerlink" title="this:"></a>this:</h4><blockquote>
+<h3 id="this"><a href="#this" class="headerlink" title="this:"></a>this:</h3><blockquote>
 <ul>
 <li>this 这个属性代表的是它所在的对象本身，this 引用的是函数据以执行的环境对象，也就是函数执行的作用域。</li>
 <li>window是JS中最大的一个对象，在window对象中声明一个变量其实就是给window这个对象声明一个属性，var box=1;相当于 window.box=1;也就等价于this.box=1;</li>
@@ -261,13 +262,13 @@
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box=&#123;</span><br><span class="line">    color:<span class="string">'blue'</span>,</span><br><span class="line">    run:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.color);    <span class="comment">//blue</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.color;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">alert(<span class="built_in">window</span>.color);    <span class="comment">//red</span></span><br><span class="line">alert(<span class="keyword">this</span>.color);     <span class="comment">//red 此处this代表的是window对象，故this.color是代表的window的属性</span></span><br><span class="line">alert(box.run());      <span class="comment">//blue</span></span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="函数的属性和方法"><a href="#函数的属性和方法" class="headerlink" title="函数的属性和方法"></a>函数的属性和方法</h3><blockquote>
+<h2 id="函数的属性和方法"><a href="#函数的属性和方法" class="headerlink" title="函数的属性和方法"></a>函数的属性和方法</h2><blockquote>
 <p>每个函数都包含两个属性：length和prototype</p>
 </blockquote>
-<h4 id="length"><a href="#length" class="headerlink" title="length:"></a>length:</h4><blockquote>
+<h3 id="length"><a href="#length" class="headerlink" title="length:"></a>length:</h3><blockquote>
 <p>函数的属性length代表的是函数希望接收的参数的个数，是由声明函数时参数列表中的个数决定的。</p>
 </blockquote>
-<h4 id="prototype"><a href="#prototype" class="headerlink" title="prototype:"></a>prototype:</h4><blockquote>
+<h3 id="prototype"><a href="#prototype" class="headerlink" title="prototype:"></a>prototype:</h3><blockquote>
 <ul>
 <li>prototype 是保存所有实例方法的实际所在，也就是原型。  </li>
 <li>prototype下面有两个方法：apply()，call()，这两个方法都是函数非继承而来的方法，是每一个函数都具有的方法。</li>
@@ -282,7 +283,7 @@
 <li>使用这apply()和call()这两个方法来扩充作用域最大的好处是：对象不需要与方法发生任何的耦合关系。</li>
 </ul>
 </blockquote>
-<h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例:"></a>代码示例:</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> color=<span class="string">'red'</span>;</span><br><span class="line"><span class="keyword">var</span> box=&#123;</span><br><span class="line">    color:<span class="string">'green'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayColor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.color;</span><br><span class="line">&#125;</span><br><span class="line">alert(sayColor());          　　<span class="comment">//red 对象：window</span></span><br><span class="line">alert(sayColor.apply(<span class="built_in">window</span>));  <span class="comment">//red  对象：window</span></span><br><span class="line">alert(sayColor.apply(<span class="keyword">this</span>));    <span class="comment">//red  对象：window</span></span><br><span class="line">alert(sayColor.apply(box));     <span class="comment">//green  对象：box</span></span><br></pre></td></tr></table></figure>
+<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例:"></a>代码示例:</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> color=<span class="string">'red'</span>;</span><br><span class="line"><span class="keyword">var</span> box=&#123;</span><br><span class="line">    color:<span class="string">'green'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayColor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.color;</span><br><span class="line">&#125;</span><br><span class="line">alert(sayColor());          　　<span class="comment">//red 对象：window</span></span><br><span class="line">alert(sayColor.apply(<span class="built_in">window</span>));  <span class="comment">//red  对象：window</span></span><br><span class="line">alert(sayColor.apply(<span class="keyword">this</span>));    <span class="comment">//red  对象：window</span></span><br><span class="line">alert(sayColor.apply(box));     <span class="comment">//green  对象：box</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -404,7 +405,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#理解Function类型"><span class="toc-number">1.</span> <span class="toc-text">理解Function类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#函数声明与表达式（匿名函数）"><span class="toc-number">1.1.</span> <span class="toc-text">函数声明与表达式（匿名函数）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#作为值的函数"><span class="toc-number">1.2.</span> <span class="toc-text">作为值的函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数内部属性"><span class="toc-number">2.</span> <span class="toc-text">函数内部属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#arguments"><span class="toc-number">2.1.</span> <span class="toc-text">arguments:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#this"><span class="toc-number">2.2.</span> <span class="toc-text">this:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数的属性和方法"><span class="toc-number">3.</span> <span class="toc-text">函数的属性和方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#length"><span class="toc-number">3.1.</span> <span class="toc-text">length:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#prototype"><span class="toc-number">3.2.</span> <span class="toc-text">prototype:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码示例"><span class="toc-number">3.3.</span> <span class="toc-text">代码示例:</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#理解Function类型"><span class="toc-number">1.1.</span> <span class="toc-text">理解Function类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数声明与表达式（匿名函数）"><span class="toc-number">1.1.1.</span> <span class="toc-text">函数声明与表达式（匿名函数）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作为值的函数"><span class="toc-number">1.1.2.</span> <span class="toc-text">作为值的函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数内部属性"><span class="toc-number">1.2.</span> <span class="toc-text">函数内部属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#arguments"><span class="toc-number">1.2.1.</span> <span class="toc-text">arguments:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this"><span class="toc-number">1.2.2.</span> <span class="toc-text">this:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数的属性和方法"><span class="toc-number">1.3.</span> <span class="toc-text">函数的属性和方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#length"><span class="toc-number">1.3.1.</span> <span class="toc-text">length:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#prototype"><span class="toc-number">1.3.2.</span> <span class="toc-text">prototype:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码示例"><span class="toc-number">1.3.3.</span> <span class="toc-text">代码示例:</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -581,6 +582,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Table</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">storage</a>
               </li>
             
             <div class="clearfix"></div>
