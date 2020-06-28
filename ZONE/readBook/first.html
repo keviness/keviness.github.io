@@ -312,27 +312,33 @@
   
   
   
+    <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div>
 
-  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
 
-  
-
-  
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
-<script src="https://jjeejj.github.io/js/gitment.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "https://keviness.github.io/ZONE/readBook/first.html",
-  owner: 'keviness',
-  repo: 'keviness.github.io',
-  oauth: {
-    client_id: '5a7038de6bbe21a2b21e',
-    client_secret: '3581f686afe3a2496b240b810fd27d0ea27be50b',
-  },
+if(true){
+  var gitalk = new Gitalk({
+    clientID: '5a7038de6bbe21a2b21e',
+    clientSecret: '3581f686afe3a2496b240b810fd27d0ea27be50b',
+    repo: 'keviness.github.io',
+    owner: 'keviness',
+    admin: ['keviness'],
+    id: 'Thu May 28 2020 22:34:29 GMT+0800',
+    distractionFreeMode: 'true'
 })
-gitment.render('gitment-ctn')
+gitalk.render('gitalk-container')
+}
 </script>
+  
+
+  
+
+  
+
+  
+
   
 
 
@@ -446,15 +452,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Algorithms</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">C</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Algorithms</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Flex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -466,18 +476,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Flex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Layout</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">layout</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">background</a>
               </li>
              
@@ -486,15 +484,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">layout</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Table</a>
+                <a href="javascript:void(0)" class="js-tag color2">Layout</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">storage</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Table</a>
               </li>
             
             <div class="clearfix"></div>
