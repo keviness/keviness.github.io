@@ -7,19 +7,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://keviness.github.io">
-  <title>CSS样式表的引入 | Keviness&#39;s Blog</title>
+  <title>SVG概述 | Keviness&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="背景&amp;emsp;要对HTML中的各种元素进行渲染，让页面充满生机，CSS是不二的选择。CSS是web页面中的肌肤，好的CSS渲染可是一件了不得的艺术品。要对CSS进行渲染首当其冲的问题是在HTML中对CSS进行引入，以下是一些个引入方法：">
+  <meta name="description" content="背景&amp;emsp;在web中我们经常需要进行数据的可视化，让数据的呈现更为立体形象。SVG为我们提供了一个不错的选择，以下是一些总结：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS样式表的引入">
-<meta property="og:url" content="https://keviness.github.io/post/7e016094.html">
+<meta property="og:title" content="SVG概述">
+<meta property="og:url" content="https://keviness.github.io/post/c8d4b451.html">
 <meta property="og:site_name" content="Keviness&#39;s Blog">
-<meta property="og:description" content="背景&amp;emsp;要对HTML中的各种元素进行渲染，让页面充满生机，CSS是不二的选择。CSS是web页面中的肌肤，好的CSS渲染可是一件了不得的艺术品。要对CSS进行渲染首当其冲的问题是在HTML中对CSS进行引入，以下是一些个引入方法：">
+<meta property="og:description" content="背景&amp;emsp;在web中我们经常需要进行数据的可视化，让数据的呈现更为立体形象。SVG为我们提供了一个不错的选择，以下是一些总结：">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-06T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-04-06T16:00:00.000Z">
+<meta property="article:published_time" content="2020-06-28T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-06-28T16:00:00.000Z">
 <meta property="article:author" content="keviness">
-<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="SVG">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Keviness&#39;s Blog" type="application/atom+xml">
@@ -176,20 +177,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CSS/CSS_Link" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JavaScript/javascript_SVG" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      CSS样式表的引入
+      SVG概述
     </h1>
   
 
         
-        <a href="/post/7e016094.html" class="archive-article-date">
-  	<time datetime="2020-04-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
+        <a href="/post/c8d4b451.html" class="archive-article-date">
+  	<time datetime="2020-06-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-29</time>
 </a>
         
           <div style="margin-top:10px;">
@@ -198,7 +199,7 @@
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
         <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">362</span>字
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">736</span>字
       </span>
     </span>
 
@@ -207,7 +208,7 @@
       <span class="post-meta-item-icon" style="color:gray">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">1</span>分钟
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">4</span>分钟
       </span>
     </span>
     <!--
@@ -224,24 +225,51 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;要对HTML中的各种元素进行渲染，让页面充满生机，CSS是不二的选择。CSS是web页面中的肌肤，好的CSS渲染可是一件了不得的艺术品。要对CSS进行渲染首当其冲的问题是在HTML中对CSS进行引入，以下是一些个引入方法：</p>
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;在web中我们经常需要进行数据的可视化，让数据的呈现更为立体形象。SVG为我们提供了一个不错的选择，以下是一些总结：</p>
 <a id="more"></a>
-<h2 id="css样式表的引入"><a href="#css样式表的引入" class="headerlink" title="css样式表的引入"></a>css样式表的引入</h2><h3 id="内嵌样式表"><a href="#内嵌样式表" class="headerlink" title="内嵌样式表"></a>内嵌样式表</h3><blockquote>
-<p>内嵌样式表是写在Tag(标签)里面的。内嵌样式只对所在的Tag有效 (若有多种样式，内嵌式会覆盖其它的样式)。</p>
+<h2 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a>SVG</h2><blockquote>
+<ul>
+<li>SVG意为可缩放矢量图形（Scalable Vector Graphics）。</li>
+<li>使用XML格式定义图像。</li>
+</ul>
 </blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"font-size:20px; color:red"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这个style定义p标签里面的文字 是20px字体，字体颜色是红色。</p>
-</blockquote>
-<h3 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h3><blockquote>
-<p>内部样式表是写在HTML的head标签里面的，内部样式表只对所在的网页有效。<br>内部样式表要用到style标签，如下 ：</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>  <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">    div&#123;</span><br><span class="line">        color : red;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="SVG常见绘图"><a href="#SVG常见绘图" class="headerlink" title="SVG常见绘图"></a>SVG常见绘图</h2><h3 id="圆形"><a href="#圆形" class="headerlink" title="圆形 "></a>圆形 <circle></circle></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=<span class="string">"http://www.w3.org/2000/svg"</span> version=<span class="string">"1.1"</span>&gt;</span><br><span class="line">   &lt;circle cx=<span class="string">"100"</span> cy=<span class="string">"50"</span> r=<span class="string">"40"</span> stroke=<span class="string">"black"</span> stroke-width=<span class="string">"2"</span> fill=<span class="string">"red"</span> /&gt;</span><br><span class="line">&lt;<span class="regexp">/svg&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h3><blockquote>
-<p>若很多网页需要用到同样的样式，此时需要用外部样式表。<br>外部样式表需要将样式写在一个css文件中,然后在页面中用link标签引入，在需要应用该样式的每个页面中引入该文件。<br>rel=”stylesheet” type=”text/css” 是固定写法不可修改。</p>
+<h3 id="椭圆"><a href="#椭圆" class="headerlink" title="椭圆 "></a>椭圆 <ellipse></ellipse></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=<span class="string">"http://www.w3.org/2000/svg"</span> version=<span class="string">"1.1"</span>&gt;</span><br><span class="line">  &lt;ellipse cx=<span class="string">"300"</span> cy=<span class="string">"80"</span> rx=<span class="string">"100"</span> ry=<span class="string">"50"</span></span><br><span class="line">  style=<span class="string">"fill:yellow;stroke:purple;stroke-width:2"</span>/&gt;</span><br><span class="line">&lt;<span class="regexp">/svg&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="矩形"><a href="#矩形" class="headerlink" title="矩形 "></a>矩形 <rect></rect></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//普通矩形</span></span><br><span class="line">&lt;svg xmlns=<span class="string">"http://www.w3.org/2000/svg"</span> version=<span class="string">"1.1"</span>&gt;</span><br><span class="line">  &lt;rect width=<span class="string">"300"</span> height=<span class="string">"100"</span></span><br><span class="line">  style=<span class="string">"fill:rgb(0,0,255);stroke-width:1;stroke:rgb(0,0,0)"</span>/&gt;</span><br><span class="line">&lt;<span class="regexp">/svg&gt;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/圆角矩形</span></span><br><span class="line"><span class="regexp">&lt;svg xmlns="http:/</span><span class="regexp">/www.w3.org/</span><span class="number">2000</span>/svg<span class="string">" version="</span><span class="number">1.1</span><span class="string">"&gt;</span></span><br><span class="line"><span class="string">  &lt;rect x="</span><span class="number">50</span><span class="string">" y="</span><span class="number">20</span><span class="string">" rx="</span><span class="number">20</span><span class="string">" ry="</span><span class="number">20</span><span class="string">" width="</span><span class="number">150</span><span class="string">" height="</span><span class="number">150</span><span class="string">"</span></span><br><span class="line"><span class="string">  style="</span>fill:red;stroke:black;stroke-width:<span class="number">5</span>;opacity:<span class="number">0.5</span><span class="string">"/&gt;</span></span><br><span class="line"><span class="string">&lt;/svg&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="直线"><a href="#直线" class="headerlink" title="直线 "></a>直线 <line></line></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=<span class="string">"http://www.w3.org/2000/svg"</span> version=<span class="string">"1.1"</span>&gt;</span><br><span class="line">  &lt;line x1=<span class="string">"0"</span> y1=<span class="string">"0"</span> x2=<span class="string">"200"</span> y2=<span class="string">"200"</span></span><br><span class="line">  style=<span class="string">"stroke:rgb(255,0,0);stroke-width:2"</span>/&gt;</span><br><span class="line">&lt;<span class="regexp">/svg&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="多边形"><a href="#多边形" class="headerlink" title="多边形 "></a>多边形 <polygon></polygon></h3><blockquote>
+<ul>
+<li>polygon来自希腊。”Poly”意味”many”，”gon”意味”angle”.</li>
+</ul>
 </blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"./css/example.css "</span> <span class="attr">rel</span> =<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css "</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>…<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//三角形</span></span><br><span class="line">&lt;svg  height=<span class="string">"210"</span> width=<span class="string">"500"</span>&gt;</span><br><span class="line">  &lt;polygon points=<span class="string">"200,10 250,190 160,210"</span></span><br><span class="line">  style=<span class="string">"fill:lime;stroke:purple;stroke-width:1"</span>/&gt;</span><br><span class="line">&lt;<span class="regexp">/svg&gt;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/五角星</span></span><br><span class="line"><span class="regexp">&lt;svg height="210" width="500"&gt;</span></span><br><span class="line"><span class="regexp">  &lt;polygon points="100,10 40,198 190,78 10,78 160,198"</span></span><br><span class="line"><span class="regexp">  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:nonzero;" /</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/svg&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="曲线"><a href="#曲线" class="headerlink" title="曲线 "></a>曲线 <polyline></polyline></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=<span class="string">"http://www.w3.org/2000/svg"</span> version=<span class="string">"1.1"</span>&gt;</span><br><span class="line">  &lt;polyline points=<span class="string">"20,20 40,25 60,40 80,120 120,140 200,180"</span></span><br><span class="line">  style=<span class="string">"fill:none;stroke:black;stroke-width:3"</span> /&gt;</span><br><span class="line">&lt;<span class="regexp">/svg&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="文本"><a href="#文本" class="headerlink" title="文本 "></a>文本 <text></text></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=<span class="string">"http://www.w3.org/2000/svg"</span> version=<span class="string">"1.1"</span></span><br><span class="line">xmlns:xlink=<span class="string">"http://www.w3.org/1999/xlink"</span>&gt;</span><br><span class="line">  &lt;a xlink:href=<span class="string">"http://www.w3schools.com/svg/"</span> target=<span class="string">"_blank"</span>&gt;</span><br><span class="line">    &lt;text x=<span class="string">"0"</span> y=<span class="string">"15"</span> fill=<span class="string">"red"</span>&gt;I love SVG&lt;<span class="regexp">/text&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>a&gt;</span><br><span class="line">&lt;<span class="regexp">/svg&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="SVG-Stroke-属性"><a href="#SVG-Stroke-属性" class="headerlink" title="SVG Stroke 属性"></a>SVG Stroke 属性</h3><blockquote>
+<p>SVG提供了一个范围广泛stroke 属性。在本章中，我们将看看下面：</p>
+</blockquote>
+<h4 id="stroke"><a href="#stroke" class="headerlink" title="stroke"></a>stroke</h4><blockquote>
+<p>定义一条线，文本或元素轮廓颜色.</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=<span class="string">"http://www.w3.org/2000/svg"</span> version=<span class="string">"1.1"</span>&gt;</span><br><span class="line">  &lt;g fill=<span class="string">"none"</span>&gt;</span><br><span class="line">    &lt;path stroke=<span class="string">"red"</span> d=<span class="string">"M5 20 l215 0"</span> /&gt;</span><br><span class="line">    &lt;path stroke=<span class="string">"blue"</span> d=<span class="string">"M5 40 l215 0"</span> /&gt;</span><br><span class="line">    &lt;path stroke=<span class="string">"black"</span> d=<span class="string">"M5 60 l215 0"</span> /&gt;</span><br><span class="line">  &lt;<span class="regexp">/g&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>svg&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="stroke-width"><a href="#stroke-width" class="headerlink" title="stroke-width"></a>stroke-width</h4><blockquote>
+<p>stroke- width属性定义了一条线，文本或元素轮廓厚度.</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=<span class="string">"http://www.w3.org/2000/svg"</span> version=<span class="string">"1.1"</span>&gt;</span><br><span class="line">  &lt;g fill=<span class="string">"none"</span> stroke=<span class="string">"black"</span>&gt;</span><br><span class="line">    &lt;path stroke-width=<span class="string">"2"</span> d=<span class="string">"M5 20 l215 0"</span> /&gt;</span><br><span class="line">    &lt;path stroke-width=<span class="string">"4"</span> d=<span class="string">"M5 40 l215 0"</span> /&gt;</span><br><span class="line">    &lt;path stroke-width=<span class="string">"6"</span> d=<span class="string">"M5 60 l215 0"</span> /&gt;</span><br><span class="line">  &lt;<span class="regexp">/g&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>svg&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="stroke-linecap"><a href="#stroke-linecap" class="headerlink" title="stroke-linecap"></a>stroke-linecap</h4><blockquote>
+<p>定义不同类型的开放路径的终结。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg xmlns=<span class="string">"http://www.w3.org/2000/svg"</span> version=<span class="string">"1.1"</span>&gt;</span><br><span class="line">  &lt;g fill=<span class="string">"none"</span> stroke=<span class="string">"black"</span> stroke-width=<span class="string">"6"</span>&gt;</span><br><span class="line">    &lt;path stroke-linecap=<span class="string">"butt"</span> d=<span class="string">"M5 20 l215 0"</span> /&gt;</span><br><span class="line">    &lt;path stroke-linecap=<span class="string">"round"</span> d=<span class="string">"M5 40 l215 0"</span> /&gt;</span><br><span class="line">    &lt;path stroke-linecap=<span class="string">"square"</span> d=<span class="string">"M5 60 l215 0"</span> /&gt;</span><br><span class="line">  &lt;<span class="regexp">/g&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>svg&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="stroke-dasharray"><a href="#stroke-dasharray" class="headerlink" title="stroke-dasharray"></a>stroke-dasharray</h4><blockquote>
+<p>用于创建虚线样式。<br><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><br/>  <g fill="none" stroke="black" stroke-width="4"><br/>    <path stroke-dasharray="5,5" d="M5 20 l215 0"/><br/>    <path stroke-dasharray="10,10" d="M5 40 l215 0"/><br/>    <path stroke-dasharray="20,10,5,5,5,10" d="M5 60 l215 0"/><br/>  </g><br/></svg></p>
+</blockquote>
 
       
 
@@ -255,7 +283,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SVG</a>
         		</li>
       		
 		</ul>
@@ -311,7 +343,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://keviness.github.io/post/7e016094.html" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://keviness.github.io/post/c8d4b451.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -326,18 +358,9 @@
 
 <nav id="article-nav">
   
-    <a href="/post/8bf176c0.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          HTML FORM
-        
-      </div>
-    </a>
   
-  
-    <a href="/post/d0426352.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CSS 常见对齐方式</div>
+    <a href="/post/5b4c752e.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">web storage常用的两种方式</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -364,7 +387,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#css样式表的引入"><span class="toc-number">1.1.</span> <span class="toc-text">css样式表的引入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#内嵌样式表"><span class="toc-number">1.1.1.</span> <span class="toc-text">内嵌样式表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内部样式表"><span class="toc-number">1.1.2.</span> <span class="toc-text">内部样式表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#外部样式表"><span class="toc-number">1.1.3.</span> <span class="toc-text">外部样式表</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SVG"><span class="toc-number">1.1.</span> <span class="toc-text">SVG</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SVG常见绘图"><span class="toc-number">1.2.</span> <span class="toc-text">SVG常见绘图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#圆形"><span class="toc-number">1.2.1.</span> <span class="toc-text">圆形 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#椭圆"><span class="toc-number">1.2.2.</span> <span class="toc-text">椭圆 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#矩形"><span class="toc-number">1.2.3.</span> <span class="toc-text">矩形 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#直线"><span class="toc-number">1.2.4.</span> <span class="toc-text">直线 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多边形"><span class="toc-number">1.2.5.</span> <span class="toc-text">多边形 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#曲线"><span class="toc-number">1.2.6.</span> <span class="toc-text">曲线 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本"><span class="toc-number">1.2.7.</span> <span class="toc-text">文本 </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SVG-Stroke-属性"><span class="toc-number">1.2.8.</span> <span class="toc-text">SVG Stroke 属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#stroke"><span class="toc-number">1.2.8.1.</span> <span class="toc-text">stroke</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#stroke-width"><span class="toc-number">1.2.8.2.</span> <span class="toc-text">stroke-width</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#stroke-linecap"><span class="toc-number">1.2.8.3.</span> <span class="toc-text">stroke-linecap</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#stroke-dasharray"><span class="toc-number">1.2.8.4.</span> <span class="toc-text">stroke-dasharray</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -391,7 +414,7 @@ if(true){
     repo: 'keviness.github.io',
     owner: 'keviness',
     admin: ['keviness'],
-    id: 'Tue Apr 07 2020 00:00:00 GMT+0800',
+    id: 'Mon Jun 29 2020 00:00:00 GMT+0800',
     distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container')
