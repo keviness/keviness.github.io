@@ -7,17 +7,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://keviness.github.io">
-  <title>Tag: C | Keviness&#39;s Blog</title>
+  <title>Location Object概述 | Keviness&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hello! welcome to you~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Keviness&#39;s Blog">
-<meta property="og:url" content="https://keviness.github.io/tags/C/index.html">
+  <meta name="description" content="背景&amp;emsp;以史为鉴，是人类发明的一种不错的改善当前经验的方法。每个人从过去的经历中学习到了很多，历史对我们而言十分重要。在web世界中，我们如何对待曾经发生过的历史呢？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Location Object概述">
+<meta property="og:url" content="https://keviness.github.io/post/abe472d8.html">
 <meta property="og:site_name" content="Keviness&#39;s Blog">
-<meta property="og:description" content="hello! welcome to you~">
+<meta property="og:description" content="背景&amp;emsp;以史为鉴，是人类发明的一种不错的改善当前经验的方法。每个人从过去的经历中学习到了很多，历史对我们而言十分重要。在web世界中，我们如何对待曾经发生过的历史呢？">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-07-07T14:52:21.737Z">
+<meta property="article:modified_time" content="2020-07-07T14:52:21.737Z">
 <meta property="article:author" content="keviness">
-<meta property="article:tag" content="keviness blog">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="location">
+<meta property="article:tag" content="hash">
+<meta property="article:tag" content="history">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Keviness&#39;s Blog" type="application/atom+xml">
@@ -174,60 +179,315 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-JavaScript/javascript_location" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/post/7fccb627.html" class="archive-article-date">
-  	<time datetime="2020-05-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/post/7fccb627.html">用C语言实现贪吃蛇</a>
+    <h1 class="article-title" itemprop="name">
+      Location Object概述
     </h1>
   
 
-        <div class="article-info info-on-right">
+        
+        <a href="/post/abe472d8.html" class="archive-article-date">
+  	<time datetime="2020-07-07T14:52:21.737Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-07</time>
+</a>
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon" style="color: gray;">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
+        <!--这里样式可以自己定制-->
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">818</span>字
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon" style="color:gray">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">3</span>分钟
+      </span>
+    </span>
+    <!--
+    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
+      &nbsp; | &nbsp;
+      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
+    </span>
+    -->
+</div>
+
           
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;以史为鉴，是人类发明的一种不错的改善当前经验的方法。每个人从过去的经历中学习到了很多，历史对我们而言十分重要。在web世界中，我们如何对待曾经发生过的历史呢？</p>
+<a id="more"></a>
+<h2 id="一，Location-对象属性"><a href="#一，Location-对象属性" class="headerlink" title="一，Location 对象属性"></a>一，Location 对象属性</h2><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">hash</td>
+<td align="center">设置或返回从井号 (#) 开始的 URL（锚）。</td>
+</tr>
+<tr>
+<td align="center">host</td>
+<td align="center">设置或返回主机名和当前 URL 的端口号。</td>
+</tr>
+<tr>
+<td align="center">hostname</td>
+<td align="center">设置或返回当前 URL 的主机名。</td>
+</tr>
+<tr>
+<td align="center">href</td>
+<td align="center">设置或返回完整的 URL。</td>
+</tr>
+<tr>
+<td align="center">pathname</td>
+<td align="center">设置或返回当前 URL 的路径部分。</td>
+</tr>
+<tr>
+<td align="center">port</td>
+<td align="center">设置或返回当前 URL 的端口号。</td>
+</tr>
+<tr>
+<td align="center">protocol</td>
+<td align="center">设置或返回当前 URL 的协议。</td>
+</tr>
+<tr>
+<td align="center">search</td>
+<td align="center">设置或返回从问号 (?) 开始的 URL（查询部分）。</td>
+</tr>
+</tbody></table>
+<h2 id="二，Location对象方法"><a href="#二，Location对象方法" class="headerlink" title="二，Location对象方法"></a>二，Location对象方法</h2><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">assign()</td>
+<td align="center">加载新的文档。</td>
+</tr>
+<tr>
+<td align="center">reload()</td>
+<td align="center">重新加载当前文档。</td>
+</tr>
+<tr>
+<td align="center">replace()</td>
+<td align="center">用新的文档替换当前文档。</td>
+</tr>
+</tbody></table>
+<h3 id="Location-hash示例"><a href="#Location-hash示例" class="headerlink" title="Location hash示例"></a>Location hash示例</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bodyObj = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"body"</span>)[<span class="number">0</span>];</span><br><span class="line">bodyObj.addEventListener(<span class="string">"click"</span>, getButtonValue, <span class="literal">false</span>);</span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"hashchange"</span>, showToCont, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getButtonValue</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> targetElement = event.target;</span><br><span class="line">    <span class="keyword">if</span> (targetElement.nodeName.toLowerCase() === <span class="string">"button"</span>) &#123;</span><br><span class="line">        value = targetElement.innerHTML;</span><br><span class="line">        location.hash = value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showToCont</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> value,</span><br><span class="line">        contObj;</span><br><span class="line"></span><br><span class="line">    contObj = <span class="built_in">document</span>.querySelector(<span class="string">"#cont"</span>);</span><br><span class="line">    value = getLocationHash();</span><br><span class="line">    <span class="keyword">if</span> (value) &#123;</span><br><span class="line">        contObj.innerHTML = value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLocationHash</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> hashValue = location.hash;</span><br><span class="line">    <span class="keyword">return</span> hashValue? hashValue.substring(<span class="number">1</span>, hashValue.length):<span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="三，pushState-和replaceState"><a href="#三，pushState-和replaceState" class="headerlink" title="三，pushState()和replaceState()"></a>三，pushState()和replaceState()</h2><blockquote>
+<ul>
+<li>history.pushState/replaceState(state, title, url);</li>
+<li>state：存储JSON字符串，可以用在popstate事件中。</li>
+<li>title：现在大多数浏览器不支持或者忽略这个参数，最好用null代替</li>
+<li>url：任意有效的URL.</li>
+<li>两个方法的主要区别：pushState()是在history栈中添加一个新的条目，replaceState()是替换当前的记录值。</li>
+</ul>
+</blockquote>
+<h2 id="四，popstate"><a href="#四，popstate" class="headerlink" title="四，popstate"></a>四，popstate</h2><blockquote>
+<ul>
+<li>当前活动历史项(history entry)改变会触发popstate事件。</li>
+<li>调用history.pushState()创建新的历史项(history entry)，或调用history.replaceState()替换新的历史项(history entry)，那么popstate事件的state属性会包含历史项(history entry)状态对象(state object)的拷贝。</li>
+<li>注意,调用history.pushState()或history.replaceState()不会触发popstate事件。只有在做出浏览器动作时，才会触发该事件，如用户点击浏览器的回退按钮（或者在Javascript代码中调用history.back()）</li>
+<li>不同的浏览器在加载页面时处理popstate事件的形式存在差异。页面加载时Chrome和Safari通常会触发popstate事件，但Firefox则不会。</li>
+</ul>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onpopstate = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//浏览器触发返回和前进时触发</span></span><br><span class="line">    <span class="built_in">console</span>.log(e.state);</span><br><span class="line">   &#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="五，History对象"><a href="#五，History对象" class="headerlink" title="五，History对象"></a>五，History对象</h2><ul>
+<li>history.pushState()会增加历史记录的条目，但是不会触发hashchange和popstate；</li>
+<li>hashchange也可以增加历史记录的条目，但是它却可以触发popstate。</li>
+</ul>
+<h2 id="六，change事件"><a href="#六，change事件" class="headerlink" title="六，change事件"></a>六，change事件</h2><ul>
+<li>change事件在<code>&lt;input&gt;</code>, <code>&lt;select&gt;</code>, 和<code>&lt;textarea&gt;</code>元素的值更改时触发；与input事件不同，change事件不一定会对元素值的每次更改触发。</li>
+<li><code>&lt;input type=&quot;radio&quot;&gt;</code>和<code>&lt;input type=&quot;checkbox&quot;&gt;</code>的默认选项被修改时，例如：通过点击或者键盘事件；<br>如：点击了<code>&lt;select&gt;</code>中的一个选项，从<code>&lt;input type=&quot;date&quot;&gt;</code>标签选择了一个日期，通过<code>&lt;input type=&quot;file&quot;&gt;</code>标签上传了一个文件等；</li>
+</ul>
+<ul>
+<li>当标签的值被修改并且失焦后，但并未进行提交，例如：对<code>&lt;textarea&gt;</code>或者<code>&lt;input type=&quot;text&quot;&gt;</code>的值进行编辑后。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">location</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hash</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">history</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://keviness.github.io/post/abe472d8.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
-    
+<nav id="article-nav">
+  
+  
+    <a href="/post/53ec7d50.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Canvas概述</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一，Location-对象属性"><span class="toc-number">1.1.</span> <span class="toc-text">一，Location 对象属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二，Location对象方法"><span class="toc-number">1.2.</span> <span class="toc-text">二，Location对象方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Location-hash示例"><span class="toc-number">1.2.1.</span> <span class="toc-text">Location hash示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三，pushState-和replaceState"><span class="toc-number">1.3.</span> <span class="toc-text">三，pushState()和replaceState()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四，popstate"><span class="toc-number">1.4.</span> <span class="toc-text">四，popstate</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五，History对象"><span class="toc-number">1.5.</span> <span class="toc-text">五，History对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六，change事件"><span class="toc-number">1.6.</span> <span class="toc-text">六，change事件</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+    <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+  var gitalk = new Gitalk({
+    clientID: '5a7038de6bbe21a2b21e',
+    clientSecret: '3581f686afe3a2496b240b810fd27d0ea27be50b',
+    repo: 'keviness.github.io',
+    owner: 'keviness',
+    admin: ['keviness'],
+    id: 'Tue Jul 07 2020 22:52:21 GMT+0800',
+    distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container')
+}
+</script>
+  
+
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -251,9 +511,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
