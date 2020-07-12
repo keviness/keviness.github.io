@@ -293,25 +293,25 @@
 
 <h2 id="三，pushState-和replaceState"><a href="#三，pushState-和replaceState" class="headerlink" title="三，pushState()和replaceState()"></a>三，pushState()和replaceState()</h2><blockquote>
 <ul>
-<li>history.pushState/replaceState(state, title, url);</li>
+<li><code>history.pushState/replaceState(state, title, url)</code>;</li>
 <li>state：存储JSON字符串，可以用在popstate事件中。</li>
 <li>title：现在大多数浏览器不支持或者忽略这个参数，最好用null代替</li>
 <li>url：任意有效的URL.</li>
-<li>两个方法的主要区别：pushState()是在history栈中添加一个新的条目，replaceState()是替换当前的记录值。</li>
+<li>两个方法的主要区别：<code>pushState()</code>是在history栈中添加一个新的条目，<code>replaceState()</code>是替换当前的记录值。</li>
 </ul>
 </blockquote>
 <h2 id="四，popstate"><a href="#四，popstate" class="headerlink" title="四，popstate"></a>四，popstate</h2><blockquote>
 <ul>
 <li>当前活动历史项(history entry)改变会触发popstate事件。</li>
-<li>调用history.pushState()创建新的历史项(history entry)，或调用history.replaceState()替换新的历史项(history entry)，那么popstate事件的state属性会包含历史项(history entry)状态对象(state object)的拷贝。</li>
-<li>注意,调用history.pushState()或history.replaceState()不会触发popstate事件。只有在做出浏览器动作时，才会触发该事件，如用户点击浏览器的回退按钮（或者在Javascript代码中调用history.back()）</li>
+<li>调用<code>history.pushState()</code>创建新的历史项(history entry)，或调用<code>history.replaceState()</code>替换新的历史项(history entry)，那么popstate事件的state属性会包含历史项(history entry)状态对象(state object)的拷贝。</li>
+<li>注意,调用<code>history.pushState()</code>或<code>history.replaceState()</code>不会触发popstate事件。只有在做出浏览器动作时，才会触发该事件，如用户点击浏览器的回退按钮（或者在Javascript代码中调用<code>history.back()</code>）</li>
 <li>不同的浏览器在加载页面时处理popstate事件的形式存在差异。页面加载时Chrome和Safari通常会触发popstate事件，但Firefox则不会。</li>
 </ul>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onpopstate = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//浏览器触发返回和前进时触发</span></span><br><span class="line">    <span class="built_in">console</span>.log(e.state);</span><br><span class="line">   &#125;;</span><br></pre></td></tr></table></figure>
 
 <h2 id="五，History对象"><a href="#五，History对象" class="headerlink" title="五，History对象"></a>五，History对象</h2><ul>
-<li>history.pushState()会增加历史记录的条目，但是不会触发hashchange和popstate；</li>
+<li><code>history.pushState()</code>会增加历史记录的条目，但是不会触发hashchange和popstate；</li>
 <li>hashchange也可以增加历史记录的条目，但是它却可以触发popstate。</li>
 </ul>
 <h2 id="六，change事件"><a href="#六，change事件" class="headerlink" title="六，change事件"></a>六，change事件</h2><ul>
