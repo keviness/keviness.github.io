@@ -7,18 +7,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://keviness.github.io">
-  <title>Keviness&#39;s Blog</title>
+  <title>线性表：数组的链式存储实现 | Keviness&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hello! welcome to you~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Keviness&#39;s Blog">
-<meta property="og:url" content="https://keviness.github.io/page/4/index.html">
+  <meta name="description" content="背景&amp;emsp;转眼就到九月份了，数据结构的工作还未结束，任重而道远啊，加油~&amp;emsp;线性表是比较常见的数据结构，按存储方式分，有链表（链式存储）和数组（顺序存储）两种，那么数组可不可以用链式存储实现呢？以下是一些个实现思路，完整代码请用神奇的传送门~ 线性表：数组的链式存储实现一，概念及示意图  二，实现代码（一）数据形式12345typedef struct node&amp;#123;    i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性表：数组的链式存储实现">
+<meta property="og:url" content="https://keviness.github.io/post/c206fe66.html">
 <meta property="og:site_name" content="Keviness&#39;s Blog">
-<meta property="og:description" content="hello! welcome to you~">
+<meta property="og:description" content="背景&amp;emsp;转眼就到九月份了，数据结构的工作还未结束，任重而道远啊，加油~&amp;emsp;线性表是比较常见的数据结构，按存储方式分，有链表（链式存储）和数组（顺序存储）两种，那么数组可不可以用链式存储实现呢？以下是一些个实现思路，完整代码请用神奇的传送门~ 线性表：数组的链式存储实现一，概念及示意图  二，实现代码（一）数据形式12345typedef struct node&amp;#123;    i">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://keviness.github.io/post/c206fe66/xianxing.png">
+<meta property="article:published_time" content="2020-08-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-08-31T16:00:00.000Z">
 <meta property="article:author" content="keviness">
-<meta property="article:tag" content="keviness blog">
+<meta property="article:tag" content="Algorithms">
+<meta property="article:tag" content="C">
+<meta property="article:tag" content="Array">
+<meta property="article:tag" content="List">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://keviness.github.io/post/c206fe66/xianxing.png">
   
     <link rel="alternative" href="/atom.xml" title="Keviness&#39;s Blog" type="application/atom+xml">
   
@@ -174,22 +181,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-HtmlNote/HtmlNote" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Algorithms/Algorithms_array" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/28ceed59.html">HTMLNote</a>
+    <h1 class="article-title" itemprop="name">
+      线性表：数组的链式存储实现
     </h1>
   
 
         
-        <a href="/post/28ceed59.html" class="archive-article-date">
-  	<time datetime="2020-02-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-11</time>
+        <a href="/post/c206fe66.html" class="archive-article-date">
+  	<time datetime="2020-08-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-01</time>
 </a>
         
           <div style="margin-top:10px;">
@@ -198,7 +203,7 @@
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
         <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">339</span>字
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">647</span>字
       </span>
     </span>
 
@@ -207,7 +212,7 @@
       <span class="post-meta-item-icon" style="color:gray">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">1</span>分钟
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">3</span>分钟
       </span>
     </span>
     <!--
@@ -224,8 +229,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;今天起，我就开始走进web世界了，我知道，这将是另一个充满冒险和快乐的地方，加油少年~<br>&emsp;闲话少叙，让我们进入正题吧，了解一下HTML的基本结构。</p>
-        
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;转眼就到九月份了，数据结构的工作还未结束，任重而道远啊，加油~<br>&emsp;线性表是比较常见的数据结构，按存储方式分，有链表（链式存储）和数组（顺序存储）两种，那么数组可不可以用链式存储实现呢？以下是一些个实现思路，完整代码请用<a href="https://github.com/keviness/Algorithms/blob/master/Algorithms_C/%E9%83%9D%E6%96%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/DataStruct/array.c" target="_blank" rel="noopener">神奇的传送门</a>~</p>
+<h2 id="线性表：数组的链式存储实现"><a href="#线性表：数组的链式存储实现" class="headerlink" title="线性表：数组的链式存储实现"></a>线性表：数组的链式存储实现</h2><h3 id="一，概念及示意图"><a href="#一，概念及示意图" class="headerlink" title="一，概念及示意图"></a>一，概念及示意图</h3><img src="/post/c206fe66/xianxing.png" class title="SequenceList">
+
+<h3 id="二，实现代码"><a href="#二，实现代码" class="headerlink" title="二，实现代码"></a>二，实现代码</h3><h4 id="（一）数据形式"><a href="#（一）数据形式" class="headerlink" title="（一）数据形式"></a>（一）数据形式</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">pnext</span>;</span></span><br><span class="line">&#125;List, *Plist;</span><br></pre></td></tr></table></figure>
+<h4 id="（二）初始化"><a href="#（二）初始化" class="headerlink" title="（二）初始化"></a>（二）初始化</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitArray</span><span class="params">(PQUEUE <span class="built_in">queue</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        pnew = (Plist)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(List));</span><br><span class="line">        <span class="keyword">if</span> (pnew == <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">puts</span>(<span class="string">"Locate mmemory error!"</span>);</span><br><span class="line">            <span class="built_in">exit</span>(EXIT_FAILURE);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Enter the %d data:"</span>, i+<span class="number">1</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;item);</span><br><span class="line">        EATLINE;</span><br><span class="line">        pnew-&gt;data = item;</span><br><span class="line">        pnew-&gt;pnext = <span class="literal">NULL</span>;</span><br><span class="line">        pprevious-&gt;pnext = pnew;</span><br><span class="line">        pprevious = pnew;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> phead;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="（三）检测为空或已满"><a href="#（三）检测为空或已满" class="headerlink" title="（三）检测为空或已满"></a>（三）检测为空或已满</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">ListIsEmpty</span><span class="params">(Plist phead)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (phead-&gt;pnext == <span class="literal">NULL</span>) ? <span class="literal">true</span>:<span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">ListIsEmpty</span><span class="params">(Plist phead)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (phead-&gt;pnext == SIZE) ? <span class="literal">true</span>:<span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="（四）追加操作"><a href="#（四）追加操作" class="headerlink" title="（四）追加操作"></a>（四）追加操作</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">AppendItem</span><span class="params">(Plist phead)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Plist pnew;</span><br><span class="line">    Plist p = phead;</span><br><span class="line">    <span class="keyword">int</span> item;</span><br><span class="line">    <span class="keyword">while</span> (p-&gt;pnext != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        p = p-&gt;pnext;</span><br><span class="line">    &#125;</span><br><span class="line">    pnew = (Plist)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(List));</span><br><span class="line">    <span class="keyword">if</span> (pnew == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">"Locate memory error!"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"Enter the data you want to append:"</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;item);</span><br><span class="line">    EATLINE;</span><br><span class="line">    pnew-&gt;data = item;</span><br><span class="line">    pnew-&gt;pnext = <span class="literal">NULL</span>;</span><br><span class="line">    p-&gt;pnext = pnew;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Enter the %d successfully!\n"</span>, item);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="（五）插入操作"><a href="#（五）插入操作" class="headerlink" title="（五）插入操作"></a>（五）插入操作</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">InsertItem</span><span class="params">(Plist phead)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pos, data;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    Plist p = phead;</span><br><span class="line">    Plist pnew;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"Enter the index you want to insert:"</span>);</span><br><span class="line">    <span class="keyword">while</span> ((<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;pos) != <span class="number">1</span>) &amp;&amp; pos&lt;<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        EATLINE;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">"The error pos value, try again:"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    EATLINE;</span><br><span class="line">    <span class="keyword">while</span> (i&lt;pos<span class="number">-1</span> &amp;&amp; p!=<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        p = p-&gt;pnext;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (i&gt;pos<span class="number">-1</span> &amp;&amp; p==<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">"The pos input error!"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    pnew = (Plist)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(List));</span><br><span class="line">    <span class="keyword">if</span> (pnew == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">"Can\'t locate the memory!"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"Enter the data you want to save:"</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;data);</span><br><span class="line">    EATLINE;</span><br><span class="line">    pnew-&gt;data = data;</span><br><span class="line">    </span><br><span class="line">    pnew-&gt;pnext = p-&gt;pnext;</span><br><span class="line">    p-&gt;pnext = pnew;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"successfully insert %d \n"</span>, data);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="（六）删除操作"><a href="#（六）删除操作" class="headerlink" title="（六）删除操作"></a>（六）删除操作</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">DeleteItem</span><span class="params">(Plist phead)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pos, data, i, value;</span><br><span class="line">    Plist pnew, p, q;</span><br><span class="line">    p = phead;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"Enter the pos you want to delete:"</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> ((<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;pos) != <span class="number">1</span>) &amp;&amp; pos&lt;<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        EATLINE;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">"The error pos value, try again:"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    EATLINE;</span><br><span class="line">    i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (i&lt;pos<span class="number">-1</span> &amp;&amp; p-&gt;pnext!=<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        p = p-&gt;pnext;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (i&gt;pos<span class="number">-1</span> || p-&gt;pnext==<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">"The pos input error!"</span>);</span><br><span class="line">        <span class="built_in">exit</span>(EXIT_FAILURE);</span><br><span class="line">    &#125;</span><br><span class="line">    q = p-&gt;pnext;</span><br><span class="line">    value = q-&gt;data;</span><br><span class="line">    p-&gt;pnext = q-&gt;pnext;</span><br><span class="line">    <span class="built_in">free</span>(q);</span><br><span class="line">    q = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="（七）遍历操作"><a href="#（七）遍历操作" class="headerlink" title="（七）遍历操作"></a>（七）遍历操作</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">TraverseList</span><span class="params">(Plist phead, <span class="keyword">void</span>(*pfun)(Plist plst))</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Plist p = phead-&gt;pnext;</span><br><span class="line">    <span class="keyword">if</span> (ListIsEmpty(phead))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">"The List is empty！"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (p != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        (*pfun)(p);</span><br><span class="line">        p = p-&gt;pnext;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="（八）获取长度"><a href="#（八）获取长度" class="headerlink" title="（八）获取长度"></a>（八）获取长度</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ListLength</span><span class="params">(Plist phead)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    Plist p = phead-&gt;pnext;</span><br><span class="line">    <span class="keyword">while</span> (p != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        p = p-&gt;pnext;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -238,7 +253,19 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Algorithms</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Array</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">List</a>
         		</li>
       		
 		</ul>
@@ -247,118 +274,76 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/28ceed59.html">Read more >></a>
-        </p>
-      
 
       
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HtmlNote/First-post" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/20a69af8.html">First Step</a>
-    </h1>
-  
-
-        
-        <a href="/post/20a69af8.html" class="archive-article-date">
-  	<time datetime="2020-02-09T09:05:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-09</time>
-</a>
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon" style="color: gray;">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
-        <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">33</span>字
-      </span>
+      </div>
     </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon" style="color:gray">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">1</span>分钟
-      </span>
-    </span>
-    <!--
-    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
-      &nbsp; | &nbsp;
-      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
-    </span>
-    -->
+  </div>
 </div>
 
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Hello-program-world"><a href="#Hello-program-world" class="headerlink" title="Hello program world"></a>Hello program world</h2><p>&emsp;本博客会长期更新，记录我的编程历程，学习心得。<br>&emsp;漫漫长途，心向远方~</p>
-
-      
-
-      
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://keviness.github.io/post/c206fe66.html" alt="微信分享二维码">
     </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
+</div>
 
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/20a69af8.html">Read more >></a>
-        </p>
-      
-
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+
+<nav id="article-nav">
+  
+  
+    <a href="/post/75b41c5c.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">队列：顺序存储实现</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -373,17 +358,54 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#线性表：数组的链式存储实现"><span class="toc-number">1.1.</span> <span class="toc-text">线性表：数组的链式存储实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一，概念及示意图"><span class="toc-number">1.1.1.</span> <span class="toc-text">一，概念及示意图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二，实现代码"><span class="toc-number">1.1.2.</span> <span class="toc-text">二，实现代码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（一）数据形式"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">（一）数据形式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（二）初始化"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">（二）初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（三）检测为空或已满"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">（三）检测为空或已满</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（四）追加操作"><span class="toc-number">1.1.2.4.</span> <span class="toc-text">（四）追加操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（五）插入操作"><span class="toc-number">1.1.2.5.</span> <span class="toc-text">（五）插入操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（六）删除操作"><span class="toc-number">1.1.2.6.</span> <span class="toc-text">（六）删除操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（七）遍历操作"><span class="toc-number">1.1.2.7.</span> <span class="toc-text">（七）遍历操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（八）获取长度"><span class="toc-number">1.1.2.8.</span> <span class="toc-text">（八）获取长度</span></a></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
 
+  
+  
+  
+    <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+  var gitalk = new Gitalk({
+    clientID: '5a7038de6bbe21a2b21e',
+    clientSecret: '3581f686afe3a2496b240b810fd27d0ea27be50b',
+    repo: 'keviness.github.io',
+    owner: 'keviness',
+    admin: ['keviness'],
+    id: 'Tue Sep 01 2020 00:00:00 GMT+0800',
+    distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container')
+}
+</script>
+  
 
   
+
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
+
+  
+
   
 
 
@@ -407,8 +429,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

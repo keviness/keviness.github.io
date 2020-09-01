@@ -7,11 +7,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://keviness.github.io">
-  <title>队列（一）：顺序存储实现 | Keviness&#39;s Blog</title>
+  <title>队列：顺序存储实现 | Keviness&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="背景&amp;emsp;队列在生活中可是经常见的。比如，食堂，商场等地方经常需要排队。它的主要性质是先进先出（first in first out），在算法中队列有顺序存储（连续存储）和链式存储（离散存储）两种方式。其中顺序存储必须要用循环队列的形式实现，具体如下：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="队列（一）：顺序存储实现">
+<meta property="og:title" content="队列：顺序存储实现">
 <meta property="og:url" content="https://keviness.github.io/post/75b41c5c.html">
 <meta property="og:site_name" content="Keviness&#39;s Blog">
 <meta property="og:description" content="背景&amp;emsp;队列在生活中可是经常见的。比如，食堂，商场等地方经常需要排队。它的主要性质是先进先出（first in first out），在算法中队列有顺序存储（连续存储）和链式存储（离散存储）两种方式。其中顺序存储必须要用循环队列的形式实现，具体如下：">
@@ -189,7 +189,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      队列（一）：顺序存储实现
+      队列：顺序存储实现
     </h1>
   
 
@@ -204,7 +204,7 @@
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
         <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">541</span>字
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">540</span>字
       </span>
     </span>
 
@@ -232,7 +232,7 @@
       
         <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;队列在生活中可是经常见的。比如，食堂，商场等地方经常需要排队。它的主要性质是先进先出（first in first out），在算法中队列有顺序存储（连续存储）和链式存储（离散存储）两种方式。其中顺序存储必须要用循环队列的形式实现，具体如下：</p>
 <a id="more"></a>
-<h2 id="队列（一）：顺序存储实现"><a href="#队列（一）：顺序存储实现" class="headerlink" title="队列（一）：顺序存储实现"></a>队列（一）：顺序存储实现</h2><h3 id="一，顺序存储实现"><a href="#一，顺序存储实现" class="headerlink" title="一，顺序存储实现"></a>一，顺序存储实现</h3><blockquote>
+<h2 id="队列：顺序存储实现"><a href="#队列：顺序存储实现" class="headerlink" title="队列：顺序存储实现"></a>队列：顺序存储实现</h2><h3 id="一，顺序存储实现"><a href="#一，顺序存储实现" class="headerlink" title="一，顺序存储实现"></a>一，顺序存储实现</h3><blockquote>
 <ul>
 <li>顺序存储实现队列必须用循环队列方式实现。</li>
 <li>如此，对内存的使用友好，不会使程序奔溃。</li>
@@ -340,6 +340,15 @@
 
 <nav id="article-nav">
   
+    <a href="/post/c206fe66.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          线性表：数组的链式存储实现
+        
+      </div>
+    </a>
+  
   
     <a href="/post/631fd3f2.html" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">递归概述</div>
@@ -369,7 +378,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#队列（一）：顺序存储实现"><span class="toc-number">1.1.</span> <span class="toc-text">队列（一）：顺序存储实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一，顺序存储实现"><span class="toc-number">1.1.1.</span> <span class="toc-text">一，顺序存储实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（一）概念及示意图"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">（一）概念及示意图</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-队列示意图"><span class="toc-number">1.1.1.1.1.</span> <span class="toc-text">1,队列示意图</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-入队出队示意图"><span class="toc-number">1.1.1.1.2.</span> <span class="toc-text">2,入队出队示意图</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-判断队列满或空示意图"><span class="toc-number">1.1.1.1.3.</span> <span class="toc-text">3,判断队列满或空示意图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二，实现代码"><span class="toc-number">1.1.2.</span> <span class="toc-text">二，实现代码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（一）队列数据形式"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">（一）队列数据形式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（二）初始化队列"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">（二）初始化队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（三）检测队列为空或已满"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">（三）检测队列为空或已满</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（四）入队出队操作"><span class="toc-number">1.1.2.4.</span> <span class="toc-text">（四）入队出队操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（五）遍历队列"><span class="toc-number">1.1.2.5.</span> <span class="toc-text">（五）遍历队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（六）打印队列"><span class="toc-number">1.1.2.6.</span> <span class="toc-text">（六）打印队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（七）队列长度"><span class="toc-number">1.1.2.7.</span> <span class="toc-text">（七）队列长度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（八）清空队列"><span class="toc-number">1.1.2.8.</span> <span class="toc-text">（八）清空队列</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#队列：顺序存储实现"><span class="toc-number">1.1.</span> <span class="toc-text">队列：顺序存储实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一，顺序存储实现"><span class="toc-number">1.1.1.</span> <span class="toc-text">一，顺序存储实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（一）概念及示意图"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">（一）概念及示意图</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-队列示意图"><span class="toc-number">1.1.1.1.1.</span> <span class="toc-text">1,队列示意图</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-入队出队示意图"><span class="toc-number">1.1.1.1.2.</span> <span class="toc-text">2,入队出队示意图</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-判断队列满或空示意图"><span class="toc-number">1.1.1.1.3.</span> <span class="toc-text">3,判断队列满或空示意图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二，实现代码"><span class="toc-number">1.1.2.</span> <span class="toc-text">二，实现代码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（一）队列数据形式"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">（一）队列数据形式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（二）初始化队列"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">（二）初始化队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（三）检测队列为空或已满"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">（三）检测队列为空或已满</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（四）入队出队操作"><span class="toc-number">1.1.2.4.</span> <span class="toc-text">（四）入队出队操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（五）遍历队列"><span class="toc-number">1.1.2.5.</span> <span class="toc-text">（五）遍历队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（六）打印队列"><span class="toc-number">1.1.2.6.</span> <span class="toc-text">（六）打印队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（七）队列长度"><span class="toc-number">1.1.2.7.</span> <span class="toc-text">（七）队列长度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（八）清空队列"><span class="toc-number">1.1.2.8.</span> <span class="toc-text">（八）清空队列</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -628,6 +637,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Queue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Array</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">List</a>
               </li>
             
             <div class="clearfix"></div>
