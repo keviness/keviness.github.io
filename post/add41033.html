@@ -7,22 +7,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://keviness.github.io">
-  <title>HTML FORM | Keviness&#39;s Blog</title>
+  <title>栈的链式存储实现 | Keviness&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="背景&amp;emsp;我们经常需要和远程服务器进行信息交互，在我们需要将信息提交的服务器中的时候，表单（form）的威力也就展示出来了，那么表单具体有哪一些呢？">
+  <meta name="description" content="背景&amp;emsp;栈是一种先进后出的数据结构（First In Last Out）。它在实际编程中起到了非常重要的作用。比如，我们程序在运行中对函数的调用，就有着明显的压栈和出栈的操作，栈按存储结构分类分为链式栈和顺序栈。那么栈的链式存储如何实现呢？以下是一些实现思路，完整代码请用随意门~ 栈的链式存储实现一，概念及示意图 栈的链式存储示意图 二，实现代码（一）数据形式12345678910type">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTML FORM">
-<meta property="og:url" content="https://keviness.github.io/post/8bf176c0.html">
+<meta property="og:title" content="栈的链式存储实现">
+<meta property="og:url" content="https://keviness.github.io/post/add41033.html">
 <meta property="og:site_name" content="Keviness&#39;s Blog">
-<meta property="og:description" content="背景&amp;emsp;我们经常需要和远程服务器进行信息交互，在我们需要将信息提交的服务器中的时候，表单（form）的威力也就展示出来了，那么表单具体有哪一些呢？">
+<meta property="og:description" content="背景&amp;emsp;栈是一种先进后出的数据结构（First In Last Out）。它在实际编程中起到了非常重要的作用。比如，我们程序在运行中对函数的调用，就有着明显的压栈和出栈的操作，栈按存储结构分类分为链式栈和顺序栈。那么栈的链式存储如何实现呢？以下是一些实现思路，完整代码请用随意门~ 栈的链式存储实现一，概念及示意图 栈的链式存储示意图 二，实现代码（一）数据形式12345678910type">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://keviness.github.io/post/8bf176c0/form.png">
-<meta property="article:published_time" content="2020-04-07T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-04-07T16:00:00.000Z">
+<meta property="og:image" content="https://keviness.github.io/post/undefined/stackLink.png">
+<meta property="article:published_time" content="2020-09-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-09-07T16:00:00.000Z">
 <meta property="article:author" content="keviness">
-<meta property="article:tag" content="HTML">
+<meta property="article:tag" content="Algorithms">
+<meta property="article:tag" content="C">
+<meta property="article:tag" content="Stack">
+<meta property="article:tag" content="Link">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://keviness.github.io/post/8bf176c0/form.png">
+<meta name="twitter:image" content="https://keviness.github.io/post/undefined/stackLink.png">
   
     <link rel="alternative" href="/atom.xml" title="Keviness&#39;s Blog" type="application/atom+xml">
   
@@ -178,20 +181,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-HtmlNote/Html_form" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Algorithms/Algorithms_stackLink" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      HTML FORM
+      栈的链式存储实现
     </h1>
   
 
         
-        <a href="/post/8bf176c0.html" class="archive-article-date">
-  	<time datetime="2020-04-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
+        <a href="/post/add41033.html" class="archive-article-date">
+  	<time datetime="2020-09-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-08</time>
 </a>
         
           <div style="margin-top:10px;">
@@ -200,7 +203,7 @@
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
         <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">345</span>字
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">486</span>字
       </span>
     </span>
 
@@ -209,7 +212,7 @@
       <span class="post-meta-item-icon" style="color:gray">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">1</span>分钟
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">2</span>分钟
       </span>
     </span>
     <!--
@@ -226,17 +229,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;我们经常需要和远程服务器进行信息交互，在我们需要将信息提交的服务器中的时候，表单（form）的威力也就展示出来了，那么表单具体有哪一些呢？</p>
-<a id="more"></a>
-<h3 id="表单的一些属性："><a href="#表单的一些属性：" class="headerlink" title="表单的一些属性："></a>表单的一些属性：</h3><ol>
-<li>name属性：用于对提交到服务器后的表单数据进行标识,是一种key-value的对应形式。  </li>
-<li>value属性：在input框里面写的值。</li>
-<li>readonly属性：使表单元素变为只读。</li>
-<li>disabled属性：让按钮变灰，使表单元素不可用。</li>
-</ol>
-<hr>
-<h3 id="常见表单元素"><a href="#常见表单元素" class="headerlink" title="常见表单元素"></a>常见表单元素</h3><h4 id="常见表单元素应用场景"><a href="#常见表单元素应用场景" class="headerlink" title="常见表单元素应用场景"></a>常见表单元素应用场景</h4><img src="/post/8bf176c0/form.png" class title="FormApplication">
-<h4 id="代码举例："><a href="#代码举例：" class="headerlink" title="代码举例："></a>代码举例：</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">单行文本框</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"key"</span> <span class="attr">value</span>=<span class="string">"123"</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> </span></span><br><span class="line"><span class="tag"><span class="attr">disabled</span>=<span class="string">"disabled"</span>/&gt;</span>  </span><br><span class="line">密码框</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span>/&gt;</span>　　</span><br><span class="line">下拉列表</span><br><span class="line"><span class="tag">&lt;<span class="name">selected</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"1"</span> <span class="attr">selected</span>&gt;</span>1<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"2"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"3"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">selected</span>&gt;</span></span><br><span class="line">单选框</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"like"</span> <span class="attr">value</span>=<span class="string">"喜欢"</span> <span class="attr">checked</span>=<span class="string">"checked"</span>/&gt;</span>　　</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"like"</span> <span class="attr">value</span>=<span class="string">"不喜欢"</span>/&gt;</span></span><br><span class="line">多选框</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"run"</span> <span class="attr">value</span>=<span class="string">"跑"</span> <span class="attr">checked</span>=<span class="string">"checked"</span>/&gt;</span>　　</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"climb"</span> <span class="attr">value</span>=<span class="string">"爬山"</span>/&gt;</span></span><br><span class="line">文件域</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span>&gt;</span></span><br><span class="line">多行文本框</span><br><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">rows</span>=<span class="string">"5"</span> <span class="attr">cols</span>=<span class="string">"10"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">提交按钮</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>/&gt;</span>　</span><br><span class="line">重置按钮</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"reset"</span> <span class="attr">value</span>=<span class="string">"重置"</span>/&gt;</span>  </span><br><span class="line">按钮</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"按钮"</span>/&gt;</span>  </span><br><span class="line">图像按钮</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"image"</span> <span class="attr">src</span>=<span class="string">"img.jpg"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;栈是一种先进后出的数据结构（First In Last Out）。它在实际编程中起到了非常重要的作用。比如，我们程序在运行中对函数的调用，就有着明显的压栈和出栈的操作，栈按存储结构分类分为链式栈和顺序栈。那么栈的链式存储如何实现呢？以下是一些实现思路，完整代码请用<a href="https://github.com/keviness/Algorithms/blob/master/Algorithms_C/DataStruct/stack_link.c" target="_blank" rel="noopener">随意门</a>~</p>
+<h2 id="栈的链式存储实现"><a href="#栈的链式存储实现" class="headerlink" title="栈的链式存储实现"></a>栈的链式存储实现</h2><h3 id="一，概念及示意图"><a href="#一，概念及示意图" class="headerlink" title="一，概念及示意图"></a>一，概念及示意图</h3><ul>
+<li>栈的链式存储示意图<img src="/post/undefined/stackLink.png" class title="StackLink">
+<h3 id="二，实现代码"><a href="#二，实现代码" class="headerlink" title="二，实现代码"></a>二，实现代码</h3><h4 id="（一）数据形式"><a href="#（一）数据形式" class="headerlink" title="（一）数据形式"></a>（一）数据形式</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">pnext</span>;</span></span><br><span class="line">&#125;NODE, * Pnode;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">stack</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    Pnode top;</span><br><span class="line">    Pnode buttom;</span><br><span class="line">&#125;STACK, * Pstack;</span><br></pre></td></tr></table></figure>
+<h4 id="（二）初始化"><a href="#（二）初始化" class="headerlink" title="（二）初始化"></a>（二）初始化</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitStack</span><span class="params">(Pstack <span class="built_in">stack</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>-&gt;top = (Pnode)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(NODE));</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">stack</span>-&gt;top == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">"Error in locate the memory!"</span>);</span><br><span class="line">        <span class="built_in">exit</span>(EXIT_FAILURE);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">stack</span>-&gt;buttom = <span class="built_in">stack</span>-&gt;top;</span><br><span class="line">    <span class="built_in">stack</span>-&gt;top-&gt;pnext = <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="（三）检测为空"><a href="#（三）检测为空" class="headerlink" title="（三）检测为空"></a>（三）检测为空</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">StackIsEmpty</span><span class="params">(Pstack <span class="built_in">stack</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">stack</span>-&gt;top == <span class="built_in">stack</span>-&gt;buttom)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//return (stack-&gt;top)==(stack-&gt;buttom) ? true:false;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="（四）压栈操作"><a href="#（四）压栈操作" class="headerlink" title="（四）压栈操作"></a>（四）压栈操作</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">PushStack</span><span class="params">(Pstack <span class="built_in">stack</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> value;</span><br><span class="line">    Pnode pnew = (Pnode)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(NODE));</span><br><span class="line">    <span class="keyword">if</span> (pnew == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">"Error in locating memory!"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"Enter the data you want to save:"</span>);</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;value) != <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        EATLINE;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">"Error value you input, try again:"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    EATLINE;</span><br><span class="line">    pnew-&gt;data = value;</span><br><span class="line">    pnew-&gt;pnext = <span class="built_in">stack</span>-&gt;top;</span><br><span class="line">    <span class="built_in">stack</span>-&gt;top = pnew;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"push %d into the stack successfully!\n"</span>, value);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="（五）出栈操作"><a href="#（五）出栈操作" class="headerlink" title="（五）出栈操作"></a>（五）出栈操作</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">PopStack</span><span class="params">(Pstack <span class="built_in">stack</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (StackIsEmpty(<span class="built_in">stack</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">"The stack is empty!"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Pnode temp;</span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    temp = <span class="built_in">stack</span>-&gt;top;</span><br><span class="line">    data = temp-&gt;data;</span><br><span class="line">    <span class="built_in">stack</span>-&gt;top = temp-&gt;pnext;</span><br><span class="line">    <span class="built_in">free</span>(temp);</span><br><span class="line">    temp = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"pop %d from stack successfully!\n"</span>, data);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="（六）获取栈的长度"><a href="#（六）获取栈的长度" class="headerlink" title="（六）获取栈的长度"></a>（六）获取栈的长度</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GetStackLength</span><span class="params">(Pstack <span class="built_in">stack</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (StackIsEmpty(<span class="built_in">stack</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">"The stack is empty!"</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    Pnode previousTop = <span class="built_in">stack</span>-&gt;top;</span><br><span class="line">    <span class="keyword">while</span> (previousTop != (<span class="built_in">stack</span>-&gt;buttom))</span><br><span class="line">    &#123;</span><br><span class="line">        count++;</span><br><span class="line">        previousTop = previousTop-&gt;pnext;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"The stack length:%d \n"</span>, count);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="（七）遍历操作"><a href="#（七）遍历操作" class="headerlink" title="（七）遍历操作"></a>（七）遍历操作</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TraverseStack</span><span class="params">(Pstack <span class="built_in">stack</span>, <span class="keyword">void</span>(*pfun)(<span class="keyword">int</span> *data))</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (StackIsEmpty(<span class="built_in">stack</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">"The stack is empty!"</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Pnode previousTop = <span class="built_in">stack</span>-&gt;top;</span><br><span class="line">    <span class="keyword">while</span> (previousTop != (<span class="built_in">stack</span>-&gt;buttom))</span><br><span class="line">    &#123;</span><br><span class="line">        (*pfun)(&amp;(previousTop-&gt;data));</span><br><span class="line">        previousTop = previousTop-&gt;pnext;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
 
@@ -250,7 +254,19 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Algorithms</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Stack</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Link</a>
         		</li>
       		
 		</ul>
@@ -306,7 +322,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://keviness.github.io/post/8bf176c0.html" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://keviness.github.io/post/add41033.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -321,18 +337,9 @@
 
 <nav id="article-nav">
   
-    <a href="/post/77058f3d.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Function Type
-        
-      </div>
-    </a>
   
-  
-    <a href="/post/7e016094.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CSS样式表的引入</div>
+    <a href="/post/821c169a.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">常用查找算法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -359,7 +366,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#表单的一些属性："><span class="toc-number">1.0.1.</span> <span class="toc-text">表单的一些属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见表单元素"><span class="toc-number">1.0.2.</span> <span class="toc-text">常见表单元素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常见表单元素应用场景"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">常见表单元素应用场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码举例："><span class="toc-number">1.0.2.2.</span> <span class="toc-text">代码举例：</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#栈的链式存储实现"><span class="toc-number">1.1.</span> <span class="toc-text">栈的链式存储实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一，概念及示意图"><span class="toc-number">1.1.1.</span> <span class="toc-text">一，概念及示意图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二，实现代码"><span class="toc-number">1.1.2.</span> <span class="toc-text">二，实现代码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（一）数据形式"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">（一）数据形式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（二）初始化"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">（二）初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（三）检测为空"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">（三）检测为空</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（四）压栈操作"><span class="toc-number">1.1.2.4.</span> <span class="toc-text">（四）压栈操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（五）出栈操作"><span class="toc-number">1.1.2.5.</span> <span class="toc-text">（五）出栈操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（六）获取栈的长度"><span class="toc-number">1.1.2.6.</span> <span class="toc-text">（六）获取栈的长度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（七）遍历操作"><span class="toc-number">1.1.2.7.</span> <span class="toc-text">（七）遍历操作</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -386,7 +393,7 @@ if(true){
     repo: 'keviness.github.io',
     owner: 'keviness',
     admin: ['keviness'],
-    id: 'Wed Apr 08 2020 00:00:00 GMT+0800',
+    id: 'Tue Sep 08 2020 00:00:00 GMT+0800',
     distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container')
