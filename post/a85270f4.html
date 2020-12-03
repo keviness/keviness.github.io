@@ -9,17 +9,21 @@
   <link rel="dns-prefetch" href="https://keviness.github.io">
 
   
-  <title>Tag: Algorithms | Keviness&#39;s Blog</title>
+  <title>队列：链式存储实现（Java实现） | Keviness&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hello! welcome to you~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Keviness&#39;s Blog">
-<meta property="og:url" content="https://keviness.github.io/tags/Algorithms/page/2/index.html">
+  <meta name="description" content="背景&amp;emsp;日月如梭，不知不觉已经到了2020年的最后一个月。2020年真心是一个魔幻的一年，世界发生了很多不可预料的事情，总结起来就是一句话：今年光见证历史了:)&amp;emsp;接触Java已经大半年时间了，前面用C实现过一些基本的算法，现在拿Java进行实现，顺便对常用算法知识进行复习巩固，本博客作为笔记。具体实现请用随意门~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="队列：链式存储实现（Java实现）">
+<meta property="og:url" content="https://keviness.github.io/post/a85270f4.html">
 <meta property="og:site_name" content="Keviness&#39;s Blog">
-<meta property="og:description" content="hello! welcome to you~">
+<meta property="og:description" content="背景&amp;emsp;日月如梭，不知不觉已经到了2020年的最后一个月。2020年真心是一个魔幻的一年，世界发生了很多不可预料的事情，总结起来就是一句话：今年光见证历史了:)&amp;emsp;接触Java已经大半年时间了，前面用C实现过一些基本的算法，现在拿Java进行实现，顺便对常用算法知识进行复习巩固，本博客作为笔记。具体实现请用随意门~">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-12-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-02T16:00:00.000Z">
 <meta property="article:author" content="keviness">
-<meta property="article:tag" content="keviness blog">
+<meta property="article:tag" content="Algorithms">
+<meta property="article:tag" content="Array">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Keviness&#39;s Blog" type="application/atom+xml">
@@ -176,36 +180,77 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java/JavaAlgorithmsArray" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/post/b7abc8f6.html" class="archive-article-date">
-  	<time datetime="2020-03-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/post/b7abc8f6.html">Algorithms(second)</a>
+    <h1 class="article-title" itemprop="name">
+      队列：链式存储实现（Java实现）
     </h1>
   
 
-        <div class="article-info info-on-right">
+        
+        <a href="/post/a85270f4.html" class="archive-article-date">
+  	<time datetime="2020-12-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-03</time>
+</a>
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon" style="color: gray;">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
+        <!--这里样式可以自己定制-->
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">535</span>字
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon" style="color:gray">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">2</span>分钟
+      </span>
+    </span>
+    <!--
+    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
+      &nbsp; | &nbsp;
+      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
+    </span>
+    -->
+</div>
+
           
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;日月如梭，不知不觉已经到了2020年的最后一个月。2020年真心是一个魔幻的一年，世界发生了很多不可预料的事情，总结起来就是一句话：今年光见证历史了:)<br>&emsp;接触Java已经大半年时间了，前面用C实现过一些基本的算法，现在拿Java进行实现，顺便对常用算法知识进行复习巩固，本博客作为笔记。具体实现请用<a href="https://github.com/keviness/Algorithms/blob/master/Algorithms_Java/DataStruct/Array/Array.java" target="_blank" rel="noopener">随意门~</a></p>
+<a id="more"></a>
+<h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2><h4 id="（一）结点形式"><a href="#（一）结点形式" class="headerlink" title="（一）结点形式"></a>（一）结点形式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> data;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> data)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.data = data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"The data:"</span>+<span class="keyword">this</span>.data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="（二）初始化"><a href="#（二）初始化" class="headerlink" title="（二）初始化"></a>（二）初始化</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span> length;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span> count;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">ArrayList</span><span class="params">(<span class="keyword">int</span> length)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.length = length;</span><br><span class="line">    <span class="keyword">public</span> Node[] array = <span class="keyword">new</span> Node[<span class="keyword">this</span>.length];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="（三）检测为空-满"><a href="#（三）检测为空-满" class="headerlink" title="（三）检测为空/满"></a>（三）检测为空/满</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.count == <span class="number">0</span>? <span class="keyword">true</span>:<span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isFull</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.count == <span class="keyword">this</span>.length? <span class="keyword">true</span>:<span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="（四）获取元素"><a href="#（四）获取元素" class="headerlink" title="（四）获取元素"></a>（四）获取元素</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.isEmpty())</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(<span class="string">"The array is empty!"</span>);</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.array[index-<span class="number">1</span>].data;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="（五）修改元素"><a href="#（五）修改元素" class="headerlink" title="（五）修改元素"></a>（五）修改元素</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">modify</span><span class="params">(<span class="keyword">int</span> index, <span class="keyword">int</span> value)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.isEmpty())</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(<span class="string">"The array is empty!"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.array[index].data = value;</span><br><span class="line">        System.out.printf(<span class="string">"%d modified successfully! \n"</span>, index);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="（六）末尾追加元素"><a href="#（六）末尾追加元素" class="headerlink" title="（六）末尾追加元素"></a>（六）末尾追加元素</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">append</span><span class="params">(Node element)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.isFull())</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(<span class="string">"The array is full!"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.array[<span class="keyword">this</span>.count] = element;</span><br><span class="line">        <span class="keyword">this</span>.count++;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="（七）插入元素"><a href="#（七）插入元素" class="headerlink" title="（七）插入元素"></a>（七）插入元素</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> index, Node value)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.isEmpty() || index==<span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>.array[<span class="number">0</span>] = value;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">this</span>.isFull())</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(<span class="string">"The array is full!"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(index&lt;<span class="number">1</span> &amp;&amp; index&gt;count+<span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(<span class="string">"The error index!"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="keyword">this</span>.count-<span class="number">1</span>; i&gt;=index-<span class="number">1</span>; i--)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">this</span>.array[i+<span class="number">1</span>] = <span class="keyword">this</span>.array[i];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">this</span>.array[index-<span class="number">1</span>] = value;</span><br><span class="line">            <span class="keyword">this</span>.count++;</span><br><span class="line">            System.out.printf(<span class="string">"%d inserted successfully! \n"</span>, index);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="（八）删除元素"><a href="#（八）删除元素" class="headerlink" title="（八）删除元素"></a>（八）删除元素</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">(<span class="keyword">int</span> index)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.isEmpty())</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(<span class="string">"The array is empty!"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (index&lt;<span class="number">1</span> || index&gt;<span class="keyword">this</span>.count)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(<span class="string">"The index is error!"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=index; i&lt;<span class="keyword">this</span>.count; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>.array[i-<span class="number">1</span>] = <span class="keyword">this</span>.array[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.array[<span class="keyword">this</span>.count-<span class="number">1</span>] = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">this</span>.count--;</span><br><span class="line">        System.out.printf(<span class="string">"%d deleted successfully! \n"</span>, index);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="（九）打印元素"><a href="#（九）打印元素" class="headerlink" title="（九）打印元素"></a>（九）打印元素</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"The array elements:"</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="keyword">this</span>.count; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(i+<span class="number">1</span> + <span class="string">": "</span>+ array[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -213,64 +258,154 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Algorithms</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/post/cacc6e40.html" class="archive-article-date">
-  	<time datetime="2020-03-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/post/cacc6e40.html">Algorithms(first)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Algorithms</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Array</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
   </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://keviness.github.io/post/a85270f4.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  
 </article>
-  
-  
-    </div></section>
+
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/tags/Algorithms/">上一页</a><a class="page-number" href="/tags/Algorithms/">1</a><span class="page-number current">2</span>
-    </nav>
+<nav id="article-nav">
+  
+  
+    <a href="/post/98b7ffbf.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java访问修饰符</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#实现代码"><span class="toc-number">1.1.</span> <span class="toc-text">实现代码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（一）结点形式"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">（一）结点形式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（二）初始化"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">（二）初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（三）检测为空-满"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">（三）检测为空&#x2F;满</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（四）获取元素"><span class="toc-number">1.1.0.4.</span> <span class="toc-text">（四）获取元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（五）修改元素"><span class="toc-number">1.1.0.5.</span> <span class="toc-text">（五）修改元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（六）末尾追加元素"><span class="toc-number">1.1.0.6.</span> <span class="toc-text">（六）末尾追加元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（七）插入元素"><span class="toc-number">1.1.0.7.</span> <span class="toc-text">（七）插入元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（八）删除元素"><span class="toc-number">1.1.0.8.</span> <span class="toc-text">（八）删除元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（九）打印元素"><span class="toc-number">1.1.0.9.</span> <span class="toc-text">（九）打印元素</span></a></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+    <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+  var gitalk = new Gitalk({
+    clientID: '5a7038de6bbe21a2b21e',
+    clientSecret: '3581f686afe3a2496b240b810fd27d0ea27be50b',
+    repo: 'keviness.github.io',
+    owner: 'keviness',
+    admin: ['keviness'],
+    id: 'Thu Dec 03 2020 00:00:00 GMT+0800',
+    distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container')
+}
+</script>
+  
+
+  
+
+  
+
+  
+
   
 
 
@@ -295,9 +430,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
