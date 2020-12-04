@@ -17,7 +17,7 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>队列：链式存储实现（Java实现）</title>
+    <title>数组：顺序存储实现（Java实现）</title>
     <link href="https://keviness.github.io/post/a85270f4.html"/>
     <id>https://keviness.github.io/post/a85270f4.html</id>
     <published>2020-12-02T16:00:00.000Z</published>
@@ -139,9 +139,9 @@
     
       <category term="C" scheme="https://keviness.github.io/tags/C/"/>
     
-      <category term="Stack" scheme="https://keviness.github.io/tags/Stack/"/>
-    
       <category term="Link" scheme="https://keviness.github.io/tags/Link/"/>
+    
+      <category term="Stack" scheme="https://keviness.github.io/tags/Stack/"/>
     
   </entry>
   
@@ -214,11 +214,11 @@
     
       <category term="Algorithms" scheme="https://keviness.github.io/tags/Algorithms/"/>
     
-      <category term="C" scheme="https://keviness.github.io/tags/C/"/>
+      <category term="List" scheme="https://keviness.github.io/tags/List/"/>
     
       <category term="Array" scheme="https://keviness.github.io/tags/Array/"/>
     
-      <category term="List" scheme="https://keviness.github.io/tags/List/"/>
+      <category term="C" scheme="https://keviness.github.io/tags/C/"/>
     
   </entry>
   
@@ -241,9 +241,9 @@
     
       <category term="Algorithms" scheme="https://keviness.github.io/tags/Algorithms/"/>
     
-      <category term="C" scheme="https://keviness.github.io/tags/C/"/>
-    
       <category term="List" scheme="https://keviness.github.io/tags/List/"/>
+    
+      <category term="C" scheme="https://keviness.github.io/tags/C/"/>
     
   </entry>
   
