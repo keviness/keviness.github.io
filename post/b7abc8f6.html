@@ -19,6 +19,7 @@
 <meta property="og:description" content="背景&amp;emsp;我们知道，我们在完成一件事情时，总会有一些计划，比如在什么时候用什么方法去完成。在数据结构的世界中，算法就是如此，它是解决特定问题求解步骤的描述，以下是一些总结：">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://keviness.github.io/post/b7abc8f6/Algorithms_second.png">
+<meta property="og:image" content="https://keviness.github.io/post/b7abc8f6/Algorithms_second.png">
 <meta property="article:published_time" content="2020-03-21T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-03-21T16:00:00.000Z">
 <meta property="article:author" content="keviness">
@@ -202,7 +203,7 @@
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
         <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">496</span>字
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">983</span>字
       </span>
     </span>
 
@@ -211,7 +212,7 @@
       <span class="post-meta-item-icon" style="color:gray">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">1</span>分钟
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">3</span>分钟
       </span>
     </span>
     <!--
@@ -268,7 +269,65 @@
 <h4 id="常见的算法时间复杂度表示："><a href="#常见的算法时间复杂度表示：" class="headerlink" title="常见的算法时间复杂度表示："></a>常见的算法时间复杂度表示：</h4><img src="/post/b7abc8f6/Algorithms_second.png" class title="algorithms">
 <hr>
 <h3 id="算法空间复杂度"><a href="#算法空间复杂度" class="headerlink" title="算法空间复杂度"></a>算法空间复杂度</h3><blockquote>
-<p>计算算法所需的存储空间的实现。<br>计算公式：S(n) = O(f(n))<br>n：问题规模； f(n)：关于n所占存储空间内存的函数。</p>
+<p>计算算法所需的存储空间的实现。<br>计算公式：S(n) = O(f(n))<br>=======</p>
+</blockquote>
+<hr>
+<p>title: Algorithms(second)<br>date: 2020.3.22<br>tag: Algorithms<br>abbrlink: b7abc8f6</p>
+<hr>
+<h1 id="背景-1"><a href="#背景-1" class="headerlink" title="背景"></a>背景</h1><p>&emsp;我们知道，我们在完成一件事情时，总会有一些计划，比如在什么时候用什么方法去完成。在数据结构的世界中，算法就是如此，它是解决特定问题求解步骤的描述，以下是一些总结：</p>
+<!--more-->
+<h2 id="算法（Algorithms）-1"><a href="#算法（Algorithms）-1" class="headerlink" title="算法（Algorithms）"></a>算法（Algorithms）</h2><h3 id="算法定义：-1"><a href="#算法定义：-1" class="headerlink" title="算法定义："></a>算法定义：</h3><blockquote>
+<p>算法是解决特定问题求解步骤的描述，在计算机表现为指令的有限序列，且每个指令表示一个或多个操作。</p>
+</blockquote>
+<hr>
+<h3 id="算法特性-1"><a href="#算法特性-1" class="headerlink" title="算法特性"></a>算法特性</h3><h4 id="一，输入输出：-1"><a href="#一，输入输出：-1" class="headerlink" title="一，输入输出："></a>一，输入输出：</h4><ol>
+<li>输入：算法具有零个或一个输入。</li>
+<li>输出：算法具有至少一个输出。</li>
+</ol>
+<hr>
+<h4 id="二，有穷性：-1"><a href="#二，有穷性：-1" class="headerlink" title="二，有穷性："></a>二，有穷性：</h4><ol>
+<li>算法在执行有限的步骤之后，会自动结束而不会出现无限循环，且每个步骤须在有限的时间内完成。</li>
+</ol>
+<hr>
+<h4 id="三，确定性：-1"><a href="#三，确定性：-1" class="headerlink" title="三，确定性："></a>三，确定性：</h4><ol>
+<li>算法的每一个步骤都有明确的含义，不会出现二义性</li>
+<li>一定条件下，只有一条执行路径，相同输入只能获得的一个输出结果，每个步骤被精确定义，无歧义。</li>
+</ol>
+<hr>
+<h4 id="四，可行性：-1"><a href="#四，可行性：-1" class="headerlink" title="四，可行性："></a>四，可行性：</h4><ol>
+<li>算法的每一个步骤都是可执行的，每一步都可执行有限步骤完成。</li>
+</ol>
+<hr>
+<h3 id="算法时间复杂度-1"><a href="#算法时间复杂度-1" class="headerlink" title="算法时间复杂度"></a>算法时间复杂度</h3><blockquote>
+<p>时间复杂度：算法的时间度量。</p>
+</blockquote>
+<hr>
+<h4 id="算法时间复杂度表示方法：大O阶表示方法-1"><a href="#算法时间复杂度表示方法：大O阶表示方法-1" class="headerlink" title="算法时间复杂度表示方法：大O阶表示方法"></a>算法时间复杂度表示方法：大O阶表示方法</h4><blockquote>
+<p>T(n) = O(f(n))：随问题规模n的增大，执行时间的增长率与f(n)的增长率相同。<br>n：问题规模；f(n)：运行次数函数（基本操作数量）。</p>
+</blockquote>
+<ol>
+<li>加法常数：用常数1取代。</li>
+<li>只保留运行次数函数中的最高阶项。</li>
+<li>若最高阶存在，且不是1，去处最高阶项常数。</li>
+</ol>
+<hr>
+<h4 id="常见的算法时间复杂度表示：-1"><a href="#常见的算法时间复杂度表示：-1" class="headerlink" title="常见的算法时间复杂度表示："></a>常见的算法时间复杂度表示：</h4><img src="/post/b7abc8f6/Algorithms_second.png" class title="algorithms">
+<hr>
+<h3 id="算法空间复杂度-1"><a href="#算法空间复杂度-1" class="headerlink" title="算法空间复杂度"></a>算法空间复杂度</h3><blockquote>
+<p>计算算法所需的存储空间的实现。<br>计算公式：S(n) = O(f(n))</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>a7c4693 (Update: blog)<br>n：问题规模； f(n)：关于n所占存储空间内存的函数。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 </blockquote>
 
       
@@ -393,7 +452,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#算法（Algorithms）"><span class="toc-number">1.1.</span> <span class="toc-text">算法（Algorithms）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#算法定义："><span class="toc-number">1.1.1.</span> <span class="toc-text">算法定义：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法特性"><span class="toc-number">1.1.2.</span> <span class="toc-text">算法特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一，输入输出："><span class="toc-number">1.1.2.1.</span> <span class="toc-text">一，输入输出：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二，有穷性："><span class="toc-number">1.1.2.2.</span> <span class="toc-text">二，有穷性：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三，确定性："><span class="toc-number">1.1.2.3.</span> <span class="toc-text">三，确定性：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四，可行性："><span class="toc-number">1.1.2.4.</span> <span class="toc-text">四，可行性：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法时间复杂度"><span class="toc-number">1.1.3.</span> <span class="toc-text">算法时间复杂度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#算法时间复杂度表示方法：大O阶表示方法"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">算法时间复杂度表示方法：大O阶表示方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常见的算法时间复杂度表示："><span class="toc-number">1.1.3.2.</span> <span class="toc-text">常见的算法时间复杂度表示：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法空间复杂度"><span class="toc-number">1.1.4.</span> <span class="toc-text">算法空间复杂度</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#算法（Algorithms）"><span class="toc-number">1.1.</span> <span class="toc-text">算法（Algorithms）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#算法定义："><span class="toc-number">1.1.1.</span> <span class="toc-text">算法定义：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法特性"><span class="toc-number">1.1.2.</span> <span class="toc-text">算法特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一，输入输出："><span class="toc-number">1.1.2.1.</span> <span class="toc-text">一，输入输出：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二，有穷性："><span class="toc-number">1.1.2.2.</span> <span class="toc-text">二，有穷性：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三，确定性："><span class="toc-number">1.1.2.3.</span> <span class="toc-text">三，确定性：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四，可行性："><span class="toc-number">1.1.2.4.</span> <span class="toc-text">四，可行性：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法时间复杂度"><span class="toc-number">1.1.3.</span> <span class="toc-text">算法时间复杂度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#算法时间复杂度表示方法：大O阶表示方法"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">算法时间复杂度表示方法：大O阶表示方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常见的算法时间复杂度表示："><span class="toc-number">1.1.3.2.</span> <span class="toc-text">常见的算法时间复杂度表示：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法空间复杂度"><span class="toc-number">1.1.4.</span> <span class="toc-text">算法空间复杂度</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#背景-1"><span class="toc-number">2.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#算法（Algorithms）-1"><span class="toc-number">2.1.</span> <span class="toc-text">算法（Algorithms）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#算法定义：-1"><span class="toc-number">2.1.1.</span> <span class="toc-text">算法定义：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法特性-1"><span class="toc-number">2.1.2.</span> <span class="toc-text">算法特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一，输入输出：-1"><span class="toc-number">2.1.2.1.</span> <span class="toc-text">一，输入输出：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二，有穷性：-1"><span class="toc-number">2.1.2.2.</span> <span class="toc-text">二，有穷性：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三，确定性：-1"><span class="toc-number">2.1.2.3.</span> <span class="toc-text">三，确定性：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四，可行性：-1"><span class="toc-number">2.1.2.4.</span> <span class="toc-text">四，可行性：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法时间复杂度-1"><span class="toc-number">2.1.3.</span> <span class="toc-text">算法时间复杂度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#算法时间复杂度表示方法：大O阶表示方法-1"><span class="toc-number">2.1.3.1.</span> <span class="toc-text">算法时间复杂度表示方法：大O阶表示方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常见的算法时间复杂度表示：-1"><span class="toc-number">2.1.3.2.</span> <span class="toc-text">常见的算法时间复杂度表示：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法空间复杂度-1"><span class="toc-number">2.1.4.</span> <span class="toc-text">算法空间复杂度</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -696,6 +755,26 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Project</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Link List</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Queue Link</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Queue Sequence</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Stack Link</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Stack Sequence</a>
               </li>
             
             <div class="clearfix"></div>

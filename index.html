@@ -289,6 +289,787 @@
 
 
   
+    <article id="post-Java/JavaAlgorithmsSearch" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/dedb6031.html">常用查找算法（Java实现）</a>
+    </h1>
+  
+
+        
+        <a href="/post/dedb6031.html" class="archive-article-date">
+  	<time datetime="2020-12-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-27</time>
+</a>
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon" style="color: gray;">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
+        <!--这里样式可以自己定制-->
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">2k</span>字
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon" style="color:gray">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">8</span>分钟
+      </span>
+    </span>
+    <!--
+    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
+      &nbsp; | &nbsp;
+      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
+    </span>
+    -->
+</div>
+
+          
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;怎样在一堆混乱的数据中查找到需要的数据呢？查找算法就显得很重要了。以下是常见的查找算法实现，看实现的完整代码请用<a href="https://github.com/keviness/Algorithms/tree/master/Algorithms_Java/Search" target="_blank" rel="noopener">随意门~</a></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Algorithms</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Search</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/dedb6031.html">Read more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java/JavaAlgorithmsSort" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/f6eb039a.html">常见排序算法（Java实现）</a>
+    </h1>
+  
+
+        
+        <a href="/post/f6eb039a.html" class="archive-article-date">
+  	<time datetime="2020-12-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-25</time>
+</a>
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon" style="color: gray;">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
+        <!--这里样式可以自己定制-->
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">1.8k</span>字
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon" style="color:gray">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">8</span>分钟
+      </span>
+    </span>
+    <!--
+    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
+      &nbsp; | &nbsp;
+      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
+    </span>
+    -->
+</div>
+
+          
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;在算法的世界里，顺序具有重要地位。以下是一些常用排序算法的实现，完整实现代码请用<a href="https://github.com/keviness/Algorithms/tree/master/Algorithms_Java/Sort" target="_blank" rel="noopener">神奇的传送门~</a>。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Algorithms</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Sort</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/f6eb039a.html">Read more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java/JavaAlgorithmsQueueSequence" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/f8b7c9ad.html">队列顺序存储实现（java实现）</a>
+    </h1>
+  
+
+        
+        <a href="/post/f8b7c9ad.html" class="archive-article-date">
+  	<time datetime="2020-12-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-19</time>
+</a>
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon" style="color: gray;">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
+        <!--这里样式可以自己定制-->
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">301</span>字
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon" style="color:gray">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">1</span>分钟
+      </span>
+    </span>
+    <!--
+    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
+      &nbsp; | &nbsp;
+      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
+    </span>
+    -->
+</div>
+
+          
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;在算法中队列有顺序存储（连续存储）和链式存储（离散存储）两种方式。其中顺序存储必须要用循环队列的形式实现，具体实现可以走<a href="https://github.com/keviness/Algorithms/blob/master/Algorithms_Java/DataStruct/Queue/QueueSequence.java" target="_blank" rel="noopener">随意门~</a></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Algorithms</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Queue Sequence</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/f8b7c9ad.html">Read more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java/JavaAlgorithmsQueueLink" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/dcb6bac6.html">队列链式存储实现（java实现）</a>
+    </h1>
+  
+
+        
+        <a href="/post/dcb6bac6.html" class="archive-article-date">
+  	<time datetime="2020-12-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-18</time>
+</a>
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon" style="color: gray;">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
+        <!--这里样式可以自己定制-->
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">266</span>字
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon" style="color:gray">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">1</span>分钟
+      </span>
+    </span>
+    <!--
+    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
+      &nbsp; | &nbsp;
+      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
+    </span>
+    -->
+</div>
+
+          
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;前面已经简单论述过它的顺序存储实现，接下来是它的链式存储实现，以下是一些实现思路，完整代码请用<a href="https://github.com/keviness/Algorithms/blob/master/Algorithms_Java/DataStruct/Queue/QueueLink.java" target="_blank" rel="noopener">随意门~</a></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Algorithms</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Queue Link</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/dcb6bac6.html">Read more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java/JavaAlgorithmsStackLink" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/f05b471.html">栈的链式存储实现（Java实现）</a>
+    </h1>
+  
+
+        
+        <a href="/post/f05b471.html" class="archive-article-date">
+  	<time datetime="2020-12-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-17</time>
+</a>
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon" style="color: gray;">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
+        <!--这里样式可以自己定制-->
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">253</span>字
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon" style="color:gray">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">1</span>分钟
+      </span>
+    </span>
+    <!--
+    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
+      &nbsp; | &nbsp;
+      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
+    </span>
+    -->
+</div>
+
+          
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;栈是一种先进后出的数据结构（First In Last Out）。栈按存储结构分类分为链式栈和顺序栈。那么栈的链式存储如何实现呢？以下是一些实现思路，完整代码请用<a href="https://github.com/keviness/Algorithms/blob/master/Algorithms_Java/DataStruct/Stack/stackLink.java" target="_blank" rel="noopener">随意门~</a></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Algorithms</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Stack Link</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/f05b471.html">Read more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java/JavaAlgorithmsStackSequence" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/2b04c71a.html">栈的顺序存储实现（Java实现）</a>
+    </h1>
+  
+
+        
+        <a href="/post/2b04c71a.html" class="archive-article-date">
+  	<time datetime="2020-12-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-17</time>
+</a>
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon" style="color: gray;">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
+        <!--这里样式可以自己定制-->
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">234</span>字
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon" style="color:gray">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">1</span>分钟
+      </span>
+    </span>
+    <!--
+    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
+      &nbsp; | &nbsp;
+      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
+    </span>
+    -->
+</div>
+
+          
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;前面已经利用Java进行了栈的链式存储实现，接下来是它的顺序存储实现，以下是一些实现思路，完整代码请用<a href="https://github.com/keviness/Algorithms/blob/master/Algorithms_Java/DataStruct/Stack/stackLink.java" target="_blank" rel="noopener">神奇的随意门~</a></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Algorithms</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Stack Sequence</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/2b04c71a.html">Read more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java/JavaAlgorithmsLinkList" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/53dd0bf9.html">线性表：链表实现（链式存储实现）</a>
+    </h1>
+  
+
+        
+        <a href="/post/53dd0bf9.html" class="archive-article-date">
+  	<time datetime="2020-12-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-16</time>
+</a>
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon" style="color: gray;">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
+        <!--这里样式可以自己定制-->
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">327</span>字
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon" style="color:gray">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">1</span>分钟
+      </span>
+    </span>
+    <!--
+    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
+      &nbsp; | &nbsp;
+      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
+    </span>
+    -->
+</div>
+
+          
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;线性表是比较常见的数据结构，按存储方式分，有链表（链式存储）和数组（顺序存储）两种，那么Java如何实现链表呢？以下是一些个实现思路，完整代码请用<a href="https://github.com/keviness/Algorithms/blob/master/Algorithms_Java/DataStruct/SingleLinkList/SingleLink.java" target="_blank" rel="noopener">传送门~</a></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Algorithms</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Sequence</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Link List</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/53dd0bf9.html">Read more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java/JavaAlgorithmsArray" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -311,7 +1092,7 @@
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
         <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">535</span>字
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">1.1k</span>字
       </span>
     </span>
 
@@ -320,7 +1101,7 @@
       <span class="post-meta-item-icon" style="color:gray">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">2</span>分钟
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">5</span>分钟
       </span>
     </span>
     <!--
@@ -337,7 +1118,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;日月如梭，不知不觉已经到了2020年的最后一个月。2020年真心是一个魔幻的一年，世界发生了很多不可预料的事情，总结起来就是一句话：今年光见证历史了:)<br>&emsp;接触Java已经大半年时间了，前面用C实现过一些基本的算法，现在拿Java进行实现，顺便对常用算法知识进行复习巩固，本博客作为笔记。具体实现请用<a href="https://github.com/keviness/Algorithms/blob/master/Algorithms_Java/DataStruct/Array/Array.java" target="_blank" rel="noopener">随意门~</a></p>
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;日月如梭，不知不觉已经到了2020年的最后一个月。2020年真心是一个魔幻的年份，世界发生了很多不可预料的事情，总结起来就是一句话：今年光见证历史了:)<br>&emsp;接触Java已经大半年时间了，前面用C实现过一些基本的算法，现在拿Java进行实现，顺便对常用算法知识进行复习巩固，本博客作为笔记。具体实现请用<a href="https://github.com/keviness/Algorithms/blob/master/Algorithms_Java/DataStruct/Array/Array.java" target="_blank" rel="noopener">随意门~</a></p>
         
       
 
@@ -477,795 +1258,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/post/98b7ffbf.html">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript/javascript_table" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/6a9fb1f0.html">JavaScript实现跨行合并table中相同单元格</a>
-    </h1>
-  
-
-        
-        <a href="/post/6a9fb1f0.html" class="archive-article-date">
-  	<time datetime="2020-10-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-23</time>
-</a>
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon" style="color: gray;">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
-        <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">423</span>字
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon" style="color:gray">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">1</span>分钟
-      </span>
-    </span>
-    <!--
-    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
-      &nbsp; | &nbsp;
-      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
-    </span>
-    -->
-</div>
-
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;在web中我们经常需要用到table表格对我们的数据进行呈现，table表格能很友好地显示我们的数据，那在动态创建table时，如何进行跨行合并相同内容单元格呢？以下是一些个方法：</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Table</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/6a9fb1f0.html">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Algorithms/Algorithms_queueLink" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/91f8721d.html">队列：链式存储实现</a>
-    </h1>
-  
-
-        
-        <a href="/post/91f8721d.html" class="archive-article-date">
-  	<time datetime="2020-09-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-13</time>
-</a>
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon" style="color: gray;">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
-        <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">545</span>字
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon" style="color:gray">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">2</span>分钟
-      </span>
-    </span>
-    <!--
-    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
-      &nbsp; | &nbsp;
-      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
-    </span>
-    -->
-</div>
-
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;暑假快要结束了，研究生生涯就要拉开序幕了。数据结构的工作可以告一段落了，这个暑假过得还是很充实的，接下来的Java工作也要加油~<br>&emsp;队列这个数据结构和我们生活的一些排队场景十分相似（FIFO），前面已经简单论述过它的顺序存储实现，接下来是它的链式存储实现，以下是一些实现思路，完整代码请用<a href="https://github.com/keviness/Algorithms/blob/master/Algorithms_C/DataStruct/queue_link.c" target="_blank" rel="noopener">随意门~</a></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Algorithms</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Queue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Link</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/91f8721d.html">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Algorithms/Algorithms_stackSequence" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/50fbc576.html">栈：顺序存储实现</a>
-    </h1>
-  
-
-        
-        <a href="/post/50fbc576.html" class="archive-article-date">
-  	<time datetime="2020-09-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-10</time>
-</a>
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon" style="color: gray;">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
-        <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">299</span>字
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon" style="color:gray">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">1</span>分钟
-      </span>
-    </span>
-    <!--
-    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
-      &nbsp; | &nbsp;
-      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
-    </span>
-    -->
-</div>
-
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;栈是一种应用十分广泛的数据结构，前面我们已经展示了栈的链式存储实现，接下来是它的顺序存储实现，以下是一些实现思路，完整代码请用<a href="https://github.com/keviness/Algorithms/blob/master/Algorithms_C/DataStruct/stack_sequence.c" target="_blank" rel="noopener">神奇的随意门~</a></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Algorithms</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Stack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Sequence</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/50fbc576.html">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Algorithms/Algorithms_stackLink" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/add41033.html">栈：链式存储实现</a>
-    </h1>
-  
-
-        
-        <a href="/post/add41033.html" class="archive-article-date">
-  	<time datetime="2020-09-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-08</time>
-</a>
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon" style="color: gray;">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
-        <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">486</span>字
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon" style="color:gray">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">2</span>分钟
-      </span>
-    </span>
-    <!--
-    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
-      &nbsp; | &nbsp;
-      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
-    </span>
-    -->
-</div>
-
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;栈是一种先进后出的数据结构（First In Last Out）。它在实际编程中起到了非常重要的作用。比如，我们程序在运行中对函数的调用，就有着明显的压栈和出栈的操作，栈按存储结构分类分为链式栈和顺序栈。那么栈的链式存储如何实现呢？以下是一些实现思路，完整代码请用<a href="https://github.com/keviness/Algorithms/blob/master/Algorithms_C/DataStruct/stack_link.c" target="_blank" rel="noopener">随意门</a>~</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Algorithms</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Stack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Link</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/add41033.html">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Algorithms/Algorithms_search" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/821c169a.html">常用查找算法</a>
-    </h1>
-  
-
-        
-        <a href="/post/821c169a.html" class="archive-article-date">
-  	<time datetime="2020-09-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-07</time>
-</a>
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon" style="color: gray;">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
-        <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">2k</span>字
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon" style="color:gray">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">8</span>分钟
-      </span>
-    </span>
-    <!--
-    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
-      &nbsp; | &nbsp;
-      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
-    </span>
-    -->
-</div>
-
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;众里寻他千百度，那人却在灯火燃珊处。怎样在一堆混乱的数据中查找到需要的数据呢？查找算法就显得很重要了，常见的查找有多种，以下是其中的一些，看实现的完整代码请用<a href="https://github.com/keviness/Algorithms/tree/master/Algorithms_C/Search" target="_blank" rel="noopener">随意门~</a></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Algorithms</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Search</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/821c169a.html">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Algorithms/Algorithms_sort" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/c90bdf37.html">常见排序算法</a>
-    </h1>
-  
-
-        
-        <a href="/post/c90bdf37.html" class="archive-article-date">
-  	<time datetime="2020-09-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-05</time>
-</a>
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon" style="color: gray;">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
-        <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">1.8k</span>字
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon" style="color:gray">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">8</span>分钟
-      </span>
-    </span>
-    <!--
-    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
-      &nbsp; | &nbsp;
-      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
-    </span>
-    -->
-</div>
-
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;人类社会需要秩序，顺序从某个角度而言是秩序的一种。在算法的世界里，顺序具有重要地位。那该将一些混乱无序的数据变成有序的呢？以下是一些经典算法实现，完整代码请用<a href="https://github.com/keviness/Algorithms/tree/master/Algorithms_C/Sorts" target="_blank" rel="noopener">神奇的传送门~</a>。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Algorithms</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Sort</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/c90bdf37.html">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Algorithms/Algorithms_array" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/ab15e1cb.html">线性表：数组的实现</a>
-    </h1>
-  
-
-        
-        <a href="/post/ab15e1cb.html" class="archive-article-date">
-  	<time datetime="2020-09-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-03</time>
-</a>
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon" style="color: gray;">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
-        <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">477</span>字
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon" style="color:gray">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">2</span>分钟
-      </span>
-    </span>
-    <!--
-    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
-      &nbsp; | &nbsp;
-      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
-    </span>
-    -->
-</div>
-
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;数组在C语言中已经存在了，那么如何实现一个自定义的数组呢？以下是一些实现思路，完整代码请走<a href="https://github.com/keviness/Algorithms/blob/master/Algorithms_C/DataStruct/array.c" target="_blank" rel="noopener">神奇的传送门~</a></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Algorithms</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Array</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">List</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/ab15e1cb.html">Read more >></a>
         </p>
       
 
@@ -1562,6 +1554,26 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Project</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Link List</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Queue Link</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Queue Sequence</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Stack Link</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Stack Sequence</a>
               </li>
             
             <div class="clearfix"></div>
