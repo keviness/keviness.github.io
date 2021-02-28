@@ -9,15 +9,17 @@
   <link rel="dns-prefetch" href="https://keviness.github.io">
 
   
-  <title>Keviness&#39;s Blog</title>
+  <title>Linux常用目录处理命令 | Keviness&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hello! welcome to you~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Keviness&#39;s Blog">
-<meta property="og:url" content="https://keviness.github.io/page/3/index.html">
+  <meta name="description" content="背景&amp;emsp;目前国内 Linux 更多的是应用于服务器上，而桌面操作系统更多使用的是 Windows。那它们之间有哪些区别呢？这篇文章进行一个总结～">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux常用目录处理命令">
+<meta property="og:url" content="https://keviness.github.io/post/a1e98319.html">
 <meta property="og:site_name" content="Keviness&#39;s Blog">
-<meta property="og:description" content="hello! welcome to you~">
+<meta property="og:description" content="背景&amp;emsp;目前国内 Linux 更多的是应用于服务器上，而桌面操作系统更多使用的是 Windows。那它们之间有哪些区别呢？这篇文章进行一个总结～">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-02-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-02-27T16:00:00.000Z">
 <meta property="article:author" content="keviness">
 <meta property="article:tag" content="keviness blog">
 <meta name="twitter:card" content="summary">
@@ -176,22 +178,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Numpy/numpy2_operarions" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-LinuxCommand/常见目录处理命令" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/9ae22f4b.html">Numpy（二）：numpy数组常用操作</a>
+    <h1 class="article-title" itemprop="name">
+      Linux常用目录处理命令
     </h1>
   
 
         
-        <a href="/post/9ae22f4b.html" class="archive-article-date">
-  	<time datetime="2020-07-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-27</time>
+        <a href="/post/a1e98319.html" class="archive-article-date">
+  	<time datetime="2021-02-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-28</time>
 </a>
         
           <div style="margin-top:10px;">
@@ -200,7 +200,7 @@
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
         <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">3.2k</span>字
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">2.4k</span>字
       </span>
     </span>
 
@@ -209,7 +209,7 @@
       <span class="post-meta-item-icon" style="color:gray">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">14</span>分钟
+        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">9</span>分钟
       </span>
     </span>
     <!--
@@ -226,8 +226,210 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;Numpy中的数组是多维数组，Numpy除了有很强的数组元素访问能力，还有很强的数组操作能力，以下是常用的Numpy数组操作函数：</p>
-        
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;目前国内 Linux 更多的是应用于服务器上，而桌面操作系统更多使用的是 Windows。那它们之间有哪些区别呢？这篇文章进行一个总结～</p>
+<a id="more"></a>
+<h3 id="一，Linux-VS-Windows"><a href="#一，Linux-VS-Windows" class="headerlink" title="一，Linux VS Windows"></a>一，Linux VS Windows</h3><table>
+<thead>
+<tr>
+<th align="center">系统直接的比较</th>
+<th align="center">Windows</th>
+<th align="center">Linux</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">界面</td>
+<td align="center">界面统一，外壳程序固定所有 Windows 程序菜单几乎一致，快捷键也几乎相同</td>
+<td align="center">图形界面风格依发布版不同而不同，可能互不兼容。GNU/Linux 的终端机是从 UNIX 传承下来，基本命令和操作方法也几乎一致。</td>
+</tr>
+<tr>
+<td align="center">驱动程序</td>
+<td align="center">驱动程序丰富，版本更新频繁。默认安装程序里面一般包含有该版本发布时流行的硬件驱动程序，之后所出的新硬件驱动依赖于硬件厂商提供。对于一些老硬件，如果没有了原配的驱动有时很难支持。另外，有时硬件厂商未提供所需版本的 Windows 下的驱动，也会比较头痛。</td>
+<td align="center">由志愿者开发，由 Linux 核心开发小组发布，很多硬件厂商基于版权考虑并未提供驱动程序，尽管多数无需手动安装，但是涉及安装则相对复杂，使得新用户面对驱动程序问题（是否存在和安装方法）会一筹莫展。但是在开源开发模式下，许多老硬件尽管在Windows下很难支持的也容易找到驱动。HP、Intel、AMD 等硬件厂商逐步不同程度支持开源驱动，问题正在得到缓解。</td>
+</tr>
+<tr>
+<td align="center">使用</td>
+<td align="center">使用比较简单，容易入门。图形化界面对没有计算机背景知识的用户使用十分有利。</td>
+<td align="center">图形界面使用简单，容易入门。文字界面，需要学习才能掌握。</td>
+</tr>
+<tr>
+<td align="center">学习</td>
+<td align="center">系统构造复杂、变化频繁，且知识、技能淘汰快，深入学习困难。</td>
+<td align="center">系统构造简单、稳定，且知识、技能传承性好，深入学习相对容易。</td>
+</tr>
+<tr>
+<td align="center">软件</td>
+<td align="center">每一种特定功能可能都需要商业软件的支持，需要购买相应的授权。</td>
+<td align="center">大部分软件都可以自由获取，同样功能的软件选择较少。</td>
+</tr>
+</tbody></table>
+<h3 id="二，Linux文件路径"><a href="#二，Linux文件路径" class="headerlink" title="二，Linux文件路径"></a>二，Linux文件路径</h3><blockquote>
+<ul>
+<li>Linux的目录结构为树状结构，最顶级的目录为根目录 /。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>其他目录通过挂载可以将它们添加到树中，通过解除挂载可以移除它们。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>绝对路径：<br>路径的写法，由根目录 / 写起，例如： /usr/share/doc 这个目录。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>相对路径：<br>路径的写法，不是由 / 写起，例如由 /usr/share/doc 要到 /usr/share/man 底下时，可以写成： cd ../man 这就是相对路径的写法。</li>
+</ul>
+</blockquote>
+<h3 id="三，处理目录的常用命令"><a href="#三，处理目录的常用命令" class="headerlink" title="三，处理目录的常用命令"></a>三，处理目录的常用命令</h3><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ls（英文全拼：list files）</td>
+<td align="center">列出目录及文件名</td>
+</tr>
+<tr>
+<td align="center">cd（英文全拼：change directory）</td>
+<td align="center">切换目录</td>
+</tr>
+<tr>
+<td align="center">pwd（英文全拼：print work directory）</td>
+<td align="center">显示目前的目录</td>
+</tr>
+<tr>
+<td align="center">mkdir（英文全拼：make directory）</td>
+<td align="center">创建一个新的目录</td>
+</tr>
+<tr>
+<td align="center">rmdir（英文全拼：remove directory）</td>
+<td align="center">删除一个空的目录</td>
+</tr>
+<tr>
+<td align="center">cp（英文全拼：copy file）</td>
+<td align="center">复制文件或目录</td>
+</tr>
+<tr>
+<td align="center">rm（英文全拼：remove）</td>
+<td align="center">删除文件或目录</td>
+</tr>
+<tr>
+<td align="center">mv（英文全拼：move file）</td>
+<td align="center">移动文件与目录，或修改文件与目录的名</td>
+</tr>
+<tr>
+<td align="center">man [命令]</td>
+<td align="center">查看各个命令的使用文档，如 ：man cp</td>
+</tr>
+</tbody></table>
+<h4 id="1-ls-列出目录"><a href="#1-ls-列出目录" class="headerlink" title="1, ls (列出目录)"></a>1, ls (列出目录)</h4><p>选项与参数：<br>-a ：全部的文件，连同隐藏文件( 开头为 . 的文件) 一起列出来(常用)<br>-d ：仅列出目录本身，而不是列出目录内的文件数据(常用)<br>-l ：长数据串列出，包含文件的属性与权限等等数据；(常用)<br>将家目录下的所有文件列出来(含属性与隐藏档)<br>[root@www ~]# ls -al ~</p>
+<h4 id="2-cd-切换目录"><a href="#2-cd-切换目录" class="headerlink" title="2, cd (切换目录)"></a>2, cd (切换目录)</h4><blockquote>
+<p>cd是Change Directory的缩写，这是用来变换工作目录的命令。</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]<span class="meta"># mkdir runoob</span></span><br><span class="line"></span><br><span class="line">#使用绝对路径切换到 runoob 目录</span><br><span class="line">[root@www ~]<span class="meta"># cd /root/runoob/</span></span><br><span class="line"></span><br><span class="line">#使用相对路径切换到 runoob 目录</span><br><span class="line">[root@www ~]<span class="meta"># cd ./runoob/</span></span><br><span class="line"></span><br><span class="line"> 表示回到自己的家目录，亦即是 /root 这个目录</span><br><span class="line">[root@www runoob]<span class="meta"># cd ~</span></span><br><span class="line"></span><br><span class="line">#表示去到目前的上一级目录，亦即是 /root 的上一级目录的意思；</span><br><span class="line">[root@www ~]<span class="meta"># cd ..</span></span><br><span class="line">接下来大家多操作几次应该就可以很好的理解 cd 命令的。</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-pwd-显示目前所在的目录"><a href="#3-pwd-显示目前所在的目录" class="headerlink" title="3, pwd (显示目前所在的目录)"></a>3, pwd (显示目前所在的目录)</h4><blockquote>
+<p>pwd 是 Print Working Directory 的缩写，也就是显示目前所在目录的命令。</p>
+</blockquote>
+<blockquote>
+<p>选项与参数：<br>-P ：显示出确实的路径，而非使用连结 (link) 路径。<br>实例：单纯显示出目前的工作目录：</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]<span class="meta"># pwd</span></span><br><span class="line">/root   &lt;== 显示出目录啦～</span><br><span class="line">实例显示出实际的工作目录，而非连结档本身的目录名而已。</span><br><span class="line">[root@www ~]# cd /var/mail   &lt;==注意，/var/mail是一个连结档</span><br><span class="line">[root@www mail]# pwd</span><br><span class="line">/var/mail         &lt;==列出目前的工作目录</span><br><span class="line">[root@www mail]# pwd -P</span><br><span class="line">/var/spool/mail   &lt;==怎么回事？有没有加 -P 差很多～</span><br><span class="line">[root@www mail]# ls -ld /var/mail</span><br><span class="line">lrwxrwxrwx <span class="number">1</span> root root <span class="number">10</span> Sep  <span class="number">4</span> <span class="number">17</span>:<span class="number">54</span> /var/mail -&gt; spool/mail</span><br></pre></td></tr></table></figure>
+<h4 id="4-mkdir-创建新目录"><a href="#4-mkdir-创建新目录" class="headerlink" title="4, mkdir (创建新目录)"></a>4, mkdir (创建新目录)</h4><ul>
+<li>使用mkdir (make directory):创建新的目录</li>
+<li>选项与参数：<blockquote>
+<ul>
+<li>-m ：配置文件的权限喔！直接配置，不需要看默认权限 (umask) 的脸色～</li>
+<li>-p ：帮助你直接将所需要的目录(包含上一级目录)递归创建起来！<br>实例：请到/tmp底下尝试创建数个新目录看看：</li>
+</ul>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]<span class="meta"># cd /tmp</span></span><br><span class="line">[root@www tmp]<span class="meta"># mkdir test    &lt;==创建一名为 test 的新目录</span></span><br><span class="line">[root@www tmp]<span class="meta"># mkdir test1/test2/test3/test4</span></span><br><span class="line"><span class="built_in">mkdir</span>: cannot create directory `test1/test2/test3/test4<span class="number">'</span>: </span><br><span class="line">No such file <span class="keyword">or</span> directory       &lt;== 没办法直接创建此目录啊！</span><br><span class="line">[root@www tmp]# <span class="built_in">mkdir</span> -p test1/test2/test3/test4</span><br><span class="line">加了这个 -p 的选项，可以自行帮你创建多层目录！</span><br><span class="line"></span><br><span class="line">实例：创建权限为 rwx--x--x 的目录。</span><br><span class="line"></span><br><span class="line">[root@www tmp]# <span class="built_in">mkdir</span> -m <span class="number">711</span> test2</span><br><span class="line">[root@www tmp]# ls -l</span><br><span class="line">drwxr-xr-x  <span class="number">3</span> root  root <span class="number">4096</span> Jul <span class="number">18</span> <span class="number">12</span>:<span class="number">50</span> test</span><br><span class="line">drwxr-xr-x  <span class="number">3</span> root  root <span class="number">4096</span> Jul <span class="number">18</span> <span class="number">12</span>:<span class="number">53</span> test1</span><br><span class="line">drwx--x--x  <span class="number">2</span> root  root <span class="number">4096</span> Jul <span class="number">18</span> <span class="number">12</span>:<span class="number">54</span> test2</span><br><span class="line">上面的权限部分，如果没有加上 -m 来强制配置属性，系统会使用默认属性。</span><br><span class="line"></span><br><span class="line">如果我们使用 -m ，如上例我们给予 -m <span class="number">711</span> 来给予新的目录 drwx--x--x 的权限。</span><br></pre></td></tr></table></figure>
+<h4 id="5-rmdir-删除空的目录"><a href="#5-rmdir-删除空的目录" class="headerlink" title="5, rmdir (删除空的目录)"></a>5, rmdir (删除空的目录)</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[root@www tmp]<span class="meta"># rmdir runoob/</span></span><br><span class="line">将 <span class="built_in">mkdir</span> 实例中创建的目录(/tmp 底下)删除掉！</span><br><span class="line">[root@www tmp]<span class="meta"># ls -l   &lt;==看看有多少目录存在？</span></span><br><span class="line">drwxr-xr-x  <span class="number">3</span> root  root <span class="number">4096</span> Jul <span class="number">18</span> <span class="number">12</span>:<span class="number">50</span> test</span><br><span class="line">drwxr-xr-x  <span class="number">3</span> root  root <span class="number">4096</span> Jul <span class="number">18</span> <span class="number">12</span>:<span class="number">53</span> test1</span><br><span class="line">drwx--x--x  <span class="number">2</span> root  root <span class="number">4096</span> Jul <span class="number">18</span> <span class="number">12</span>:<span class="number">54</span> test2</span><br><span class="line">[root@www tmp]<span class="meta"># rmdir test   &lt;==可直接删除掉，没问题</span></span><br><span class="line">[root@www tmp]<span class="meta"># rmdir test1  &lt;==因为尚有内容，所以无法删除！</span></span><br><span class="line"><span class="built_in">rmdir</span>: `test1<span class="number">'</span>: Directory <span class="keyword">not</span> empty</span><br><span class="line">[root@www tmp]<span class="meta"># rmdir -p test1/test2/test3/test4</span></span><br><span class="line">[root@www tmp]<span class="meta"># ls -l        &lt;==您看看，底下的输出中test与test1不见了！</span></span><br><span class="line">drwx--x--x  <span class="number">2</span> root  root <span class="number">4096</span> Jul <span class="number">18</span> <span class="number">12</span>:<span class="number">54</span> test2</span><br><span class="line">#利用 -p 这个选项，立刻就可以将 test1/test2/test3/test4 一次删除。</span><br><span class="line">#不过要注意的是，这个 <span class="built_in">rmdir</span> 仅能删除空的目录，你可以使用 rm 命令来删除非空目录。</span><br></pre></td></tr></table></figure>
+<h4 id="6-cp-复制文件或目录"><a href="#6-cp-复制文件或目录" class="headerlink" title="6, cp (复制文件或目录)"></a>6, cp (复制文件或目录)</h4></li>
+<li>[root@www ~]# cp [-adfilprsu] 来源档(source) 目标档(destination)</li>
+<li>[root@www ~]# cp [options] source1 source2 source3 …. directory</li>
+<li>选项与参数：<blockquote>
+<ul>
+<li>-a：相当於 -pdr 的意思，至於 pdr 请参考下列说明；(常用)</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>-d：若来源档为连结档的属性(link file)，则复制连结档属性而非文件本身；</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>-f：为强制(force)的意思，若目标文件已经存在且无法开启，则移除后再尝试一次；</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>-i：若目标档(destination)已经存在时，在覆盖时会先询问动作的进行(常用)</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>-l：进行硬式连结(hard link)的连结档创建，而非复制文件本身；</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>-p：连同文件的属性一起复制过去，而非使用默认属性(备份常用)；</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>-r：递归持续复制，用於目录的复制行为；(常用)</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>-s：复制成为符号连结档 (symbolic link)，亦即『捷径』文件；</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>-u：若 destination 比 source 旧才升级 destination ！</li>
+</ul>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">用 root 身份，将 root 目录下的 .bashrc 复制到 /tmp 下，并命名为 bashrc</span><br><span class="line"></span><br><span class="line">[root@www ~]<span class="meta"># cp ~/.bashrc /tmp/bashrc</span></span><br><span class="line">[root@www ~]<span class="meta"># cp -i ~/.bashrc /tmp/bashrc</span></span><br><span class="line">cp: overwrite `/tmp/bashrc<span class="number">'</span>? n  &lt;==n不覆盖，y为覆盖</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-rm-移除文件或目录"><a href="#7-rm-移除文件或目录" class="headerlink" title="7, rm (移除文件或目录)"></a>7, rm (移除文件或目录)</h4><blockquote>
+<p>rm [-fir] 文件或目录</p>
+</blockquote>
+<ul>
+<li><p>选项与参数：</p>
+<blockquote>
+<ul>
+<li>-f ：就是 force 的意思，忽略不存在的文件，不会出现警告信息；</li>
+<li>-i ：互动模式，在删除前会询问使用者是否动作</li>
+<li>-r ：递归删除啊！最常用在目录的删除了！这是非常危险的选项！<br>将刚刚在 cp 的实例中创建的 bashrc 删除掉！</li>
+</ul>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@www tmp]<span class="meta"># rm -i bashrc</span></span><br><span class="line">rm: <span class="built_in">remove</span> regular file `bashrc<span class="number">'</span>? y</span><br><span class="line">如果加上 -i 的选项就会主动询问喔，避免你删除到错误的档名！</span><br></pre></td></tr></table></figure>
+<h4 id="8-mv-移动文件与目录，或修改名称"><a href="#8-mv-移动文件与目录，或修改名称" class="headerlink" title="8, mv (移动文件与目录，或修改名称)"></a>8, mv (移动文件与目录，或修改名称)</h4></li>
+<li><p>[root@www ~]# mv [-fiu] source destination</p>
+</li>
+<li><p>[root@www ~]# mv [options] source1 source2 source3 …. directory</p>
+</li>
+<li><p>选项与参数：</p>
+<blockquote>
+<ul>
+<li>-f ：force 强制的意思，如果目标文件已经存在，不会询问而直接覆盖；</li>
+<li>-i ：若目标文件 (destination) 已经存在时，就会询问是否覆盖！</li>
+<li>-u ：若目标文件已经存在，且 source 比较新，才会升级 (update)<br>复制一文件，创建一目录，将文件移动到目录中</li>
+</ul>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]<span class="meta"># cd /tmp</span></span><br><span class="line">[root@www tmp]<span class="meta"># cp ~/.bashrc bashrc</span></span><br><span class="line">[root@www tmp]<span class="meta"># mkdir mvtest</span></span><br><span class="line">[root@www tmp]<span class="meta"># mv bashrc mvtest</span></span><br><span class="line">#将某个文件移动到某个目录去</span><br><span class="line">[root@www tmp]<span class="meta"># mv mvtest mvtest2</span></span><br><span class="line">#将刚刚的目录名称更名为 mvtest2</span><br></pre></td></tr></table></figure></li>
+</ul>
+
       
 
       
@@ -235,265 +437,80 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Numpy</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">operations</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/9ae22f4b.html">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Numpy/numpy1_slice" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/760d2243.html">Numpy（一）：numpy切片和索引</a>
-    </h1>
-  
-
-        
-        <a href="/post/760d2243.html" class="archive-article-date">
-  	<time datetime="2020-07-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
-</a>
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon" style="color: gray;">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
-        <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">1.5k</span>字
-      </span>
+      </div>
     </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon" style="color:gray">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">6</span>分钟
-      </span>
-    </span>
-    <!--
-    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
-      &nbsp; | &nbsp;
-      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
-    </span>
-    -->
+  </div>
 </div>
 
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;NumPy(Numerical Python)是Python语言的一个扩展程序库，支持大量的维度数组与矩阵运算，此外也针对数组运算提供大量的数学函数库。NumPy 是一个运行速度非常快的数学库，主要用于数组计算。以下是numpy对多维数组进行切片和索引操作的总结。</p>
-        
-      
-
-      
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://keviness.github.io/post/a1e98319.html" alt="微信分享二维码">
     </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Numpy</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">slice</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">index</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/760d2243.html">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript/javascript_timingEvent" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/c9819eef.html">JavaScript Timing Event</a>
-    </h1>
-  
-
-        
-        <a href="/post/c9819eef.html" class="archive-article-date">
-  	<time datetime="2020-07-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-11</time>
-</a>
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon" style="color: gray;">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
-        <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">543</span>字
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon" style="color:gray">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">2</span>分钟
-      </span>
-    </span>
-    <!--
-    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
-      &nbsp; | &nbsp;
-      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
-    </span>
-    -->
 </div>
 
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;在web编程中，我们经常需要重复一件事，或者让一个操作多次重复执行。JavaSript为我们提供了两个相关函数，这两个函数有共同也有不同之处，以下是一些个总结:</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">time</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">event</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/c9819eef.html">Read more >></a>
-        </p>
-      
-
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
   
 </article>
+
+  
+
+<nav id="article-nav">
+  
+  
+    <a href="/post/40451eee.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">用C语言实现显示日历</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -508,770 +525,54 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript/javascript_table" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/6a9fb1f0.html">JavaScript实现跨行合并table中相同单元格</a>
-    </h1>
-  
-
-        
-        <a href="/post/6a9fb1f0.html" class="archive-article-date">
-  	<time datetime="2020-07-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-07</time>
-</a>
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon" style="color: gray;">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
-        <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">423</span>字
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon" style="color:gray">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">1</span>分钟
-      </span>
-    </span>
-    <!--
-    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
-      &nbsp; | &nbsp;
-      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
-    </span>
-    -->
-</div>
-
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;在web中我们经常需要用到table表格对我们的数据进行呈现，table表格能很友好地显示我们的数据，那在动态创建table时，如何进行跨行合并相同内容单元格呢？以下是一些个方法：</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Table</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/6a9fb1f0.html">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一，Linux-VS-Windows"><span class="toc-number">1.0.1.</span> <span class="toc-text">一，Linux VS Windows</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二，Linux文件路径"><span class="toc-number">1.0.2.</span> <span class="toc-text">二，Linux文件路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三，处理目录的常用命令"><span class="toc-number">1.0.3.</span> <span class="toc-text">三，处理目录的常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-ls-列出目录"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">1, ls (列出目录)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-cd-切换目录"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">2, cd (切换目录)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-pwd-显示目前所在的目录"><span class="toc-number">1.0.3.3.</span> <span class="toc-text">3, pwd (显示目前所在的目录)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-mkdir-创建新目录"><span class="toc-number">1.0.3.4.</span> <span class="toc-text">4, mkdir (创建新目录)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-rmdir-删除空的目录"><span class="toc-number">1.0.3.5.</span> <span class="toc-text">5, rmdir (删除空的目录)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-cp-复制文件或目录"><span class="toc-number">1.0.3.6.</span> <span class="toc-text">6, cp (复制文件或目录)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-rm-移除文件或目录"><span class="toc-number">1.0.3.7.</span> <span class="toc-text">7, rm (移除文件或目录)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-mv-移动文件与目录，或修改名称"><span class="toc-number">1.0.3.8.</span> <span class="toc-text">8, mv (移动文件与目录，或修改名称)</span></a></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-JavaScript/javascript_location" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/abe472d8.html">Location Object概述</a>
-    </h1>
-  
-
-        
-        <a href="/post/abe472d8.html" class="archive-article-date">
-  	<time datetime="2020-07-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-07</time>
-</a>
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon" style="color: gray;">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
-        <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">818</span>字
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon" style="color:gray">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">3</span>分钟
-      </span>
-    </span>
-    <!--
-    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
-      &nbsp; | &nbsp;
-      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
-    </span>
-    -->
-</div>
-
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;以史为鉴，是人类发明的一种不错的改善当前经验的方法。每个人从过去的经历中学习到了很多，历史对我们而言十分重要。在web世界中，我们如何对待曾经发生过的历史呢？</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">location</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hash</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">history</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/abe472d8.html">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript/javascript_canvas" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/53ec7d50.html">Canvas概述</a>
-    </h1>
-  
-
-        
-        <a href="/post/53ec7d50.html" class="archive-article-date">
-  	<time datetime="2020-06-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-30</time>
-</a>
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon" style="color: gray;">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
-        <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">997</span>字
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon" style="color:gray">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">4</span>分钟
-      </span>
-    </span>
-    <!--
-    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
-      &nbsp; | &nbsp;
-      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
-    </span>
-    -->
-</div>
-
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;眨眼之间，2020年已经过去了一半。前端学习的计划还没结束，新的计划就要开始，顿时感觉压力倍增呀。暑假是一个很好的学习时间，希望在这一段时间的“闭关”中，我能够打牢基础，为以后的学习做准备。<br>&emsp;闲言少叙，除了SVG之外，HTML5新增了canvas绘图利器，在动态展现表格数据方面有着强大的功能。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">canvas</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/53ec7d50.html">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript/javascript_SVG" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/c8d4b451.html">SVG概述</a>
-    </h1>
-  
-
-        
-        <a href="/post/c8d4b451.html" class="archive-article-date">
-  	<time datetime="2020-06-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-29</time>
-</a>
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon" style="color: gray;">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
-        <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">806</span>字
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon" style="color:gray">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">4</span>分钟
-      </span>
-    </span>
-    <!--
-    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
-      &nbsp; | &nbsp;
-      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
-    </span>
-    -->
-</div>
-
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;在web中我们经常需要进行数据的可视化，让数据的呈现更为立体形象。SVG为我们提供了一个不错的选择，以下是一些总结：</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SVG</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/c8d4b451.html">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript/javascript_webStorage" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/5b4c752e.html">web storage常用的两种方式</a>
-    </h1>
-  
-
-        
-        <a href="/post/5b4c752e.html" class="archive-article-date">
-  	<time datetime="2020-06-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-27</time>
-</a>
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon" style="color: gray;">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
-        <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">743</span>字
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon" style="color:gray">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">2</span>分钟
-      </span>
-    </span>
-    <!--
-    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
-      &nbsp; | &nbsp;
-      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
-    </span>
-    -->
-</div>
-
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;数据是网络世界的灵魂，我们浏览网页的根本目的在于获得由数据构成的信息。在HTML5之前，这些都是由cookie完成的。但是cookie不适合大量数据的存储，因为它们由每个对服务器的请求来传递，这使得cookie速度很慢而且效率也不高。HTML5之后，网页本地存储数据有了新的选择。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">storage</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/5b4c752e.html">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript/javascript_preventDefault" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/7a8ff88c.html">JavaScript阻止浏览器默认事件发生</a>
-    </h1>
-  
-
-        
-        <a href="/post/7a8ff88c.html" class="archive-article-date">
-  	<time datetime="2020-06-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
-</a>
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon" style="color: gray;">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
-        <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">242</span>字
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon" style="color:gray">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">1</span>分钟
-      </span>
-    </span>
-    <!--
-    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
-      &nbsp; | &nbsp;
-      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
-    </span>
-    -->
-</div>
-
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;在JavaScript Event中经常需要对事件进行阻止，主要有以下方法：<br>&emsp;event.preventDefault()阻止浏览器默认事件。<br>&emsp;event.stopPropagation()阻止元素事件冒泡。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/7a8ff88c.html">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript/javascript_Encode" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/e10ad84b.html">JavaScript对HTML进行编码与解码</a>
-    </h1>
-  
-
-        
-        <a href="/post/e10ad84b.html" class="archive-article-date">
-  	<time datetime="2020-05-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-31</time>
-</a>
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon" style="color: gray;">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;">  字数统计: </span>
-        <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">764</span>字
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon" style="color:gray">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;color: gray;">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: rgb(131, 99, 248)">3</span>分钟
-      </span>
-    </span>
-    <!--
-    <span id="busuanzi_container_page_pv" style="font-size: 16px;color: grey;">
-      &nbsp; | &nbsp;
-      本文阅读量: <span id="busuanzi_value_page_pv" style="color: rgb(131, 99, 248)"></span>次
-    </span>
-    -->
-</div>
-
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>&emsp;经常遇到一些字符需要进行转义后才能显示到界面上。此时，就需要进行编码与解码，那么如何进行编码和解码呢？以下是一些个总结：</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/e10ad84b.html">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-  
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">下一页</a>
-    </nav>
+  
+    <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+  var gitalk = new Gitalk({
+    clientID: '5a7038de6bbe21a2b21e',
+    clientSecret: '3581f686afe3a2496b240b810fd27d0ea27be50b',
+    repo: 'keviness.github.io',
+    owner: 'keviness',
+    admin: ['keviness'],
+    id: 'Sun Feb 28 2021 00:00:00 GMT+0800',
+    distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container')
+}
+</script>
+  
+
+  
+
+  
+
+  
+
   
 
 
@@ -1295,8 +596,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
